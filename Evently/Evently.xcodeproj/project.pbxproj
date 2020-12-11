@@ -15,6 +15,7 @@
 		8C1222482581DD7000ABF35F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */; };
 		8C1222532581DD7000ABF35F /* EventlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1222522581DD7000ABF35F /* EventlyTests.swift */; };
 		8C12225E2581DD7000ABF35F /* EventlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12225D2581DD7000ABF35F /* EventlyUITests.swift */; };
+		8C1848392583341700F925B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1848382583341700F925B6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8C1222592581DD7000ABF35F /* EventlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C12225D2581DD7000ABF35F /* EventlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventlyUITests.swift; sourceTree = "<group>"; };
 		8C12225F2581DD7000ABF35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C1848382583341700F925B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				8C1222442581DD7000ABF35F /* Assets.xcassets */,
 				8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */,
 				8C1222492581DD7000ABF35F /* Info.plist */,
+				8C1848382583341700F925B6 /* Constants.swift */,
 			);
 			path = Evently;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				8C1222402581DD6B00ABF35F /* ViewController.swift in Sources */,
 				8C12223C2581DD6B00ABF35F /* AppDelegate.swift in Sources */,
 				8C12223E2581DD6B00ABF35F /* SceneDelegate.swift in Sources */,
+				8C1848392583341700F925B6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
