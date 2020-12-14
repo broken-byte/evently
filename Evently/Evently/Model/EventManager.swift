@@ -44,7 +44,12 @@ struct EventManager {
                 let imageURL: String = event.performers[0].image
                 let location: String = event.venue.display_location
                 let time: String = event.datetime_utc
-                let event = EventModel(title: title, imageURL: imageURL, location: location, timeOfEvent: time)
+                let event = EventModel(
+                    title: title,
+                    imageURL: imageURL,
+                    location: location,
+                    timeOfEvent: time
+                )
                 events.append(event)
             }
             print(events)
