@@ -14,7 +14,7 @@ struct EventModel {
     let location: String
     var timeOfEventInUTC: String
     
-    func getTimeOfEventInLocalFormat() -> String {
+    public func getTimeOfEventInLocalFormat() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
