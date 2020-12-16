@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EventViewController: UIViewController {
     
+    @IBOutlet weak var eventSearchBar: UISearchBar!
     let eventManager = EventManager()
 
     override func viewDidLoad() {

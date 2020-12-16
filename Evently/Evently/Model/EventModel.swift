@@ -8,25 +8,27 @@
 import Foundation
 
 struct EventModel {
+    // TODO: I think that EventModel shouldnt handle the image url -> UI image functionality, as that sounds like Controller territory
     
     let title: String
     let imageURL: String
     let location: String
     var timeOfEventInUTC: String
     
-    public func getTimeOfEventInLocalFormat() -> String {
+    public func getTimeOfEventInLocalFormat() -> String { // TODO: Get the datetime to appeat in 12 hour format instead of 24 hour
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
         dateFormatter.locale = Locale(identifier: "your_loc_id")
-        let utcDate = dateFormatter.date(from: timeOfEventInUTC)
-        guard dateFormatter.date(from: timeOfEventInUTC) != nil else {
-            print("Failed to create Date object from ISO UTC date string")
+        guard let utcDate = dateFormatter.date(from: timeOfEventInUTC) else {
+            assertionFailure(
+                "Failed to create Date object from ISO UTC date string"
+            )
             return ""
         }
         dateFormatter.dateFormat = "EEEE, dd MMM yyyy\nHH:mm a"
         dateFormatter.timeZone = TimeZone.current
-        let timeOfEventInLocalFormat: String = dateFormatter.string(from: utcDate!)
+        let timeOfEventInLocalFormat: String = dateFormatter.string(from: utcDate)
         return timeOfEventInLocalFormat
     }
 }
