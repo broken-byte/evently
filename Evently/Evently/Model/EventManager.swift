@@ -48,11 +48,11 @@ struct EventManager {
                     title: title,
                     imageURL: imageURL,
                     location: location,
-                    timeOfEvent: time
+                    timeOfEventInUTC: time
                 )
+                print(event.getTimeOfEventInLocalFormat())
                 events.append(event)
             }
-            print(events)
         }
         catch {
             print(error)
