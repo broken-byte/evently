@@ -6,28 +6,45 @@
 //
 
 import Foundation
+import UIKit
 
-struct ImageManager { // TODO: Figure out how to get the Image data from the image url
+class ImageManager {
     
-    func fetchImage(with imageUrl: String) {
-        return performRequest(urlString: imageUrl)
-    }
+    private var fetchedImages = [URL: UIImage]()
+    private var runningRequests = [UUID: URLSessionDataTask]() 
     
-    private func performRequest(urlString: String) {
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                if let safeData = data {
-                    // self.parseJSON(data: safeData)
-                }
-            }
-            task.resume()
+    func fetchImage(with url: URL, _ completion: @escaping (Result<UIImage, Error>) -> Void) -> UUID? {
+      if let image = fetchedImages[url] {
+        completion(.success(image))
+        return nil
+      }
+      let uuid = UUID()
+      let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        defer {
+            self.runningRequests.removeValue(forKey: uuid)
         }
+        if let data = data, let image = UIImage(data: data) {
+          self.fetchedImages[url] = image
+          completion(.success(image))
+          return
+        }
+        guard let error = error else {
+          print("Image Manager failed without a valid error type!")
+          return
+        }
+        guard (error as NSError).code == NSURLErrorCancelled else {
+          completion(.failure(error))
+            // Throw the error up the call stack if it failed but wasn't cancelled.
+          return
+        }
+      }
+      task.resume()
+      runningRequests[uuid] = task
+      return uuid
     }
     
+    func cancelFetch(_ uuid: UUID) {
+      runningRequests[uuid]?.cancel()
+      runningRequests.removeValue(forKey: uuid)
+    }
 }
-    

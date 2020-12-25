@@ -8,7 +8,6 @@
 import Foundation
 
 struct EventModel {
-    // TODO: I think that EventModel shouldnt handle the image url -> UI image functionality, as that sounds like Controller territory
     
     let title: String
     let imageURL: String
