@@ -17,25 +17,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aRE-hE-P8a">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aRE-hE-P8a">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" ambiguous="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="j6E-jj-S1j">
+                                    <searchBar contentMode="redraw" text="" placeholder="This is a search bar!" translatesAutoresizingMaskIntoConstraints="NO" id="j6E-jj-S1j">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-v8-hgI">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-v8-hgI">
                                         <rect key="frame" x="0.0" y="58" width="414" height="794"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" id="WeI-5b-HIf">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WeI-5b-HIf" id="h60-Pg-I3O">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0DH-5T-Zmd"/>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KcF-PN-mlh"/>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yke-AL-RDM"/>
+                            <constraint firstAttribute="bottom" secondItem="aRE-hE-P8a" secondAttribute="bottom" id="ZHD-87-zcZ"/>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aTf-YM-Bdv"/>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ff3-fw-xx9"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="eventSearchBar" destination="j6E-jj-S1j" id="ljL-Vs-dxi"/>
+                        <outlet property="tableView" destination="K0w-v8-hgI" id="XlM-yx-O6I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

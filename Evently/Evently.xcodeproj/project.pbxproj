@@ -14,7 +14,7 @@
 		8C1222432581DD6B00ABF35F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222412581DD6B00ABF35F /* Main.storyboard */; };
 		8C1222452581DD7000ABF35F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222442581DD7000ABF35F /* Assets.xcassets */; };
 		8C1222482581DD7000ABF35F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */; };
-		8C1222532581DD7000ABF35F /* EventlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1222522581DD7000ABF35F /* EventlyTests.swift */; };
+		8C1222532581DD7000ABF35F /* EventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1222522581DD7000ABF35F /* EventManagerTests.swift */; };
 		8C12225E2581DD7000ABF35F /* EventlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12225D2581DD7000ABF35F /* EventlyUITests.swift */; };
 		8C1848392583341700F925B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1848382583341700F925B6 /* Constants.swift */; };
 		8C18484125867F9E00F925B6 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484025867F9E00F925B6 /* EventData.swift */; };
@@ -58,7 +58,7 @@
 		8C1222472581DD7000ABF35F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C1222492581DD7000ABF35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C12224E2581DD7000ABF35F /* EventlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C1222522581DD7000ABF35F /* EventlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventlyTests.swift; sourceTree = "<group>"; };
+		8C1222522581DD7000ABF35F /* EventManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManagerTests.swift; sourceTree = "<group>"; };
 		8C1222542581DD7000ABF35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C1222592581DD7000ABF35F /* EventlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C12225D2581DD7000ABF35F /* EventlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventlyUITests.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		8C1222512581DD7000ABF35F /* EventlyTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C1222522581DD7000ABF35F /* EventlyTests.swift */,
+				8C1222522581DD7000ABF35F /* EventManagerTests.swift */,
 				8C1222542581DD7000ABF35F /* Info.plist */,
 			);
 			path = EventlyTests;
@@ -460,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C1222532581DD7000ABF35F /* EventlyTests.swift in Sources */,
+				8C1222532581DD7000ABF35F /* EventManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

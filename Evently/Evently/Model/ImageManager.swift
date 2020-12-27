@@ -20,16 +20,14 @@ class ImageManager {
       }
       let uuid = UUID()
       let task = URLSession.shared.dataTask(with: url) { data, response, error in
-        defer {
-            self.runningRequests.removeValue(forKey: uuid)
-        }
+        defer { self.runningRequests.removeValue(forKey: uuid) }
         if let data = data, let image = UIImage(data: data) {
           self.fetchedImages[url] = image
           completion(.success(image))
           return
         }
         guard let error = error else {
-          print("Image Manager failed without a valid error type!")
+          print("Image Manager failed with a nil error!")
           return
         }
         guard (error as NSError).code == NSURLErrorCancelled else {

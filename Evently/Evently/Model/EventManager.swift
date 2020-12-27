@@ -50,9 +50,10 @@ struct EventManager {
                     location: location,
                     timeOfEventInUTC: time
                 )
-                print(event.getTimeOfEventInLocalFormat())
                 events.append(event)
+                print(event.timeOfEventInLocalFormat)
             }
+            print(events)
         }
         catch {
             print(error)
