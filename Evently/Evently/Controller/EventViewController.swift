@@ -17,9 +17,9 @@ class EventViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventManager.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        eventManager.delegate = self
         eventManager.fetchEvents()
     }
 }
@@ -27,8 +27,16 @@ class EventViewController: UIViewController {
 //MARK: - EventManagerDelegate
 
 extension EventViewController: EventManagerDelegate {
-    func didFetchEvents(_ fetchedEvents: [EventModel]) {
-        print(fetchedEvents)
+    
+    func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel]) {
+        self.events = fetchedEvents
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func didFailWithError(_ error: Error) {
+        print(error)
     }
 }
 
@@ -36,12 +44,12 @@ extension EventViewController: EventManagerDelegate {
 
 extension EventViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reusableCellIdentifier, for: indexPath)
-        cell.textLabel?.text = "Still not working grrrrr"
+        cell.textLabel?.text = self.events[indexPath.row].title
         return cell
     }
 }

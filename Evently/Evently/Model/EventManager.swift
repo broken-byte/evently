@@ -9,7 +9,8 @@ import Foundation
 import Keys
 
 protocol EventManagerDelegate {
-    func didFetchEvents(_ fetchedEvents: [EventModel])
+    func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel])
+    func didFailWithError(_ error: Error)
 }
 
 struct EventManager {
@@ -21,20 +22,20 @@ struct EventManager {
         let clientID = keys.seatGeekClientID
         let clientSecret = keys.seatGeekClientSecret
         let eventUrlString = "\(Constants.seatGeekURL)/events/?client_id=\(clientID)&client_secret=\(clientSecret)"
-        performRequest(urlString: eventUrlString)
+        performRequest(with: eventUrlString)
     }
     
-    private func performRequest(urlString: String) {
+    private func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    print(error!)
+                    self.delegate?.didFailWithError(error!)
                     return
                 }
                 if let safeData = data {
-                    if let events = self.parseJSON(data: safeData) {
-                        self.delegate?.didFetchEvents(events)
+                    if let fetchedEvents = self.parseJSON(safeData) {
+                        self.delegate?.didFetchEvents(self , fetchedEvents: fetchedEvents)
                     }
                 }
             }
@@ -42,7 +43,7 @@ struct EventManager {
         }
     }
     
-    private func parseJSON(data: Data) -> [EventModel]? {
+    private func parseJSON(_ data: Data) -> [EventModel]? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(EventData.self, from: data)
@@ -63,7 +64,7 @@ struct EventManager {
             return events
         }
         catch {
-            print(error)
+            self.delegate?.didFailWithError(error)
             return nil
         }
     }
