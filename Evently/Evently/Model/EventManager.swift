@@ -8,9 +8,15 @@
 import Foundation
 import Keys
 
+protocol EventManagerDelegate {
+    func didFetchEvents(fetchedEvents: [EventModel])
+}
+
 struct EventManager {
+
+    var delegate: EventManagerDelegate?
     
-    func fetchEvents() {
+    public func fetchEvents() {
         let keys = EventlyKeys()
         let clientID = keys.seatGeekClientID
         let clientSecret = keys.seatGeekClientSecret
@@ -18,7 +24,7 @@ struct EventManager {
         performRequest(urlString: eventUrlString)
     }
     
-    func performRequest(urlString: String) {
+    private func performRequest(urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -27,14 +33,16 @@ struct EventManager {
                     return
                 }
                 if let safeData = data {
-                    self.parseJSON(data: safeData)
+                    if let events = self.parseJSON(data: safeData) {
+                        self.delegate?.didFetchEvents(fetchedEvents: events)
+                    }
                 }
             }
             task.resume()
         }
     }
     
-    func parseJSON(data: Data) {
+    private func parseJSON(data: Data) -> [EventModel]? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(EventData.self, from: data)
@@ -51,12 +59,12 @@ struct EventManager {
                     timeOfEventInUTC: time
                 )
                 events.append(event)
-                print(event.timeOfEventInLocalFormat)
             }
-            print(events)
+            return events
         }
         catch {
             print(error)
+            return nil
         }
     }
 }

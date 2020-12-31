@@ -39,17 +39,25 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="K0w-v8-hgI" firstAttribute="top" secondItem="j6E-jj-S1j" secondAttribute="bottom" constant="2" id="1Y8-cA-zYC"/>
+                                    <constraint firstAttribute="trailing" secondItem="K0w-v8-hgI" secondAttribute="trailing" id="Nzi-Mc-32C"/>
+                                    <constraint firstItem="K0w-v8-hgI" firstAttribute="top" secondItem="j6E-jj-S1j" secondAttribute="bottom" constant="2" id="SBv-UR-5hz"/>
+                                    <constraint firstAttribute="trailing" secondItem="j6E-jj-S1j" secondAttribute="trailing" id="TJu-46-edl"/>
+                                    <constraint firstItem="K0w-v8-hgI" firstAttribute="leading" secondItem="aRE-hE-P8a" secondAttribute="leading" id="lJv-mf-5SE"/>
+                                    <constraint firstAttribute="bottom" secondItem="K0w-v8-hgI" secondAttribute="bottom" id="spa-dF-5hL"/>
+                                    <constraint firstItem="j6E-jj-S1j" firstAttribute="leading" secondItem="aRE-hE-P8a" secondAttribute="leading" id="vAI-0D-SEK"/>
+                                    <constraint firstItem="j6E-jj-S1j" firstAttribute="top" secondItem="aRE-hE-P8a" secondAttribute="top" id="y6c-M3-jFQ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aRE-hE-P8a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0DH-5T-Zmd"/>
-                            <constraint firstItem="aRE-hE-P8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KcF-PN-mlh"/>
-                            <constraint firstItem="aRE-hE-P8a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yke-AL-RDM"/>
-                            <constraint firstAttribute="bottom" secondItem="aRE-hE-P8a" secondAttribute="bottom" id="ZHD-87-zcZ"/>
-                            <constraint firstItem="aRE-hE-P8a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aTf-YM-Bdv"/>
-                            <constraint firstItem="aRE-hE-P8a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ff3-fw-xx9"/>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CIE-Ie-yXD"/>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Iif-iq-NMe"/>
+                            <constraint firstItem="aRE-hE-P8a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lzj-lP-yg2"/>
+                            <constraint firstAttribute="bottom" secondItem="aRE-hE-P8a" secondAttribute="bottom" id="nGM-ck-LEp"/>
                         </constraints>
                     </view>
                     <connections>
