@@ -11,6 +11,7 @@ class EventViewController: UIViewController {
     
     @IBOutlet weak var eventSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     var eventManager = EventManager()
     var events: [EventModel] = []
 
@@ -26,7 +27,7 @@ class EventViewController: UIViewController {
 //MARK: - EventManagerDelegate
 
 extension EventViewController: EventManagerDelegate {
-    func didFetchEvents(fetchedEvents: [EventModel]) {
+    func didFetchEvents(_ fetchedEvents: [EventModel]) {
         print(fetchedEvents)
     }
 }

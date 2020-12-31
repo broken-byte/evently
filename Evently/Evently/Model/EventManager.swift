@@ -9,7 +9,7 @@ import Foundation
 import Keys
 
 protocol EventManagerDelegate {
-    func didFetchEvents(fetchedEvents: [EventModel])
+    func didFetchEvents(_ fetchedEvents: [EventModel])
 }
 
 struct EventManager {
@@ -34,7 +34,7 @@ struct EventManager {
                 }
                 if let safeData = data {
                     if let events = self.parseJSON(data: safeData) {
-                        self.delegate?.didFetchEvents(fetchedEvents: events)
+                        self.delegate?.didFetchEvents(events)
                     }
                 }
             }
