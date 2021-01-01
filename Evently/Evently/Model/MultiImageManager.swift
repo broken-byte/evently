@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ImageManager {
+class MultiImageManager {
     
     private var fetchedImages = [URL: UIImage]()
     private var runningRequests = [UUID: URLSessionDataTask]() 
