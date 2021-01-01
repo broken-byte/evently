@@ -20,6 +20,8 @@
 		8C18484125867F9E00F925B6 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484025867F9E00F925B6 /* EventData.swift */; };
 		8C18484C2586894700F925B6 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484B2586894700F925B6 /* EventManager.swift */; };
 		8C1848762586EAEE00F925B6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1848752586EAEE00F925B6 /* EventModel.swift */; };
+		8C57CD54259F9A9A00384CCD /* seat-geek-api-response-success.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C57CD53259F9A9A00384CCD /* seat-geek-api-response-success.json */; };
+		8C57CD5D259FA59400384CCD /* MockedEventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C57CD5C259FA59400384CCD /* MockedEventData.swift */; };
 		8C82A155258A8C76005CA9C6 /* MultiImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */; };
 		B261C3BA92B95C905777A8F8 /* Pods_Evently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E6ACE853B53624F3727D7E /* Pods_Evently.framework */; };
 		CC27BE2F3A0B41FF7FCDAF94 /* Pods_Evently_EventlyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A30D91229DB27004D06E6E2 /* Pods_Evently_EventlyUITests.framework */; };
@@ -67,6 +69,8 @@
 		8C18484025867F9E00F925B6 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		8C18484B2586894700F925B6 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		8C1848752586EAEE00F925B6 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		8C57CD53259F9A9A00384CCD /* seat-geek-api-response-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "seat-geek-api-response-success.json"; sourceTree = "<group>"; };
+		8C57CD5C259FA59400384CCD /* MockedEventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedEventData.swift; sourceTree = "<group>"; };
 		8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImageManager.swift; sourceTree = "<group>"; };
 		AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.release.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,8 +158,10 @@
 		8C1222512581DD7000ABF35F /* EventlyTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C57CD58259F9AD500384CCD /* Resources */,
 				8C1222522581DD7000ABF35F /* EventManagerTests.swift */,
 				8C1222542581DD7000ABF35F /* Info.plist */,
+				8C57CD5C259FA59400384CCD /* MockedEventData.swift */,
 			);
 			path = EventlyTests;
 			sourceTree = "<group>";
@@ -195,6 +201,14 @@
 				8C12223F2581DD6B00ABF35F /* EventViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8C57CD58259F9AD500384CCD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C57CD53259F9A9A00384CCD /* seat-geek-api-response-success.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FEA50353606451F86C1184D8 /* Frameworks */ = {
@@ -237,6 +251,7 @@
 				8C12224A2581DD7000ABF35F /* Sources */,
 				8C12224B2581DD7000ABF35F /* Frameworks */,
 				8C12224C2581DD7000ABF35F /* Resources */,
+				5D5912F9A82DDB15BCDC8C07 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C57CD54259F9A9A00384CCD /* seat-geek-api-response-success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +374,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D5912F9A82DDB15BCDC8C07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventlyTests/Pods-EventlyTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventlyTests/Pods-EventlyTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventlyTests/Pods-EventlyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		78644F16756A2236605E1487 /* [CP] Check Pods Manifest.lock */ = {
@@ -460,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C57CD5D259FA59400384CCD /* MockedEventData.swift in Sources */,
 				8C1222532581DD7000ABF35F /* EventManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

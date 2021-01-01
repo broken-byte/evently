@@ -1,21 +1,16 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '12.0'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '12.0'
 
 target 'Evently' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for Evently
-
   target 'EventlyTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Mocker', '~> 2.2.0'
   end
-
   target 'EventlyUITests' do
     # Pods for testing
   end
-
 end
 
 plugin 'cocoapods-keys', {

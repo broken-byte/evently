@@ -15,7 +15,7 @@ protocol EventManagerDelegate {
 
 struct EventManager {
 
-    var delegate: EventManagerDelegate?
+    public var delegate: EventManagerDelegate?
     
     public func fetchEvents() {
         let keys = EventlyKeys()

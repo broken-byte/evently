@@ -1,0 +1,224 @@
+{
+  "events": [
+    {
+      "type": "nascar_cup",
+      "id": 5333479,
+      "datetime_utc": "2021-01-01T08:30:00",
+      "venue": {
+        "state": "GA",
+        "name_v2": "Atlanta Motor Speedway",
+        "postal_code": "30228",
+        "name": "Atlanta Motor Speedway",
+        "links": [
+          
+        ],
+        "timezone": "America/New_York",
+        "url": "https://seatgeek.com/venues/atlanta-motor-speedway/tickets",
+        "score": 0.696011,
+        "location": {
+          "lat": 33.3839,
+          "lon": -84.3122
+        },
+        "address": "1500 Tara Place",
+        "country": "US",
+        "has_upcoming_events": true,
+        "num_upcoming_events": 10,
+        "city": "Hampton",
+        "slug": "atlanta-motor-speedway",
+        "extended_address": "Hampton, GA 30228",
+        "id": 1637,
+        "popularity": 0,
+        "access_method": null,
+        "metro_code": 524,
+        "capacity": 71000,
+        "display_location": "Hampton, GA"
+      },
+      "datetime_tbd": true,
+      "performers": [
+        {
+          "type": "nascar",
+          "name": "Folds Of Honor Quiktrip 500",
+          "image": "https://seatgeek.com/images/performers-landscape/folds-of-honor-quiktrip-500-1-4c93a3/622294/huge.jpg",
+          "id": 622294,
+          "images": {
+            "huge": "https://seatgeek.com/images/performers-landscape/folds-of-honor-quiktrip-500-1-4c93a3/622294/huge.jpg"
+          },
+          "divisions": null,
+          "has_upcoming_events": false,
+          "primary": true,
+          "stats": {
+            "event_count": 0
+          },
+          "taxonomies": [
+            {
+              "id": 1000000,
+              "name": "sports",
+              "parent_id": null,
+              "document_source": {
+                "source_type": "ELASTIC",
+                "generation_type": "FULL"
+              },
+              "rank": 0
+            },
+            {
+              "id": 1060000,
+              "name": "auto_racing",
+              "parent_id": 1000000,
+              "document_source": {
+                "source_type": "ELASTIC",
+                "generation_type": "FULL"
+              },
+              "rank": 0
+            },
+            {
+              "id": 1060100,
+              "name": "nascar",
+              "parent_id": 1060000,
+              "document_source": {
+                "source_type": "ELASTIC",
+                "generation_type": "FULL"
+              },
+              "rank": 0
+            }
+          ],
+          "image_attribution": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Prerace_Events_at_the_2009_Pep_Boys_Auto_500.jpg/1280px-Prerace_Events_at_the_2009_Pep_Boys_Auto_500.jpg",
+          "url": "https://seatgeek.com/folds-of-honor-quiktrip-500-1-tickets",
+          "score": 0.4,
+          "slug": "folds-of-honor-quiktrip-500-1",
+          "home_venue_id": null,
+          "short_name": "Folds Of Honor Quiktrip 500",
+          "num_upcoming_events": 0,
+          "colors": null,
+          "image_license": "https://creativecommons.org/licenses/by/2.0/deed.en",
+          "popularity": 0,
+          "location": null
+        },
+        {
+          "type": "nascar",
+          "name": "NASCAR Racing",
+          "image": "https://seatgeek.com/images/performers-landscape/generic-nascar-30d202/677188/32592/huge.jpg",
+          "id": 272945,
+          "images": {
+            "huge": "https://seatgeek.com/images/performers-landscape/generic-nascar-30d202/677188/32592/huge.jpg"
+          },
+          "divisions": null,
+          "has_upcoming_events": true,
+          "stats": {
+            "event_count": 42
+          },
+          "taxonomies": [
+            {
+              "id": 1000000,
+              "name": "sports",
+              "parent_id": null,
+              "document_source": {
+                "source_type": "ELASTIC",
+                "generation_type": "FULL"
+              },
+              "rank": 0
+            },
+            {
+              "id": 1060000,
+              "name": "auto_racing",
+              "parent_id": 1000000,
+              "document_source": {
+                "source_type": "ELASTIC",
+                "generation_type": "FULL"
+              },
+              "rank": 0
+            },
+            {
+              "id": 1060100,
+              "name": "nascar",
+              "parent_id": 1060000,
+              "document_source": {
+                "source_type": "ELASTIC",
+                "generation_type": "FULL"
+              },
+              "rank": 0
+            }
+          ],
+          "image_attribution": null,
+          "url": "https://seatgeek.com/nascar-racing-tickets",
+          "score": 0.57,
+          "slug": "nascar-racing",
+          "home_venue_id": null,
+          "short_name": "NASCAR Racing",
+          "num_upcoming_events": 42,
+          "colors": null,
+          "image_license": null,
+          "popularity": 0,
+          "location": null
+        }
+      ],
+      "is_open": false,
+      "links": [
+        
+      ],
+      "datetime_local": "2021-01-01T03:30:00",
+      "time_tbd": true,
+      "short_title": "Folds of Honor QuikTrip 500",
+      "visible_until_utc": "2021-01-02T05:00:00",
+      "stats": {
+        "listing_count": null,
+        "average_price": null,
+        "lowest_price_good_deals": null,
+        "lowest_price": null,
+        "highest_price": null,
+        "visible_listing_count": null,
+        "dq_bucket_counts": null,
+        "median_price": null,
+        "lowest_sg_base_price": null,
+        "lowest_sg_base_price_good_deals": null
+      },
+      "taxonomies": [
+        {
+          "id": 1000000,
+          "name": "sports",
+          "parent_id": null,
+          "rank": 0
+        },
+        {
+          "id": 1060000,
+          "name": "auto_racing",
+          "parent_id": 1000000,
+          "rank": 0
+        },
+        {
+          "id": 1060100,
+          "name": "nascar",
+          "parent_id": 1060000,
+          "rank": 0
+        },
+        {
+          "id": 1060101,
+          "name": "nascar_sprintcup",
+          "parent_id": 1060100,
+          "rank": 0
+        }
+      ],
+      "url": "https://seatgeek.com/folds-of-honor-quiktrip-500-tickets/nascar_cup/2021-01-01-3-30-am/5333479",
+      "score": 0.356,
+      "announce_date": "2020-09-30T00:00:00",
+      "created_at": "2020-09-30T21:58:03",
+      "date_tbd": true,
+      "title": "Folds of Honor QuikTrip 500",
+      "popularity": 0.551,
+      "description": "",
+      "status": "normal",
+      "access_method": null,
+      "event_promotion": null,
+      "announcements": {
+        
+      },
+      "conditional": false,
+      "enddatetime_utc": null,
+      "themes": [
+        
+      ],
+      "domain_information": [
+        
+      ]
+    }
+  ]
+}

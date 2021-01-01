@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EventModel {
+struct EventModel: Equatable {
     
     let title: String
     let imageURL: String
@@ -27,4 +27,13 @@ struct EventModel {
         let timeOfEventInLocalFormat: String = dateFormatter.string(from: utcDate)
         return timeOfEventInLocalFormat
     }
+    
+    static func == (leftEvent: EventModel, rightEvent: EventModel) -> Bool {
+        return
+            (leftEvent.title == rightEvent.title) &&
+            (leftEvent.imageURL == rightEvent.imageURL) &&
+            (leftEvent.location == rightEvent.imageURL) &&
+            (leftEvent.timeOfEventInUTC == rightEvent.timeOfEventInUTC) &&
+            (leftEvent.timeOfEventInLocalFormat == rightEvent.timeOfEventInLocalFormat)
+        }
 }
