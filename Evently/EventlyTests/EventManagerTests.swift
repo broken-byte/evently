@@ -15,6 +15,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
 
     override func setUpWithError() throws {
         super.setUp()
+        // TODO: Figure out how to successfully mock URLSession and JSONDecoder and inject thos into eventManager here so we can accurately test
         var eventManager = EventManager()
         eventManager.delegate = self
         
@@ -41,20 +42,20 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     }
 
     func testThatEventManagerCanSuccessfullyFetchEvents() throws {
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [MockingURLProtocol.self]
-        
-        let eventApiURL = URL(string: "https://api.seatgeek.com/2/events")!
-        let mock = Mock(
-            url: eventApiURL,
-            ignoreQuery: true,
-            dataType: .json,
-            statusCode: 200,
-            data: [
-                .get: MockedEventData.seatGeekApiJSON.data
-            ]
-        )
-        mock.register()
+//        let configuration = URLSessionConfiguration.default
+//        configuration.protocolClasses = [MockingURLProtocol.self]
+//
+//        let eventApiURL = URL(string: "https://api.seatgeek.com/2/events")!
+//        let mock = Mock(
+//            url: eventApiURL,
+//            ignoreQuery: true,
+//            dataType: .json,
+//            statusCode: 200,
+//            data: [
+//                .get: MockedEventData.seatGeekApiJSON.data
+//            ]
+//        )
+//        mock.register()
         eventsExpectation = expectation(description: "event JSON request should succeed")
         let expectedEvents: [EventModel] = [
             EventModel(

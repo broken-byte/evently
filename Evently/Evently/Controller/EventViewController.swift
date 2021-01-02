@@ -12,13 +12,16 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var eventManager = EventManager()
     var events: [EventModel] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let urlSession = URLSession(configuration: .default)
+        let jsonDecoder = JSONDecoder()
+        var eventManager = EventManager(session: urlSession, jsonDecoder: jsonDecoder)
         eventManager.delegate = self
         eventManager.fetchEvents()
     }

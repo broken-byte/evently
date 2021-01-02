@@ -13,9 +13,28 @@ protocol EventManagerDelegate {
     func didFailWithError(_ error: Error)
 }
 
-struct EventManager {
+enum URLError: Error {
+    case invalidInput(_ urlString: String)
+}
 
+enum HTTPResponseError: Error {
+    case badServerResponse(_ response: URLResponse?)
+}
+
+enum DataMIMETypeError: Error {
+    case notJSON
+}
+
+struct EventManager {
+    
     public var delegate: EventManagerDelegate?
+    private let session: URLSession
+    private let jsonDecoder: JSONDecoder
+    
+    init(session: URLSession = .shared, jsonDecoder: JSONDecoder) {
+        self.session = session
+        self.jsonDecoder = jsonDecoder
+    }
     
     public func fetchEvents() {
         let keys = EventlyKeys()
@@ -27,10 +46,18 @@ struct EventManager {
     
     private func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
+            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
                 if error != nil {
                     self.delegate?.didFailWithError(error!)
+                    return
+                }
+                guard let httpResponse = response as? HTTPURLResponse,
+                      (200...299).contains(httpResponse.statusCode) else {
+                    self.delegate?.didFailWithError(HTTPResponseError.badServerResponse(response))
+                    return
+                }
+                guard let mime = response?.mimeType, mime == "application/json" else {
+                    self.delegate?.didFailWithError(DataMIMETypeError.notJSON)
                     return
                 }
                 if let safeData = data {
@@ -38,34 +65,41 @@ struct EventManager {
                         self.delegate?.didFetchEvents(self , fetchedEvents: fetchedEvents)
                     }
                 }
-            }
+            })
             task.resume()
+        }
+        else {
+            delegate?.didFailWithError(URLError.invalidInput(urlString))
         }
     }
     
     private func parseJSON(_ data: Data) -> [EventModel]? {
-        let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(EventData.self, from: data)
-            var events: [EventModel] = []
-            for event in decodedData.events {
-                let title: String = event.title
-                let imageURL: String = event.performers[0].image
-                let location: String = event.venue.display_location
-                let time: String = event.datetime_utc
-                let event = EventModel(
-                    title: title,
-                    imageURL: imageURL,
-                    location: location,
-                    timeOfEventInUTC: time
-                )
-                events.append(event)
+            let decodedData = try jsonDecoder.decode(EventData.self, from: data)
+            var modeledEvents: [EventModel] = []
+            for eventData in decodedData.events {
+                let eventModel = createEventModel(from: eventData)
+                modeledEvents.append(eventModel)
             }
-            return events
+            return modeledEvents
         }
         catch {
             self.delegate?.didFailWithError(error)
             return nil
         }
+    }
+    
+    private func createEventModel(from eventData: Event) -> EventModel {
+        let title: String = eventData.title
+        let imageURL: String = eventData.performers[0].image
+        let location: String = eventData.venue.display_location
+        let time: String = eventData.datetime_utc
+        let eventModel = EventModel(
+            title: title,
+            imageURL: imageURL,
+            location: location,
+            timeOfEventInUTC: time
+        )
+        return eventModel
     }
 }
