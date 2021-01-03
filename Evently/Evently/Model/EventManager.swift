@@ -13,27 +13,13 @@ protocol EventManagerDelegate {
     func didFailWithError(_ error: Error)
 }
 
-enum URLError: Error {
-    case invalidInput(_ urlString: String)
-}
-
-enum HTTPResponseError: Error {
-    case badServerResponse(_ response: URLResponse?)
-}
-
-enum DataMIMETypeError: Error {
-    case notJSON
-}
-
 struct EventManager {
     
     public var delegate: EventManagerDelegate?
     private let session: URLSession
-    private let jsonDecoder: JSONDecoder
     
-    init(session: URLSession = .shared, jsonDecoder: JSONDecoder) {
-        self.session = session
-        self.jsonDecoder = jsonDecoder
+    init(urlSession: URLSession = .shared) {
+        self.session = urlSession
     }
     
     public func fetchEvents() {
@@ -41,11 +27,13 @@ struct EventManager {
         let clientID = keys.seatGeekClientID
         let clientSecret = keys.seatGeekClientSecret
         let eventUrlString = "\(Constants.seatGeekURL)/events/?client_id=\(clientID)&client_secret=\(clientSecret)"
+        print(eventUrlString)
         performRequest(with: eventUrlString)
     }
     
     private func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
+            //let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
                 if error != nil {
                     self.delegate?.didFailWithError(error!)
@@ -74,6 +62,7 @@ struct EventManager {
     }
     
     private func parseJSON(_ data: Data) -> [EventModel]? {
+        let jsonDecoder = JSONDecoder()
         do {
             let decodedData = try jsonDecoder.decode(EventData.self, from: data)
             var modeledEvents: [EventModel] = []
@@ -103,3 +92,20 @@ struct EventManager {
         return eventModel
     }
 }
+
+//MARK: - Error Enumerations
+
+extension EventManager {
+    enum URLError: Error {
+        case invalidInput(_ urlString: String)
+    }
+
+    enum HTTPResponseError: Error {
+        case badServerResponse(_ response: URLResponse?)
+    }
+
+    enum DataMIMETypeError: Error {
+        case notJSON
+    }
+}
+

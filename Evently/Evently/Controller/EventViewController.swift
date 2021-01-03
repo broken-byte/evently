@@ -20,8 +20,7 @@ class EventViewController: UIViewController {
         tableView.dataSource = self
         
         let urlSession = URLSession(configuration: .default)
-        let jsonDecoder = JSONDecoder()
-        var eventManager = EventManager(session: urlSession, jsonDecoder: jsonDecoder)
+        var eventManager = EventManager(urlSession: urlSession)
         eventManager.delegate = self
         eventManager.fetchEvents()
     }

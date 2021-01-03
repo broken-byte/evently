@@ -1,28 +1,32 @@
 import XCTest
 @testable import Evently
 
-import Mocker
-
 class EventManagerTests: XCTestCase, EventManagerDelegate {
     
     private var eventManager: EventManager!
-    
     private var actualEvents: [EventModel]!
     private var eventsExpectation: XCTestExpectation!
-    
     private var eventFetchError: Error!
     private var eventFetchErrorExpectation: XCTestExpectation!
+    
+    private enum APIResponseError: Error {
+        case request
+    }
+    
+    private enum FileReadError: Error {
+        case failedToLoadJSON
+    }
 
     override func setUpWithError() throws {
-        super.setUp()
-        // TODO: Figure out how to successfully mock URLSession and JSONDecoder and inject thos into eventManager here so we can accurately test
-        var eventManager = EventManager()
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession.init(configuration: configuration)
+        eventManager = EventManager(urlSession: urlSession)
         eventManager.delegate = self
         
     }
 
     override func tearDownWithError() throws {
-        super.tearDown()
         eventManager = nil
         actualEvents = nil
         eventsExpectation = nil
@@ -32,30 +36,27 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     
     func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel]) {
         actualEvents = fetchedEvents
-        eventsExpectation.fulfill()
+        eventsExpectation?.fulfill()
     }
     
     func didFailWithError(_ error: Error) {
         eventFetchError = error
-        eventFetchErrorExpectation.fulfill()
+        eventFetchErrorExpectation?.fulfill()
         
     }
 
-    func testThatEventManagerCanSuccessfullyFetchEvents() throws {
-//        let configuration = URLSessionConfiguration.default
-//        configuration.protocolClasses = [MockingURLProtocol.self]
-//
-//        let eventApiURL = URL(string: "https://api.seatgeek.com/2/events")!
-//        let mock = Mock(
-//            url: eventApiURL,
-//            ignoreQuery: true,
-//            dataType: .json,
-//            statusCode: 200,
-//            data: [
-//                .get: MockedEventData.seatGeekApiJSON.data
-//            ]
-//        )
-//        mock.register()
+    func testFetchEventsOnSuccess() throws {
+        let apiURL = URL(string: "https://api.seatgeek.com/2/events/?client_id=MjE0MzE2NDV8MTYwNzg4MTA4MS41OTA5OTYz&client_secret=19838d1a55ef49f1ac0090cff6463d3ee040e0ff8993606e307da9e2ce5a9d6d")!
+        if let mockedSuccessData = readLocalFile(forName: "successful-seat-geek-api-data") {
+            MockURLProtocol.requestHandler = { request in
+              guard let url = request.url, url == apiURL else {
+                throw APIResponseError.request
+              }
+              let response = HTTPURLResponse(url: apiURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
+              return (response, mockedSuccessData)
+            }
+        }
+        
         eventsExpectation = expectation(description: "event JSON request should succeed")
         let expectedEvents: [EventModel] = [
             EventModel(
@@ -68,5 +69,20 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
         eventManager.fetchEvents()
         waitForExpectations(timeout: 2)
         XCTAssertEqual(expectedEvents, actualEvents)
+    }
+    
+    private func readLocalFile(forName name: String) -> Data? {
+        var data: Data?
+              if let path = Bundle.main.path(forResource: name, ofType: "json") {
+                  do {
+                      let fileUrl = URL(fileURLWithPath: path)
+                      // Getting data from JSON file using the file URL
+                      data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
+                      //json = try? JSONSerialization.jsonObject(with: data)
+                  } catch {
+                    print(error)
+                  }
+              }
+              return data
     }
 }

@@ -20,8 +20,9 @@
 		8C18484125867F9E00F925B6 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484025867F9E00F925B6 /* EventData.swift */; };
 		8C18484C2586894700F925B6 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484B2586894700F925B6 /* EventManager.swift */; };
 		8C1848762586EAEE00F925B6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1848752586EAEE00F925B6 /* EventModel.swift */; };
-		8C57CD54259F9A9A00384CCD /* seat-geek-api-response-success.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C57CD53259F9A9A00384CCD /* seat-geek-api-response-success.json */; };
-		8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C720AAA25A0E7A7008717EE /* MockURLSession.swift */; };
+		8C720AAB25A0E7A7008717EE /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C720AAA25A0E7A7008717EE /* MockURLProtocol.swift */; };
+		8C72F0CD25A13BA4007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
+		8C72F0D425A14090007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
 		8C82A155258A8C76005CA9C6 /* MultiImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */; };
 		B261C3BA92B95C905777A8F8 /* Pods_Evently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E6ACE853B53624F3727D7E /* Pods_Evently.framework */; };
 		CC27BE2F3A0B41FF7FCDAF94 /* Pods_Evently_EventlyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A30D91229DB27004D06E6E2 /* Pods_Evently_EventlyUITests.framework */; };
@@ -69,8 +70,8 @@
 		8C18484025867F9E00F925B6 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		8C18484B2586894700F925B6 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		8C1848752586EAEE00F925B6 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
-		8C57CD53259F9A9A00384CCD /* seat-geek-api-response-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "seat-geek-api-response-success.json"; sourceTree = "<group>"; };
-		8C720AAA25A0E7A7008717EE /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		8C720AAA25A0E7A7008717EE /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "successful-seat-geek-api-data.json"; sourceTree = "<group>"; };
 		8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImageManager.swift; sourceTree = "<group>"; };
 		AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.release.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,8 +159,8 @@
 		8C1222512581DD7000ABF35F /* EventlyTests */ = {
 			isa = PBXGroup;
 			children = (
+				8C72F0CB25A13B67007E3220 /* Resources */,
 				8C720AA925A0E780008717EE /* Mocks */,
-				8C57CD58259F9AD500384CCD /* Resources */,
 				8C1222522581DD7000ABF35F /* EventManagerTests.swift */,
 				8C1222542581DD7000ABF35F /* Info.plist */,
 			);
@@ -203,20 +204,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		8C57CD58259F9AD500384CCD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8C57CD53259F9A9A00384CCD /* seat-geek-api-response-success.json */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		8C720AA925A0E780008717EE /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				8C720AAA25A0E7A7008717EE /* MockURLSession.swift */,
+				8C720AAA25A0E7A7008717EE /* MockURLProtocol.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8C72F0CB25A13B67007E3220 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FEA50353606451F86C1184D8 /* Frameworks */ = {
@@ -338,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C72F0D425A14090007E3220 /* successful-seat-geek-api-data.json in Resources */,
 				8C1222482581DD7000ABF35F /* LaunchScreen.storyboard in Resources */,
 				8C1222452581DD7000ABF35F /* Assets.xcassets in Resources */,
 				8C1222432581DD6B00ABF35F /* Main.storyboard in Resources */,
@@ -348,7 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C57CD54259F9A9A00384CCD /* seat-geek-api-response-success.json in Resources */,
+				8C72F0CD25A13BA4007E3220 /* successful-seat-geek-api-data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */,
+				8C720AAB25A0E7A7008717EE /* MockURLProtocol.swift in Sources */,
 				8C1222532581DD7000ABF35F /* EventManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
