@@ -18,9 +18,6 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     }
 
     override func setUpWithError() throws {
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [MockURLProtocol.self]
-        let urlSession = URLSession.init(configuration: configuration)
         eventManager = EventManager(urlSession: urlSession)
         eventManager.delegate = self
         
@@ -48,13 +45,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     func testFetchEventsOnSuccess() throws {
         let apiURL = URL(string: "https://api.seatgeek.com/2/events/?client_id=MjE0MzE2NDV8MTYwNzg4MTA4MS41OTA5OTYz&client_secret=19838d1a55ef49f1ac0090cff6463d3ee040e0ff8993606e307da9e2ce5a9d6d")!
         if let mockedSuccessData = readLocalFile(forName: "successful-seat-geek-api-data") {
-            MockURLProtocol.requestHandler = { request in
-              guard let url = request.url, url == apiURL else {
-                throw APIResponseError.request
-              }
-              let response = HTTPURLResponse(url: apiURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
-              return (response, mockedSuccessData)
-            }
+
         }
         
         eventsExpectation = expectation(description: "event JSON request should succeed")

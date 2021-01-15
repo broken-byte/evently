@@ -1,0 +1,24 @@
+//
+//  NetworkingProtocols.swift
+//  Evently
+//
+//  Created by Ricardo Carrillo on 1/15/21.
+//
+
+import Foundation
+
+protocol URLSessionProtocol {
+    func dataTask(with url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
+}
+
+extension URLSession: URLSessionProtocol {
+    func dataTask(with url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void)-> URLSessionDataTaskProtocol {
+        dataTask(with: url, completionHandler: completion) as URLSessionDataTaskProtocol
+    }
+}
+
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol { }

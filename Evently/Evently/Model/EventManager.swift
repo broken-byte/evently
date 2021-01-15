@@ -16,9 +16,9 @@ protocol EventManagerDelegate {
 struct EventManager {
     
     public var delegate: EventManagerDelegate?
-    private let session: URLSession
+    private let session: URLSessionProtocol
     
-    init(urlSession: URLSession = .shared) {
+    init(urlSession: URLSessionProtocol = URLSession.shared) {
         self.session = urlSession
     }
     
@@ -34,7 +34,7 @@ struct EventManager {
     private func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             //let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+            let task = session.dataTask(with: url, completion: { (data, response, error) in
                 if error != nil {
                     self.delegate?.didFailWithError(error!)
                     return
