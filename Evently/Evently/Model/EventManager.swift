@@ -33,7 +33,6 @@ struct EventManager {
     
     private func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
-            //let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completion: { (data, response, error) in
                 if error != nil {
                     self.delegate?.didFailWithError(error!)
@@ -42,10 +41,6 @@ struct EventManager {
                 guard let httpResponse = response as? HTTPURLResponse,
                       (200...299).contains(httpResponse.statusCode) else {
                     self.delegate?.didFailWithError(HTTPResponseError.badServerResponse(response))
-                    return
-                }
-                guard let mime = response?.mimeType, mime == "application/json" else {
-                    self.delegate?.didFailWithError(DataMIMETypeError.notJSON)
                     return
                 }
                 if let safeData = data {
@@ -102,10 +97,6 @@ extension EventManager {
 
     enum HTTPResponseError: Error {
         case badServerResponse(_ response: URLResponse?)
-    }
-
-    enum DataMIMETypeError: Error {
-        case notJSON
     }
 }
 

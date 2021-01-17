@@ -3,10 +3,14 @@ import XCTest
 
 class EventManagerTests: XCTestCase, EventManagerDelegate {
     
+    private var session: MockURLSession!
+    
     private var eventManager: EventManager!
+    
     private var actualEvents: [EventModel]!
-    private var eventsExpectation: XCTestExpectation!
+    
     private var eventFetchError: Error!
+    
     private var eventFetchErrorExpectation: XCTestExpectation!
     
     private enum APIResponseError: Error {
@@ -18,37 +22,40 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     }
 
     override func setUpWithError() throws {
-        eventManager = EventManager(urlSession: urlSession)
+        session = MockURLSession()
+        eventManager = EventManager(urlSession: session)
         eventManager.delegate = self
-        
     }
 
     override func tearDownWithError() throws {
         eventManager = nil
         actualEvents = nil
-        eventsExpectation = nil
         eventFetchError = nil
         eventFetchErrorExpectation = nil
     }
     
     func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel]) {
         actualEvents = fetchedEvents
-        eventsExpectation?.fulfill()
     }
     
     func didFailWithError(_ error: Error) {
         eventFetchError = error
-        eventFetchErrorExpectation?.fulfill()
+        //eventFetchErrorExpectation?.fulfill()
         
     }
 
-    func testFetchEventsOnSuccess() throws {
-        let apiURL = URL(string: "https://api.seatgeek.com/2/events/?client_id=MjE0MzE2NDV8MTYwNzg4MTA4MS41OTA5OTYz&client_secret=19838d1a55ef49f1ac0090cff6463d3ee040e0ff8993606e307da9e2ce5a9d6d")!
-        if let mockedSuccessData = readLocalFile(forName: "successful-seat-geek-api-data") {
-
+    func testThatFetchEventsSuccessfullyFetchesEventsFromAPI() throws {
+        if let expectedMockData = readLocalFile(forName: "successful-seat-geek-api-data") {
+            session.nextData = expectedMockData
         }
-        
-        eventsExpectation = expectation(description: "event JSON request should succeed")
+        if let dummySuccessResponse = HTTPURLResponse(
+            url: URL(fileURLWithPath: "https://seatgeek.com"),
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil
+        ) {
+            session.nextResponse = dummySuccessResponse
+        }
         let expectedEvents: [EventModel] = [
             EventModel(
                 title: "Folds of Honor QuikTrip 500",
@@ -58,22 +65,28 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
             )
         ]
         eventManager.fetchEvents()
-        waitForExpectations(timeout: 2)
-        XCTAssertEqual(expectedEvents, actualEvents)
+        XCTAssertEqual(expectedEvents[0].title, actualEvents[0].title)
+        XCTAssertEqual(expectedEvents[0].imageURL, actualEvents[0].imageURL)
+        XCTAssertEqual(expectedEvents[0].location, actualEvents[0].location)
+        XCTAssertEqual(expectedEvents[0].timeOfEventInUTC, actualEvents[0].timeOfEventInUTC)
+        XCTAssertEqual(expectedEvents[0].timeOfEventInLocalFormat, actualEvents[0].timeOfEventInLocalFormat)
+    }
+    
+    func testThatFetchEventsReturnsTheCorrectErrorOnBadNetworkResponse() throws {
+        
     }
     
     private func readLocalFile(forName name: String) -> Data? {
-        var data: Data?
-              if let path = Bundle.main.path(forResource: name, ofType: "json") {
-                  do {
-                      let fileUrl = URL(fileURLWithPath: path)
-                      // Getting data from JSON file using the file URL
-                      data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
-                      //json = try? JSONSerialization.jsonObject(with: data)
-                  } catch {
-                    print(error)
-                  }
-              }
-              return data
+        do {
+            if let bundlePath = Bundle.main.path(forResource: name,
+                                                 ofType: "json"),
+                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                return jsonData
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
     }
 }
