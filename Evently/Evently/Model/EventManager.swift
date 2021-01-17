@@ -91,12 +91,11 @@ struct EventManager {
 //MARK: - Error Enumerations
 
 extension EventManager {
-    enum URLError: Error {
+    public enum URLError: Error {
         case invalidInput(_ urlString: String)
     }
 
-    enum HTTPResponseError: Error {
+    public enum HTTPResponseError: Error {
         case badServerResponse(_ response: URLResponse?)
     }
 }
-

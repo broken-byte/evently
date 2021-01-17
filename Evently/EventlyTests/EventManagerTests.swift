@@ -4,14 +4,9 @@ import XCTest
 class EventManagerTests: XCTestCase, EventManagerDelegate {
     
     private var session: MockURLSession!
-    
     private var eventManager: EventManager!
-    
     private var actualEvents: [EventModel]!
-    
-    private var eventFetchError: Error!
-    
-    private var eventFetchErrorExpectation: XCTestExpectation!
+    private var actualError: Error!
     
     private enum APIResponseError: Error {
         case request
@@ -30,8 +25,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     override func tearDownWithError() throws {
         eventManager = nil
         actualEvents = nil
-        eventFetchError = nil
-        eventFetchErrorExpectation = nil
+        actualError = nil
     }
     
     func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel]) {
@@ -39,23 +33,20 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     }
     
     func didFailWithError(_ error: Error) {
-        eventFetchError = error
-        //eventFetchErrorExpectation?.fulfill()
-        
+        actualError = error
     }
 
     func testThatFetchEventsSuccessfullyFetchesEventsFromAPI() throws {
         if let expectedMockData = readLocalFile(forName: "successful-seat-geek-api-data") {
             session.nextData = expectedMockData
         }
-        if let dummySuccessResponse = HTTPURLResponse(
+        let dummySuccessResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: "https://seatgeek.com"),
             statusCode: 200,
             httpVersion: nil,
             headerFields: nil
-        ) {
-            session.nextResponse = dummySuccessResponse
-        }
+        )
+        session.nextResponse = dummySuccessResponse
         let expectedEvents: [EventModel] = [
             EventModel(
                 title: "Folds of Honor QuikTrip 500",
@@ -65,15 +56,20 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
             )
         ]
         eventManager.fetchEvents()
-        XCTAssertEqual(expectedEvents[0].title, actualEvents[0].title)
-        XCTAssertEqual(expectedEvents[0].imageURL, actualEvents[0].imageURL)
-        XCTAssertEqual(expectedEvents[0].location, actualEvents[0].location)
-        XCTAssertEqual(expectedEvents[0].timeOfEventInUTC, actualEvents[0].timeOfEventInUTC)
-        XCTAssertEqual(expectedEvents[0].timeOfEventInLocalFormat, actualEvents[0].timeOfEventInLocalFormat)
+        XCTAssertEqual(expectedEvents, actualEvents)
     }
     
     func testThatFetchEventsReturnsTheCorrectErrorOnBadNetworkResponse() throws {
-        
+        let dummyBadServerResponse = HTTPURLResponse(
+            url: URL(fileURLWithPath: "https://seatgeek.com"),
+            statusCode: 500,
+            httpVersion: nil,
+            headerFields: nil
+        )
+        session.nextResponse = dummyBadServerResponse
+        let expectedError = EventManager.HTTPResponseError.badServerResponse(dummyBadServerResponse)
+        eventManager.fetchEvents()
+        XCTAssertEqual(expectedError.localizedDescription, actualError.localizedDescription)
     }
     
     private func readLocalFile(forName name: String) -> Data? {

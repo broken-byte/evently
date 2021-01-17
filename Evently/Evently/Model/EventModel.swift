@@ -32,7 +32,7 @@ struct EventModel: Equatable {
         return
             (leftEvent.title == rightEvent.title) &&
             (leftEvent.imageURL == rightEvent.imageURL) &&
-            (leftEvent.location == rightEvent.imageURL) &&
+            (leftEvent.location == rightEvent.location) &&
             (leftEvent.timeOfEventInUTC == rightEvent.timeOfEventInUTC) &&
             (leftEvent.timeOfEventInLocalFormat == rightEvent.timeOfEventInLocalFormat)
         }
