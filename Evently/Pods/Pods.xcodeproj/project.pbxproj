@@ -66,11 +66,11 @@
 		0C3CE28EF35DDA5F1E9B05FBCA4D55AE /* Keys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Keys.release.xcconfig; sourceTree = "<group>"; };
 		189047A484CE9B69700B23E2865C5DDA /* Mocker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mocker.swift; path = Sources/Mocker.swift; sourceTree = "<group>"; };
 		19CC9EB94FC1946CB9AEC95DD7568E18 /* Pods-Evently.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Evently.release.xcconfig"; sourceTree = "<group>"; };
-		1D4AE396CC91228FE660B84E90FBD20A /* Mocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D4AE396CC91228FE660B84E90FBD20A /* Mocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Mocker.framework; path = Mocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		269B14F54F34209941C386C692F07947 /* Keys-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-umbrella.h"; sourceTree = "<group>"; };
 		36B78C5C23633F11B221748905B3E999 /* EventlyKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EventlyKeys.h; sourceTree = "<group>"; };
 		3EDC9D07BAD408FDECDB4A3DF19622F6 /* Pods-EventlyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EventlyTests.modulemap"; sourceTree = "<group>"; };
-		43EEE29FDCE0910057A3518EE5660390 /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43EEE29FDCE0910057A3518EE5660390 /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EventlyTests.framework; path = "Pods-EventlyTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F4025FA1D8434AF0C86A15774E3CC6 /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		56D5535C0D9A6419F79CC7A8ED2CC592 /* Pods-EventlyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EventlyTests-umbrella.h"; sourceTree = "<group>"; };
 		5AE55854E53489BC21B4583F02E94545 /* Pods-Evently-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Evently-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -79,23 +79,23 @@
 		5CEDF8020CC26E9FAD9CA0D3E7D9B291 /* MockingURLProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockingURLProtocol.swift; path = Sources/MockingURLProtocol.swift; sourceTree = "<group>"; };
 		5EAF02D96D32104FDA1A3E34820E6E9B /* Mocker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Mocker.modulemap; sourceTree = "<group>"; };
 		60E6A32245EE5F929C1C88DCAB35F3CC /* Mocker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Mocker-Info.plist"; sourceTree = "<group>"; };
-		65F152CF750FD986D32AEE13C067FB10 /* Pods_Evently_EventlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evently_EventlyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F152CF750FD986D32AEE13C067FB10 /* Pods_Evently_EventlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Evently_EventlyUITests.framework; path = "Pods-Evently-EventlyUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC08EC25DF5F93A777E105558A87CD0 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
 		6EA0859E08EE95F38C09ADB14931BD51 /* Keys-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Keys-dummy.m"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		77CFF8297EB5C4584BBF61B2021D0866 /* Pods_Evently.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evently.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77CFF8297EB5C4584BBF61B2021D0866 /* Pods_Evently.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Evently.framework; path = "Pods-Evently.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786BC7D53799B9ED88EDD23F1E17F575 /* Pods-Evently-EventlyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Evently-EventlyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7E6A9A6413783E13A0A94C3C1A519DDD /* Pods-Evently-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Evently-Info.plist"; sourceTree = "<group>"; };
 		817BDD287CA9628525DD627C44D95D4D /* Mocker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mocker-prefix.pch"; sourceTree = "<group>"; };
 		84F605BEE77A05A414CC6A4D85C86EF8 /* Pods-Evently-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Evently-umbrella.h"; sourceTree = "<group>"; };
 		86C929B573490881F1564A820D5470E9 /* Mocker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mocker-umbrella.h"; sourceTree = "<group>"; };
 		87FA7BCBCE42D4889F8E41253CD7D654 /* Pods-EventlyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EventlyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8E459B360A2413045CC38DF43460366A /* Keys.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = Keys.podspec.json; sourceTree = "<group>"; };
+		8E459B360A2413045CC38DF43460366A /* Keys.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; path = Keys.podspec.json; sourceTree = "<group>"; };
 		9042B566DF0F766C7DC2B3D9C84A0476 /* Pods-EventlyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EventlyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		98FAAA747378AEA4699CD5B11D30A4AB /* Pods-Evently-EventlyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Evently-EventlyUITests-frameworks.sh"; sourceTree = "<group>"; };
 		999B79F0C78D692A2A2F8A7C366A0117 /* Pods-EventlyTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EventlyTests-frameworks.sh"; sourceTree = "<group>"; };
 		9ABCD66256A5DC256876847109CCC618 /* Pods-Evently-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Evently-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9ED078E6ACE304287BC175F59A267A35 /* Mocker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mocker-dummy.m"; sourceTree = "<group>"; };
 		A7B3EFC52A351E4774E20D84E788A6D1 /* Pods-EventlyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EventlyTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AF991B337A882D1904937B6F910B6413 /* Mocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Mocker.debug.xcconfig; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		DB44A82153AEA736F8E6195BA37CF765 /* Pods-Evently.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Evently.modulemap"; sourceTree = "<group>"; };
 		E3B594E7F153F2CD8BAF73EAF02EEBEA /* Keys-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-prefix.pch"; sourceTree = "<group>"; };
 		E70D18F59E2343268461D655806073A3 /* Mock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mock.swift; path = Sources/Mock.swift; sourceTree = "<group>"; };
-		E8CACB8744373C1818777FFB8F84C67E /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8CACB8744373C1818777FFB8F84C67E /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Keys.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DEDA326C5A0780283D604D240CFBEF /* Pods-Evently-EventlyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Evently-EventlyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EA9FBA8CEC3BC83FC7ED4382DA55CF0A /* Keys.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Keys.modulemap; sourceTree = "<group>"; };
 		EAD07076E200331FBAB49AAD16B012A9 /* Pods-Evently-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Evently-dummy.m"; sourceTree = "<group>"; };
@@ -236,6 +236,7 @@
 				5CEDF8020CC26E9FAD9CA0D3E7D9B291 /* MockingURLProtocol.swift */,
 				47F6F3C08B1FC89E871A5F64A4E16A78 /* Support Files */,
 			);
+			name = Mocker;
 			path = Mocker;
 			sourceTree = "<group>";
 		};
@@ -487,7 +488,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -640,7 +641,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Mocker/Mocker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Mocker/Mocker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1025,7 +1026,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Keys/Keys-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1061,7 +1062,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Mocker/Mocker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Mocker/Mocker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1096,7 +1097,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Keys/Keys-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

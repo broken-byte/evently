@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="367" id="KGk-i7-Jjw" customClass="EventCell" customModule="Evently" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dT-eg-QEB" userLabel="EventBackground">
+                        <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-Dq-LJF">
+                                <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5QK-uj-SKr">
+                                        <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BaT-Dq-LJF" secondAttribute="bottom" id="0Iv-yk-GtM"/>
+                            <constraint firstItem="BaT-Dq-LJF" firstAttribute="top" secondItem="0dT-eg-QEB" secondAttribute="top" id="TeR-tM-1w1"/>
+                            <constraint firstAttribute="trailing" secondItem="BaT-Dq-LJF" secondAttribute="trailing" id="hjI-5A-rPy"/>
+                            <constraint firstItem="BaT-Dq-LJF" firstAttribute="leading" secondItem="0dT-eg-QEB" secondAttribute="leading" id="k7u-6O-MXZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0dT-eg-QEB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KKx-UU-lu6"/>
+                    <constraint firstItem="0dT-eg-QEB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WET-iT-wLF"/>
+                    <constraint firstAttribute="trailing" secondItem="0dT-eg-QEB" secondAttribute="trailing" id="gJ1-Rm-0o3"/>
+                    <constraint firstAttribute="bottom" secondItem="0dT-eg-QEB" secondAttribute="bottom" id="uou-cS-WPz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="61.594202898550726" y="118.86160714285714"/>
+        </tableViewCell>
+        <stackView opaque="NO" contentMode="scaleToFill" id="J7e-Vi-vCS">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <viewLayoutGuide key="safeArea" id="rLo-pM-f40"/>
+            <point key="canvasLocation" x="657" y="86"/>
+        </stackView>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

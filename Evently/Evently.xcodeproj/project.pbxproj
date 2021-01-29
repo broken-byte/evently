@@ -26,6 +26,10 @@
 		8C72F0DC25B236B5007E3220 /* networkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72F0DB25B236B5007E3220 /* networkingProtocols.swift */; };
 		8C72F0E425B23795007E3220 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */; };
 		8C82A155258A8C76005CA9C6 /* MultiImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */; };
+		8C92A11E25B4FA23007B1B42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A11C25B4FA23007B1B42 /* EventCell.swift */; };
+		8C92A11F25B4FA23007B1B42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A11C25B4FA23007B1B42 /* EventCell.swift */; };
+		8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
+		8C92A12125B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8CD2B51325B241B20009156D /* networkingProtocols.swift in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0DB25B236B5007E3220 /* networkingProtocols.swift */; };
 		B261C3BA92B95C905777A8F8 /* Pods_Evently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E6ACE853B53624F3727D7E /* Pods_Evently.framework */; };
 		CC27BE2F3A0B41FF7FCDAF94 /* Pods_Evently_EventlyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A30D91229DB27004D06E6E2 /* Pods_Evently_EventlyUITests.framework */; };
@@ -78,6 +82,8 @@
 		8C72F0DB25B236B5007E3220 /* networkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkingProtocols.swift; sourceTree = "<group>"; };
 		8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImageManager.swift; sourceTree = "<group>"; };
+		8C92A11C25B4FA23007B1B42 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		8C92A11D25B4FA23007B1B42 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.release.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDAB4CFE2FFFC5AB90DF147D /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +192,8 @@
 			children = (
 				8C1222412581DD6B00ABF35F /* Main.storyboard */,
 				8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */,
+				8C92A11C25B4FA23007B1B42 /* EventCell.swift */,
+				8C92A11D25B4FA23007B1B42 /* EventCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +357,7 @@
 				8C72F0D425A14090007E3220 /* successful-seat-geek-api-data.json in Resources */,
 				8C1222482581DD7000ABF35F /* LaunchScreen.storyboard in Resources */,
 				8C1222452581DD7000ABF35F /* Assets.xcassets in Resources */,
+				8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */,
 				8C1222432581DD6B00ABF35F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C92A12125B4FA23007B1B42 /* EventCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +508,7 @@
 			files = (
 				8C18484C2586894700F925B6 /* EventManager.swift in Sources */,
 				8C1222402581DD6B00ABF35F /* EventViewController.swift in Sources */,
+				8C92A11E25B4FA23007B1B42 /* EventCell.swift in Sources */,
 				8C82A155258A8C76005CA9C6 /* MultiImageManager.swift in Sources */,
 				8C12223C2581DD6B00ABF35F /* AppDelegate.swift in Sources */,
 				8C12223E2581DD6B00ABF35F /* SceneDelegate.swift in Sources */,
@@ -522,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C92A11F25B4FA23007B1B42 /* EventCell.swift in Sources */,
 				8C12225E2581DD7000ABF35F /* EventlyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

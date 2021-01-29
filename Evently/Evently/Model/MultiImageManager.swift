@@ -1,5 +1,5 @@
 //
-//  EventImageManager.swift
+//  MultiImageManager.swift
 //  Evently
 //
 //  Created by Ricardo Carrillo on 12/16/20.
