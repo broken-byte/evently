@@ -5,8 +5,6 @@ target 'Evently' do
   use_frameworks!
   target 'EventlyTests' do
     inherit! :search_paths
-    # Pods for testing
-    pod 'Mocker', '~> 2.2.0'
   end
   target 'EventlyUITests' do
     # Pods for testing

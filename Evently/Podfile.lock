@@ -1,14 +1,8 @@
 PODS:
   - Keys (1.0.1)
-  - Mocker (2.2.0)
 
 DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
-  - Mocker (~> 2.2.0)
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Mocker
 
 EXTERNAL SOURCES:
   Keys:
@@ -16,8 +10,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
-  Mocker: d0ceb340eddd5c28539a691ce67d068674cef9a0
 
-PODFILE CHECKSUM: 11f19450affbccfb350fb213818b2fa881743cd5
+PODFILE CHECKSUM: 4a98f922b156638a7b42d00335bcf85cfe393ecf
 
 COCOAPODS: 1.9.3
