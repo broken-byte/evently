@@ -12,20 +12,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="367" id="KGk-i7-Jjw" customClass="EventCell" customModule="Evently" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+            <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dT-eg-QEB" userLabel="EventBackground">
-                        <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                        <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-Dq-LJF">
-                                <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5QK-uj-SKr">
-                                        <rect key="frame" x="0.0" y="0.0" width="487" height="367"/>
+                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="5QK-uj-SKr">
+                                        <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -48,7 +48,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="61.594202898550726" y="118.86160714285714"/>
+            <point key="canvasLocation" x="78.985507246376812" y="118.86160714285714"/>
         </tableViewCell>
         <stackView opaque="NO" contentMode="scaleToFill" id="J7e-Vi-vCS">
             <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
