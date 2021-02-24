@@ -27,7 +27,6 @@
 		8C72F0E425B23795007E3220 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */; };
 		8C82A155258A8C76005CA9C6 /* MultiImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */; };
 		8C92A11E25B4FA23007B1B42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A11C25B4FA23007B1B42 /* EventCell.swift */; };
-		8C92A11F25B4FA23007B1B42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A11C25B4FA23007B1B42 /* EventCell.swift */; };
 		8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8C92A12125B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8CD2B51325B241B20009156D /* networkingProtocols.swift in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0DB25B236B5007E3220 /* networkingProtocols.swift */; };
@@ -192,7 +191,6 @@
 			children = (
 				8C1222412581DD6B00ABF35F /* Main.storyboard */,
 				8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */,
-				8C92A11C25B4FA23007B1B42 /* EventCell.swift */,
 				8C92A11D25B4FA23007B1B42 /* EventCell.xib */,
 			);
 			path = View;
@@ -213,6 +211,7 @@
 		8C18483F25867EC500F925B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8C92A11C25B4FA23007B1B42 /* EventCell.swift */,
 				8C12223F2581DD6B00ABF35F /* EventViewController.swift */,
 			);
 			path = Controller;
@@ -515,7 +514,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C92A11F25B4FA23007B1B42 /* EventCell.swift in Sources */,
 				8C12225E2581DD7000ABF35F /* EventlyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

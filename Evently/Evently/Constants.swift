@@ -8,6 +8,7 @@ import Keys
 
 struct Constants {
     static let reusableCellIdentifier = "ReusableCell"
+    static let eventCellIdentifier = "EventCell"
     static let seatGeekURL = "https://api.seatgeek.com/2"
     static let initialEventDateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     static let dateFormatterLocaleID = "your_loc_id"

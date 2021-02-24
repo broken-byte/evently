@@ -11,40 +11,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="367" id="KGk-i7-Jjw" customClass="EventCell" customModule="Evently" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="367" id="KGk-i7-Jjw" customClass="EventCell" customModule="Evently" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dT-eg-QEB" userLabel="EventBackground">
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-Dq-LJF">
                         <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-Dq-LJF">
+                            <view contentMode="center" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ofe-GX-fwI">
                                 <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
-                                <subviews>
-                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="5QK-uj-SKr">
-                                        <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="center" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5QK-uj-SKr">
+                                <rect key="frame" x="511" y="0.0" width="0.0" height="367"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="BaT-Dq-LJF" secondAttribute="bottom" id="0Iv-yk-GtM"/>
-                            <constraint firstItem="BaT-Dq-LJF" firstAttribute="top" secondItem="0dT-eg-QEB" secondAttribute="top" id="TeR-tM-1w1"/>
-                            <constraint firstAttribute="trailing" secondItem="BaT-Dq-LJF" secondAttribute="trailing" id="hjI-5A-rPy"/>
-                            <constraint firstItem="BaT-Dq-LJF" firstAttribute="leading" secondItem="0dT-eg-QEB" secondAttribute="leading" id="k7u-6O-MXZ"/>
-                        </constraints>
-                    </view>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0dT-eg-QEB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KKx-UU-lu6"/>
-                    <constraint firstItem="0dT-eg-QEB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WET-iT-wLF"/>
-                    <constraint firstAttribute="trailing" secondItem="0dT-eg-QEB" secondAttribute="trailing" id="gJ1-Rm-0o3"/>
-                    <constraint firstAttribute="bottom" secondItem="0dT-eg-QEB" secondAttribute="bottom" id="uou-cS-WPz"/>
+                    <constraint firstAttribute="bottom" secondItem="BaT-Dq-LJF" secondAttribute="bottom" id="11k-bb-Uht"/>
+                    <constraint firstItem="BaT-Dq-LJF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8t2-Qk-clT"/>
+                    <constraint firstItem="BaT-Dq-LJF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HAV-VR-uB0"/>
+                    <constraint firstAttribute="trailing" secondItem="BaT-Dq-LJF" secondAttribute="trailing" id="cDS-Rj-wsZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
