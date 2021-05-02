@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,58 +18,59 @@
                 <rect key="frame" x="0.0" y="0.0" width="511" height="367"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-Dq-LJF">
-                        <rect key="frame" x="15" y="15" width="481" height="337"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="BaT-Dq-LJF">
+                        <rect key="frame" x="0.0" y="15" width="511" height="337"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZG3-dc-dek">
-                                <rect key="frame" x="0.0" y="0.0" width="201" height="185"/>
+                                <rect key="frame" x="25" y="25" width="174" height="172"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="KQ1-E0-Rvd">
-                                <rect key="frame" x="234" y="0.0" width="247" height="337"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="KQ1-E0-Rvd">
+                                <rect key="frame" x="224" y="25" width="287" height="312"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Angeles Rams at Tampa Bay Buccaneers" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-w5-mKW">
-                                        <rect key="frame" x="0.0" y="0.0" width="247" height="166.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Los Angeles Rams at Tampa Bay Buccaneers" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weU-48-cbz">
+                                        <rect key="frame" x="0.0" y="0.0" width="276.5" height="193.5"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tampa, FL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgJ-4v-Li8">
-                                        <rect key="frame" x="0.0" y="166.5" width="247" height="57"/>
+                                        <rect key="frame" x="0.0" y="193.5" width="78.5" height="39.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iI-JX-ob9">
-                                        <rect key="frame" x="0.0" y="223.5" width="247" height="56.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Tuesday, 24 Nov 2020">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday, 24 Nov 2020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iI-JX-ob9">
+                                        <rect key="frame" x="0.0" y="233" width="171" height="39.5"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:15AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pml-sx-QFr">
-                                        <rect key="frame" x="0.0" y="280" width="247" height="57"/>
+                                        <rect key="frame" x="0.0" y="272.5" width="55.5" height="39.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="KQ1-E0-Rvd" secondAttribute="bottom" id="dCJ-8g-Pny"/>
+                            <constraint firstItem="KQ1-E0-Rvd" firstAttribute="top" secondItem="BaT-Dq-LJF" secondAttribute="top" id="8xm-39-3GX"/>
+                            <constraint firstAttribute="bottom" secondItem="KQ1-E0-Rvd" secondAttribute="bottom" id="Jbq-Ck-hy7"/>
+                            <constraint firstItem="KQ1-E0-Rvd" firstAttribute="leading" secondItem="ZG3-dc-dek" secondAttribute="trailing" constant="25" id="PqG-19-n2f"/>
+                            <constraint firstItem="ZG3-dc-dek" firstAttribute="top" secondItem="BaT-Dq-LJF" secondAttribute="top" constant="25" id="Z8h-N6-xuc"/>
+                            <constraint firstItem="ZG3-dc-dek" firstAttribute="leading" secondItem="BaT-Dq-LJF" secondAttribute="leading" constant="25" id="dKi-zE-NvY"/>
+                            <constraint firstAttribute="bottom" secondItem="ZG3-dc-dek" secondAttribute="bottom" constant="140" id="pB6-8l-qaI"/>
                         </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="BaT-Dq-LJF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8Xx-iD-OkR"/>
-                    <constraint firstAttribute="trailing" secondItem="BaT-Dq-LJF" secondAttribute="trailing" constant="15" id="Fd6-ai-N72"/>
+                    <constraint firstAttribute="trailing" secondItem="BaT-Dq-LJF" secondAttribute="trailing" id="Fd6-ai-N72"/>
                     <constraint firstAttribute="bottom" secondItem="BaT-Dq-LJF" secondAttribute="bottom" constant="15" id="LeN-18-Jns"/>
-                    <constraint firstItem="BaT-Dq-LJF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="QhL-Pu-ur8"/>
+                    <constraint firstItem="BaT-Dq-LJF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QhL-Pu-ur8"/>
                     <constraint firstItem="BaT-Dq-LJF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="dGA-Pe-FGu"/>
                 </constraints>
             </tableViewCellContentView>
@@ -76,4 +78,9 @@
             <point key="canvasLocation" x="78.985507246376812" y="118.86160714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
