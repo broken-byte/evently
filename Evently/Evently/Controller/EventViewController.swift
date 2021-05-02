@@ -31,7 +31,7 @@ class EventViewController: UIViewController {
 extension EventViewController: EventManagerDelegate {
     
     func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel]) {
-        self.events = fetchedEvents
+        events = fetchedEvents
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -51,7 +51,7 @@ extension EventViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reusableCellIdentifier, for: indexPath)
-        cell.textLabel?.text = self.events[indexPath.row].title
+        cell.textLabel?.text = events[indexPath.row].title
         return cell
     }
 }
