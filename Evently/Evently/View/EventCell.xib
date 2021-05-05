@@ -75,6 +75,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="eventDate" destination="6iI-JX-ob9" id="k0J-dz-35X"/>
+                <outlet property="eventImage" destination="ZG3-dc-dek" id="jaE-Za-RHD"/>
+                <outlet property="eventLocation" destination="RgJ-4v-Li8" id="cJx-De-yJC"/>
+                <outlet property="eventTime" destination="pml-sx-QFr" id="SD7-jJ-129"/>
+                <outlet property="eventTitle" destination="weU-48-cbz" id="ris-wp-hko"/>
+            </connections>
             <point key="canvasLocation" x="78.985507246376812" y="118.86160714285714"/>
         </tableViewCell>
     </objects>
