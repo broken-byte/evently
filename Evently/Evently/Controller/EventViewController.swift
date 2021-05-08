@@ -18,6 +18,10 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(
+            UINib(nibName: Constants.eventCellNibName, bundle: nil),
+            forCellReuseIdentifier: Constants.eventCellIdentifier
+        )
         
         let urlSession = URLSession(configuration: .default)
         var eventManager = EventManager(urlSession: urlSession)
@@ -50,8 +54,14 @@ extension EventViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reusableCellIdentifier, for: indexPath)
-        cell.textLabel?.text = events[indexPath.row].title
+        let event = events[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventCellIdentifier, for: indexPath)
+            as! EventCell
+        #warning("TODO: Omitted image url since still need to implement the MultiImageManager for caching/async of image url")
+        cell.eventTitle?.text = event.title
+        #warning("TODO: Omitted the date since need to find way to split date and local time up into their seperate UILabels")
+        cell.eventLocation?.text = event.location
+        cell.eventTime?.text = event.timeOfEventInLocalFormat
         return cell
     }
 }

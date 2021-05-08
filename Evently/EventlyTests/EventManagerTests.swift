@@ -36,7 +36,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
         actualError = error
     }
 
-    func testThatFetchEventsSuccessfullyFetchesEventsFromAPI() throws {
+    func testThatEventManagerSuccessfullyFetchesEventsFromAPI() throws {
         if let expectedMockData = readLocalFile(forName: "successful-seat-geek-api-data") {
             session.nextData = expectedMockData
         }
@@ -59,7 +59,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
         XCTAssertEqual(expectedEvents, actualEvents)
     }
     
-    func testThatFetchEventsReturnsTheCorrectErrorOnBadNetworkResponse() throws {
+    func testThatEventManagerReturnsTheCorrectErrorOnBadNetworkResponse() throws {
         let dummyBadServerResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: "https://seatgeek.com"),
             statusCode: 500,

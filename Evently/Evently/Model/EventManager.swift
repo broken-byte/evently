@@ -27,7 +27,6 @@ struct EventManager {
         let clientID = keys.seatGeekClientID
         let clientSecret = keys.seatGeekClientSecret
         let eventUrlString = "\(Constants.seatGeekURL)/events/?client_id=\(clientID)&client_secret=\(clientSecret)"
-        print(eventUrlString)
         performRequest(with: eventUrlString)
     }
     

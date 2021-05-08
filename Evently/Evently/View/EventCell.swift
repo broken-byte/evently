@@ -15,6 +15,8 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
     
+    #warning("TODO: My event XIB is wack at runtime, will need to fix constraints more than likely")
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

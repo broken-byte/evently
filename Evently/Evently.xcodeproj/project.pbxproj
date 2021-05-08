@@ -20,6 +20,7 @@
 		8C18484125867F9E00F925B6 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484025867F9E00F925B6 /* EventData.swift */; };
 		8C18484C2586894700F925B6 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484B2586894700F925B6 /* EventManager.swift */; };
 		8C1848762586EAEE00F925B6 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1848752586EAEE00F925B6 /* EventModel.swift */; };
+		8C50799726470B6D001E5600 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A11C25B4FA23007B1B42 /* EventCell.swift */; };
 		8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C720AAA25A0E7A7008717EE /* MockURLSession.swift */; };
 		8C72F0CD25A13BA4007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
 		8C72F0D425A14090007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
@@ -191,6 +192,7 @@
 			children = (
 				8C1222412581DD6B00ABF35F /* Main.storyboard */,
 				8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */,
+				8C92A11C25B4FA23007B1B42 /* EventCell.swift */,
 				8C92A11D25B4FA23007B1B42 /* EventCell.xib */,
 			);
 			path = View;
@@ -211,7 +213,6 @@
 		8C18483F25867EC500F925B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8C92A11C25B4FA23007B1B42 /* EventCell.swift */,
 				8C12223F2581DD6B00ABF35F /* EventViewController.swift */,
 			);
 			path = Controller;
@@ -514,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C50799726470B6D001E5600 /* EventCell.swift in Sources */,
 				8C12225E2581DD7000ABF35F /* EventlyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
