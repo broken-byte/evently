@@ -10,7 +10,7 @@ struct Constants {
     static let eventCellIdentifier = "EventCell"
     static let eventCellNibName = "EventCell"
     static let seatGeekURL = "https://api.seatgeek.com/2"
-    static let initialEventDateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+    static let apiUTCDateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss"
     static let dateFormatterLocaleID = "your_loc_id"
-    static let finalEventDateFormat = "EEEE, dd MMM yyyy\nhh:mm a"
+    static let eventDateTimeFormat = "HH:mm a, E d MMM y"
 }

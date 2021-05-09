@@ -59,9 +59,9 @@ extension EventViewController: UITableViewDataSource {
             as! EventCell
         #warning("TODO: Omitted image url since still need to implement the MultiImageManager for caching/async of image url")
         cell.eventTitle?.text = event.title
-        #warning("TODO: Omitted the date since need to find way to split date and local time up into their seperate UILabels")
         cell.eventLocation?.text = event.location
-        cell.eventTime?.text = event.timeOfEventInLocalFormat
+        cell.eventDate?.text = event.date
+        cell.eventTime?.text = event.time
         return cell
     }
 }
