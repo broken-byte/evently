@@ -13,15 +13,15 @@ protocol EventManagerDelegate {
     func didFailWithError(_ error: Error)
 }
 
-typealias DateTime = (date: String, time: String)
-
 struct EventManager {
     
     public var delegate: EventManagerDelegate?
     private let session: URLSessionProtocol
+    private let dateTimeFormatter: DateTimeFormatterProtocol
     
-    init(urlSession: URLSessionProtocol = URLSession.shared) {
+    init(urlSession: URLSessionProtocol = URLSession.shared, dateTimeFormatter: DateTimeFormatterProtocol) {
         self.session = urlSession
+        self.dateTimeFormatter = dateTimeFormatter
     }
     
     public func fetchEvents() {
@@ -78,7 +78,7 @@ struct EventManager {
         let title: String = eventData.title
         let imageURL: String = eventData.performers[0].image
         let location: String = eventData.venue.display_location
-        let dateTime: DateTime = createEventDateTime(from: eventData.datetime_utc)
+        let dateTime: DateTime = dateTimeFormatter.getFormattedDateTime(from: eventData.datetime_utc)
         let eventModel = EventModel(
             title: title,
             imageURL: imageURL,
@@ -87,27 +87,6 @@ struct EventManager {
             time: dateTime.time
         )
         return eventModel
-    }
-    
-    private func createEventDateTime(from dateTimeUTC: String) -> DateTime {
-        let formatter = DateFormatter()
-        formatter.dateFormat = Constants.apiUTCDateTimeFormat
-        formatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
-        formatter.locale = Locale(identifier: Constants.dateFormatterLocaleID)
-        guard let utcDateTime = formatter.date(from: dateTimeUTC) else {
-            assertionFailure("Failed to create Date object from ISO UTC date string")
-            return (date: "", time: "")
-        }
-        formatter.dateFormat = Constants.eventDateTimeFormat
-        formatter.amSymbol = "AM"
-        formatter.pmSymbol = "PM"
-        formatter.timeZone = TimeZone.current
-        let dateTimeComponents: [String] = formatter
-            .string(from: utcDateTime)
-            .components(separatedBy: ", ")
-        print(dateTimeComponents)
-        let dateTime: DateTime = (date: dateTimeComponents[1], time: dateTimeComponents[0])
-        return dateTime
     }
 }
 

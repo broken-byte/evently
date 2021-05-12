@@ -24,7 +24,8 @@ class EventViewController: UIViewController {
         )
         
         let urlSession = URLSession(configuration: .default)
-        var eventManager = EventManager(urlSession: urlSession)
+        let dateTimeFormatter = DateTimeFormatter()
+        var eventManager = EventManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
         eventManager.delegate = self
         eventManager.fetchEvents()
     }

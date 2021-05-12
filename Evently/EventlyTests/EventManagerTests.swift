@@ -4,6 +4,7 @@ import XCTest
 class EventManagerTests: XCTestCase, EventManagerDelegate {
     
     private var session: MockURLSession!
+    private var dateTimeFormatter: MockDateFormatter!
     private var eventManager: EventManager!
     private var actualEvents: [EventModel]!
     private var actualError: Error!
@@ -18,7 +19,8 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
 
     override func setUpWithError() throws {
         session = MockURLSession()
-        eventManager = EventManager(urlSession: session)
+        dateTimeFormatter = MockDateFormatter()
+        eventManager = EventManager(urlSession: session, dateTimeFormatter: dateTimeFormatter)
         eventManager.delegate = self
     }
 
@@ -52,7 +54,8 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
                 title: "Folds of Honor QuikTrip 500",
                 imageURL: "https://seatgeek.com/images/performers-landscape/folds-of-honor-quiktrip-500-1-4c93a3/622294/huge.jpg",
                 location: "Hampton, GA",
-                timeOfEventInUTC: "2021-01-01T08:30:00"
+                date: "Wed 12 May 2021",
+                time: "03:30 AM"
             )
         ]
         eventManager.fetchEvents()
