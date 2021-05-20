@@ -13,6 +13,7 @@ class EventViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var events: [EventModel] = []
+    var multiImageManager: MultiImageManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class EventViewController: UIViewController {
         let urlSession = URLSession(configuration: .default)
         let dateTimeFormatter = DateTimeFormatter()
         var eventManager = EventManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
+        multiImageManager = MultiImageManager(urlSession: urlSession)
         eventManager.delegate = self
         eventManager.fetchEvents()
     }
@@ -58,7 +60,25 @@ extension EventViewController: UITableViewDataSource {
         let event = events[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventCellIdentifier, for: indexPath)
             as! EventCell
-        #warning("TODO: Omitted image url since still need to implement the MultiImageManager for caching/async of image url")
+        if let imageURL: URL = URL(string: event.imageURL) {
+            let token = multiImageManager.fetchImage(with: imageURL) { result in
+                do {
+                    let image = try result.get()
+                    DispatchQueue.main.async {
+                        cell.eventImage.image = image
+                    }
+                }
+                catch {
+                    print(error)
+                    cell.eventImage.image = #imageLiteral(resourceName: "DefaultEventImage")
+                }
+            }
+            cell.onReuse = {
+                if let token = token {
+                    self.multiImageManager.cancelFetch(token)
+                }
+            }
+        }
         cell.eventTitle?.text = event.title
         cell.eventLocation?.text = event.location
         cell.eventDate?.text = event.date

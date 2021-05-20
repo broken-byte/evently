@@ -15,11 +15,19 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
     
+    var onReuse: () -> Void = {}
+    
     #warning("TODO: My event XIB is wack at runtime, will need to fix constraints more than likely")
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        onReuse()
+        eventImage.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

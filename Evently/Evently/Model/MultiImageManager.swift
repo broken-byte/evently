@@ -19,35 +19,41 @@ class MultiImageManager {
     }
 
     func fetchImage(with url: URL, _ completion: @escaping (Result<UIImage, Error>) -> Void) -> UUID? {
-      if let image = fetchedImages[url] {
-        completion(.success(image))
-        return nil
-      }
-      let uuid = UUID()
-      let task = session.dataTask(with: url) { data, response, error in
-        defer { self.runningRequests.removeValue(forKey: uuid) }
-        if let data = data, let image = UIImage(data: data) {
-          self.fetchedImages[url] = image
-          completion(.success(image))
-          return
+        // 1
+        if let image = fetchedImages[url] {
+            completion(.success(image))
+            return nil
         }
-        guard let error = error else {
-          print("Image Manager failed with a nil error!")
-          return
+        // 2
+        let uuid = UUID()
+        let task = session.dataTask(with: url) { data, response, error in
+            // 3
+            defer { self.runningRequests.removeValue(forKey: uuid) }
+            // 4
+            if let data = data, let image = UIImage(data: data) {
+                self.fetchedImages[url] = image
+                completion(.success(image))
+                return
+            }
+            // 5
+            guard let error = error else {
+                print("Image Manager failed with a nil error!")
+                return
+            }
+            guard (error as NSError).code == NSURLErrorCancelled else {
+                completion(.failure(error))
+                // Throw the error up the call stack if it failed but wasn't cancelled.
+                return
+            }
         }
-        guard (error as NSError).code == NSURLErrorCancelled else {
-          completion(.failure(error))
-            // Throw the error up the call stack if it failed but wasn't cancelled.
-          return
-        }
-      }
-      task.resume()
-      runningRequests[uuid] = task
-      return uuid
+        task.resume()
+        // 6
+        runningRequests[uuid] = task
+        return uuid
     }
 
     func cancelFetch(_ uuid: UUID) {
         runningRequests[uuid]?.cancel()
-      runningRequests.removeValue(forKey: uuid)
+        runningRequests.removeValue(forKey: uuid)
     }
 }
