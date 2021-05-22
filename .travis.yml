@@ -4,3 +4,4 @@ xcode_scheme: Evently
 xcode_destination: platform=iOS Simulator,OS=14.5,name=iPhone 12 Pro Max
 podfile: Evently/Podfile
 gemfile: Evently/Gemfile
+osx_image: xcode12.5
