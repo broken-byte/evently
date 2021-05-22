@@ -1,6 +1,6 @@
 language: objective-c
-xcode_workspace: Evently.xcworkspace
-xcode_scheme: /Evently/EventlyTests
+xcode_workspace: Evently/Evently.xcworkspace
+xcode_scheme: Evently/EventlyTests
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone Pro 12 Max
-podfile: /Evently/Podfile
-gemfile: /Evently/Gemfile
+podfile: Evently/Podfile
+gemfile: Evently/Gemfile
