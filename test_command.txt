@@ -1,0 +1,6 @@
+xcodebuild \
+  -workspace Evently/Evently.xcworkspace \
+  -scheme Evently \
+  -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,OS=14.5,name=iPhone 12 Pro Max' \
+  test
