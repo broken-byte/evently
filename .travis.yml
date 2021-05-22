@@ -1,6 +1,6 @@
 language: objective-c
 xcode_workspace: Evently/Evently.xcworkspace
 xcode_scheme: Evently
-xcode_destination: gibberish
+xcode_destination: iOS Simulator,OS=14.5,name=iPhone 12 Pro Max
 podfile: Evently/Podfile
 gemfile: Evently/Gemfile
