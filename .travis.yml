@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: /Evently.xcodeproj # path to your xcodeproj folder
+xcode_scheme: /Evently/EventlyTests
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone Pro 12 Max

@@ -18,10 +18,10 @@ class MultiImageManager {
         self.session = urlSession
     }
 
-    func fetchImage(with url: URL, _ completion: @escaping (Result<UIImage, Error>) -> Void) -> UUID? {
+    func fetchImage(with url: URL, using completion_handler: @escaping (Result<UIImage, Error>) -> Void) -> UUID? {
         // 1
         if let image = fetchedImages[url] {
-            completion(.success(image))
+            completion_handler(.success(image))
             return nil
         }
         // 2
@@ -32,7 +32,7 @@ class MultiImageManager {
             // 4
             if let data = data, let image = UIImage(data: data) {
                 self.fetchedImages[url] = image
-                completion(.success(image))
+                completion_handler(.success(image))
                 return
             }
             // 5
@@ -41,7 +41,7 @@ class MultiImageManager {
                 return
             }
             guard (error as NSError).code == NSURLErrorCancelled else {
-                completion(.failure(error))
+                completion_handler(.failure(error))
                 // Throw the error up the call stack if it failed but wasn't cancelled.
                 return
             }
