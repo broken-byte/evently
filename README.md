@@ -30,3 +30,7 @@ An iOS  application to display and search for sporting/live music events hosted 
           to the console and see the strings at runtime, so the only other method to TRULY keep my secrets secure would be a Cloud
           solution where the environment had extra security features such as AWS permissions. Maybe on the next iteration of the
           project! :)
+
+## CI
+
+This project currently uses TravisCI, which is a free continous integration service for open source software :) Hence the travis.yml file.
