@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '14.5'
+platform :ios, '11.0'
 
 target 'Evently' do
   use_frameworks!
