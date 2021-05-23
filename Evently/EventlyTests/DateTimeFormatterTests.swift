@@ -23,7 +23,6 @@ class DateTimeFormatterTests: XCTestCase {
     func testThatDateTimeFormatterCanGetFormattedDateTimeGivenUTCDateTime0() throws {
         let expectedDateTime: DateTime = (date: "Wed 12 May 2021", time: "03:30 AM")
         let actualDateTime: DateTime = dateTimeFormatter.getFormattedDateTime(from: "2021-05-12T07:30:00")
-        print(expectedDateTime, actualDateTime)
         XCTAssertEqual(expectedDateTime.date, actualDateTime.date)
         XCTAssertEqual(expectedDateTime.time, actualDateTime.time)
         
@@ -32,7 +31,6 @@ class DateTimeFormatterTests: XCTestCase {
     func testThatDateTimeFormatterCanGetFormattedDateTimeGivenUTCDateTime1() throws {
         let expectedDateTime: DateTime = (date: "Wed 12 May 2021", time: "06:30 AM")
         let actualDateTime: DateTime = dateTimeFormatter.getFormattedDateTime(from: "2021-05-12T10:30:00")
-        print(expectedDateTime, actualDateTime)
         XCTAssertEqual(expectedDateTime.date, actualDateTime.date)
         XCTAssertEqual(expectedDateTime.time, actualDateTime.time)
         
@@ -41,7 +39,6 @@ class DateTimeFormatterTests: XCTestCase {
     func testThatDateTimeFormatterCanGetFormattedDateTimeGivenUTCDateTime2() throws {
         let expectedDateTime: DateTime = (date: "Wed 12 May 2021", time: "13:00 PM")
         let actualDateTime: DateTime = dateTimeFormatter.getFormattedDateTime(from: "2021-05-12T17:00:00")
-        print(expectedDateTime, actualDateTime)
         XCTAssertEqual(expectedDateTime.date, actualDateTime.date)
         XCTAssertEqual(expectedDateTime.time, actualDateTime.time)
         
