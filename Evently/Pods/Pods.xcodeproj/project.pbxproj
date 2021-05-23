@@ -60,23 +60,23 @@
 		30CA2B0791AEC11BB1DE7FA2B986967D /* Pods-EventlyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EventlyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		36341E8349E6783CF326CB3DD7454C52 /* Pods-EventlyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EventlyTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		36B78C5C23633F11B221748905B3E999 /* EventlyKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EventlyKeys.h; sourceTree = "<group>"; };
-		43EEE29FDCE0910057A3518EE5660390 /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EventlyTests.framework; path = "Pods-EventlyTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43EEE29FDCE0910057A3518EE5660390 /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		454374BC7F860ABD46331F2C7E7673D5 /* Pods-Evently-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Evently-acknowledgements.plist"; sourceTree = "<group>"; };
 		45D723DB00FBA204FE005981E50B835E /* Pods-EventlyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EventlyTests-dummy.m"; sourceTree = "<group>"; };
 		4DCA75791B5473F31CF54581F4053419 /* Pods-Evently-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Evently-frameworks.sh"; sourceTree = "<group>"; };
 		58EA50F6F8C8E019A959ACDB88D92055 /* Pods-Evently-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Evently-umbrella.h"; sourceTree = "<group>"; };
 		5B8CDBB2D5303221338A6A4CC8BE28D7 /* Keys-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Keys-Info.plist"; sourceTree = "<group>"; };
 		5CABF89B350D6A9CD66B6F0ADFF72EC4 /* Pods-EventlyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EventlyTests-Info.plist"; sourceTree = "<group>"; };
-		65F152CF750FD986D32AEE13C067FB10 /* Pods_Evently_EventlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Evently_EventlyUITests.framework; path = "Pods-Evently-EventlyUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F152CF750FD986D32AEE13C067FB10 /* Pods_Evently_EventlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evently_EventlyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA0859E08EE95F38C09ADB14931BD51 /* Keys-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Keys-dummy.m"; sourceTree = "<group>"; };
 		6EB193D2BDCA442E8F10F15B208A6845 /* Pods-Evently-EventlyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Evently-EventlyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		77CFF8297EB5C4584BBF61B2021D0866 /* Pods_Evently.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Evently.framework; path = "Pods-Evently.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77CFF8297EB5C4584BBF61B2021D0866 /* Pods_Evently.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evently.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84056993602FBB56DC26016A0FA0FAE3 /* Pods-Evently-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Evently-Info.plist"; sourceTree = "<group>"; };
-		8E459B360A2413045CC38DF43460366A /* Keys.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; path = Keys.podspec.json; sourceTree = "<group>"; };
+		8E459B360A2413045CC38DF43460366A /* Keys.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = Keys.podspec.json; sourceTree = "<group>"; };
 		97E67B063F3028902F11EA4B9D0DE5F6 /* Pods-EventlyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EventlyTests-umbrella.h"; sourceTree = "<group>"; };
 		985EADF008F73F5D67070FACCD909243 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6DC2A12504CE5411A126DA74DC48EB5 /* Pods-Evently-EventlyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Evently-EventlyUITests-umbrella.h"; sourceTree = "<group>"; };
 		A9C4A0576F8D738EC2D4AA1918AA5A34 /* Pods-Evently-EventlyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Evently-EventlyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B94C3FD5DE8179F940A605C6BA9361BF /* Pods-Evently.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Evently.modulemap"; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		DADD63F34918FFC1EB73D95B6D3EB212 /* Pods-Evently-EventlyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Evently-EventlyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DE2FD53608ED8E4B76ED129D909C2D4B /* Pods-Evently-EventlyUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Evently-EventlyUITests-Info.plist"; sourceTree = "<group>"; };
 		E3B594E7F153F2CD8BAF73EAF02EEBEA /* Keys-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-prefix.pch"; sourceTree = "<group>"; };
-		E8CACB8744373C1818777FFB8F84C67E /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Keys.framework; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8CACB8744373C1818777FFB8F84C67E /* Keys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9FBA8CEC3BC83FC7ED4382DA55CF0A /* Keys.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Keys.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +194,7 @@
 		5E2C0347F7849CE3CA00FC3265DDE174 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				8CA4620A2659E86C009FC514 /* Keys */,
 				221FDDD5E99DDCF4BB98DC5565AE0575 /* Pods-Evently */,
 				5FA9F50CB943C27B2358D207D7E3F936 /* Pods-Evently-EventlyUITests */,
 				A52A787AD910EB664889511DE4127690 /* Pods-EventlyTests */,
@@ -216,6 +217,13 @@
 			);
 			name = "Pods-Evently-EventlyUITests";
 			path = "Target Support Files/Pods-Evently-EventlyUITests";
+			sourceTree = "<group>";
+		};
+		8CA4620A2659E86C009FC514 /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Keys;
 			sourceTree = "<group>";
 		};
 		918C67CEDF38AB6FC9603B3803A92E0F /* Development Pods */ = {
