@@ -13,7 +13,8 @@ class EventViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var events: [EventModel] = []
-    var multiImageManager: MultiImageManager!
+    var eventManager: EventAPIManager!
+    var urlSession: URLSessionProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,10 @@ class EventViewController: UIViewController {
             UINib(nibName: Constants.eventCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.eventCellIdentifier
         )
-        
-        let urlSession = URLSession(configuration: .default)
+
+        urlSession = URLSession(configuration: .default)
         let dateTimeFormatter = DateTimeFormatter()
-        var eventManager = EventManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
-        multiImageManager = MultiImageManager(urlSession: urlSession)
+        eventManager = EventAPIManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
         eventManager.delegate = self
         eventManager.fetchEvents()
     }
@@ -37,7 +37,7 @@ class EventViewController: UIViewController {
 
 extension EventViewController: EventManagerDelegate {
     
-    func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel]) {
+    func didFetchEvents(_ eventManager: EventAPIManager, fetchedEvents: [EventModel]) {
         events = fetchedEvents
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -60,25 +60,7 @@ extension EventViewController: UITableViewDataSource {
         let event = events[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventCellIdentifier, for: indexPath)
             as! EventCell
-        if let imageURL: URL = URL(string: event.imageURL) {
-            let token = multiImageManager.fetchImage(with: imageURL) { result in
-                do {
-                    let image = try result.get()
-                    DispatchQueue.main.async {
-                        cell.eventImage.image = image
-                    }
-                }
-                catch {
-                    print(error)
-                    cell.eventImage.image = #imageLiteral(resourceName: "DefaultEventImage")
-                }
-            }
-            cell.onReuse = {
-                if let token = token {
-                    self.multiImageManager.cancelFetch(token)
-                }
-            }
-        }
+        cell.eventImage?.loadImage(with: event.imageURL, and: urlSession)
         cell.eventTitle?.text = event.title
         cell.eventLocation?.text = event.location
         cell.eventDate?.text = event.date

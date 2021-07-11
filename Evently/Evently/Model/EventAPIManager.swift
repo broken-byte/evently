@@ -9,11 +9,11 @@ import Foundation
 import Keys
 
 protocol EventManagerDelegate {
-    func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel])
+    func didFetchEvents(_ eventManager: EventAPIManager, fetchedEvents: [EventModel])
     func didFailWithError(_ error: Error)
 }
 
-struct EventManager {
+struct EventAPIManager {
     
     public var delegate: EventManagerDelegate?
     private let session: URLSessionProtocol
@@ -28,8 +28,8 @@ struct EventManager {
         let keys = EventlyKeys()
         let clientID = keys.seatGeekClientID
         let clientSecret = keys.seatGeekClientSecret
-        let eventUrlString = "\(Constants.seatGeekURL)/events/?client_id=\(clientID)&client_secret=\(clientSecret)"
-        performRequest(with: eventUrlString)
+        let eventsAPIUrlString = "\(Constants.seatGeekURL)/events/?client_id=\(clientID)&client_secret=\(clientSecret)"
+        performRequest(with: eventsAPIUrlString)
     }
     
     private func performRequest(with urlString: String) {
@@ -92,7 +92,7 @@ struct EventManager {
 
 //MARK: - Error Enumerations
 
-extension EventManager {
+extension EventAPIManager {
     public enum URLError: Error {
         case invalidInput(_ urlString: String)
     }

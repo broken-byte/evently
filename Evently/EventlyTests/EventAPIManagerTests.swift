@@ -5,7 +5,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     
     private var session: MockURLSession!
     private var dateTimeFormatter: MockDateFormatter!
-    private var eventManager: EventManager!
+    private var eventAPIManager: EventAPIManager!
     private var actualEvents: [EventModel]!
     private var actualError: Error!
     
@@ -20,17 +20,17 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     override func setUpWithError() throws {
         session = MockURLSession()
         dateTimeFormatter = MockDateFormatter()
-        eventManager = EventManager(urlSession: session, dateTimeFormatter: dateTimeFormatter)
-        eventManager.delegate = self
+        eventAPIManager = EventAPIManager(urlSession: session, dateTimeFormatter: dateTimeFormatter)
+        eventAPIManager.delegate = self
     }
 
     override func tearDownWithError() throws {
-        eventManager = nil
+        eventAPIManager = nil
         actualEvents = nil
         actualError = nil
     }
     
-    func didFetchEvents(_ eventManager: EventManager, fetchedEvents: [EventModel]) {
+    func didFetchEvents(_ eventManager: EventAPIManager, fetchedEvents: [EventModel]) {
         actualEvents = fetchedEvents
     }
     
@@ -38,7 +38,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
         actualError = error
     }
 
-    func testThatEventManagerSuccessfullyFetchesEventsFromAPI() throws {
+    func testThatEventAPIManagerSuccessfullyFetchesEventsFromAPI() throws {
         if let expectedMockData = readLocalFile(forName: "successful-seat-geek-api-data") {
             session.nextData = expectedMockData
         }
@@ -58,11 +58,11 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
                 time: "03:30 AM"
             )
         ]
-        eventManager.fetchEvents()
+        eventAPIManager.fetchEvents()
         XCTAssertEqual(expectedEvents, actualEvents)
     }
     
-    func testThatEventManagerReturnsTheCorrectErrorOnBadNetworkResponse() throws {
+    func testThatEventAPIManagerReturnsTheCorrectErrorOnBadNetworkResponse() throws {
         let dummyBadServerResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: "https://seatgeek.com"),
             statusCode: 500,
@@ -70,8 +70,8 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
             headerFields: nil
         )
         session.nextResponse = dummyBadServerResponse
-        let expectedError = EventManager.HTTPResponseError.badServerResponse(dummyBadServerResponse)
-        eventManager.fetchEvents()
+        let expectedError = EventAPIManager.HTTPResponseError.badServerResponse(dummyBadServerResponse)
+        eventAPIManager.fetchEvents()
         XCTAssertEqual(expectedError.localizedDescription, actualError.localizedDescription)
     }
     

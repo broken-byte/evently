@@ -4,7 +4,6 @@
 //
 //  Created by Ricardo Carrillo on 12/10/20.
 //
-import Keys
 
 struct Constants {
     static let eventCellIdentifier = "EventCell"
