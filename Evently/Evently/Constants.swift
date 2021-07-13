@@ -12,4 +12,5 @@ struct Constants {
     static let apiUTCDateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss"
     static let dateFormatterLocaleID = "your_loc_id"
     static let eventDateTimeFormat = "HH:mm a, E d MMM y"
+    static let eventImageCornerRadius = 25.0
 }

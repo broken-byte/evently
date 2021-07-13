@@ -14,7 +14,7 @@ extension UIImageView {
     func loadImage(with imageURLString: String, and session: URLSessionProtocol) {
         image = nil
         if let imageFromCache = imageCache.object(forKey: imageURLString as NSString) {
-            self.image = imageFromCache
+            self.image = imageFromCache.getRoundedImage(with: Constants.eventImageCornerRadius)
             return
         }
         guard let imageURL = URL(string: imageURLString) else {
@@ -26,14 +26,14 @@ extension UIImageView {
                 print(error!)
                 return
             }
-            if let safeDate = data {
+            if let safeData = data {
                 DispatchQueue.main.async {
-                    if let imageToCache = UIImage(data: safeDate) {
+                    if let imageToCache = UIImage(data: safeData) {
                         imageCache.setObject(
                             imageToCache,
                             forKey: imageURLString as NSString
                         )
-                        self.image = imageToCache
+                        self.image = imageToCache.getRoundedImage(with: Constants.eventImageCornerRadius)
                     }
                 }
             }
@@ -43,5 +43,20 @@ extension UIImageView {
             }
         })
         task.resume()
+    }
+}
+
+//MARK: - UIImage Rounded Image Optimization Getter
+
+extension UIImage {
+    func getRoundedImage(with cornerRadius: Double) -> UIImage {
+        let rect = CGRect(origin:CGPoint(x: 0, y: 0), size: self.size)
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 1)
+        UIBezierPath(
+            roundedRect: rect,
+            cornerRadius: CGFloat(cornerRadius)
+            ).addClip()
+        self.draw(in: rect)
+        return UIGraphicsGetImageFromCurrentImageContext()!
     }
 }
