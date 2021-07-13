@@ -29,7 +29,6 @@
 		8C72F0CD25A13BA4007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
 		8C72F0D425A14090007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
 		8C72F0E425B23795007E3220 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */; };
-		8C82A155258A8C76005CA9C6 /* MultiImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */; };
 		8C8904D0269B4F2C00518088 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8904CF269B4F2C00518088 /* HelperExtensions.swift */; };
 		8C92A11E25B4FA23007B1B42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A11C25B4FA23007B1B42 /* EventCell.swift */; };
 		8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
@@ -87,7 +86,6 @@
 		8C720AAA25A0E7A7008717EE /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "successful-seat-geek-api-data.json"; sourceTree = "<group>"; };
 		8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
-		8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImageManager.swift; sourceTree = "<group>"; };
 		8C8904CF269B4F2C00518088 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		8C92A11C25B4FA23007B1B42 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		8C92A11D25B4FA23007B1B42 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				8C138874269B4A8A00FE1C3D /* EventAPIManager.swift */,
 				8C18484025867F9E00F925B6 /* EventData.swift */,
 				8C1848752586EAEE00F925B6 /* EventModel.swift */,
-				8C82A154258A8C76005CA9C6 /* MultiImageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -509,7 +506,6 @@
 				8C50799A264C1897001E5600 /* DateTimeFormatter.swift in Sources */,
 				8C1222402581DD6B00ABF35F /* EventViewController.swift in Sources */,
 				8C92A11E25B4FA23007B1B42 /* EventCell.swift in Sources */,
-				8C82A155258A8C76005CA9C6 /* MultiImageManager.swift in Sources */,
 				8C138873269B4A7900FE1C3D /* NetworkingProtocols.swift in Sources */,
 				8C8904D0269B4F2C00518088 /* HelperExtensions.swift in Sources */,
 				8C12223C2581DD6B00ABF35F /* AppDelegate.swift in Sources */,
