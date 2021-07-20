@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+
+//MARK: - UIImage Cache Optimization Extension
+
 let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
@@ -46,7 +49,7 @@ extension UIImageView {
     }
 }
 
-//MARK: - UIImage Rounded Image Optimization Getter
+//MARK: - UIImage Rounded Image Optimization Get Function
 
 extension UIImage {
     func getRoundedImage(with cornerRadius: Double) -> UIImage {
@@ -60,3 +63,15 @@ extension UIImage {
         return UIGraphicsGetImageFromCurrentImageContext()!
     }
 }
+
+//MARK: - Cache Optimization Error Enums
+
+//extension UIImageView {
+//    public enum URLError: Error {
+//        case invalidInput(_ urlString: String)
+//    }
+//
+//    public enum NetworkError: Error {
+//        case badServerResponse(_ response: URLResponse?)
+//    }
+//}

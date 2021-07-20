@@ -3,8 +3,8 @@ import XCTest
 
 class EventManagerTests: XCTestCase, EventManagerDelegate {
     
-    private var session: MockURLSession!
-    private var dateTimeFormatter: MockDateFormatter!
+    private var mockSession: MockURLSession!
+    private var mockDateTimeFormatter: MockDateFormatter!
     private var eventAPIManager: EventAPIManager!
     private var actualEvents: [EventModel]!
     private var actualError: Error!
@@ -18,9 +18,9 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     }
 
     override func setUpWithError() throws {
-        session = MockURLSession()
-        dateTimeFormatter = MockDateFormatter()
-        eventAPIManager = EventAPIManager(urlSession: session, dateTimeFormatter: dateTimeFormatter)
+        mockSession = MockURLSession()
+        mockDateTimeFormatter = MockDateFormatter()
+        eventAPIManager = EventAPIManager(urlSession: mockSession, dateTimeFormatter: mockDateTimeFormatter)
         eventAPIManager.delegate = self
     }
 
@@ -40,7 +40,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
 
     func testThatEventAPIManagerSuccessfullyFetchesEventsFromAPI() throws {
         if let expectedMockData = readLocalFile(forName: "successful-seat-geek-api-data") {
-            session.nextData = expectedMockData
+            mockSession.nextData = expectedMockData
         }
         let dummySuccessResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: "https://seatgeek.com"),
@@ -48,7 +48,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
             httpVersion: nil,
             headerFields: nil
         )
-        session.nextResponse = dummySuccessResponse
+        mockSession.nextResponse = dummySuccessResponse
         let expectedEvents: [EventModel] = [
             EventModel(
                 title: "Folds of Honor QuikTrip 500",
@@ -69,7 +69,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
             httpVersion: nil,
             headerFields: nil
         )
-        session.nextResponse = dummyBadServerResponse
+        mockSession.nextResponse = dummyBadServerResponse
         let expectedError = EventAPIManager.HTTPResponseError.badServerResponse(dummyBadServerResponse)
         eventAPIManager.fetchEvents()
         XCTAssertEqual(expectedError.localizedDescription, actualError.localizedDescription)
