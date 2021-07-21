@@ -60,7 +60,16 @@ extension EventViewController: UITableViewDataSource {
         let event = events[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventCellIdentifier, for: indexPath)
             as! EventCell
-        cell.eventImage?.loadImage(with: event.imageURL, and: urlSession)
+        cell.eventImage?.loadImage(with: event.imageURL, and: urlSession) { result in
+            do {
+                let loadedImage = try result.get()
+                DispatchQueue.main.async {
+                    cell.eventImage.image = loadedImage.getRoundedImage(with: Constants.eventImageCornerRadius)
+                }
+            } catch {
+                print(error)
+            }
+        }
         cell.eventTitle?.text = event.title
         cell.eventLocation?.text = event.location
         cell.eventDate?.text = event.date

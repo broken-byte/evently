@@ -23,18 +23,55 @@ class UIImageViewExtensionTests: XCTestCase {
         uiImageView = nil
     }
     
-    func testThatUiImageViewCanCreateADataTaskAndResume() throws {
-        let expectedImage = #imageLiteral(resourceName: "DefaultEventImage")
-        let expectedImageData = expectedImage.cgImage?.dataProvider?.data as Data?
-        mockSession.nextData = expectedImageData!
+    func testThatUiImageViewCanLoadAnImageCorrectly() throws {
+        let expectedInitialImage: UIImage? = #imageLiteral(resourceName: "DefaultEventImage")
+        let expectedImageData = expectedInitialImage?.pngData()
+        let expectedImage = UIImage(data: expectedImageData!)
+        mockSession.nextData = expectedImageData
+        let mockUrlString = "https://dummyImageUrl.com"
         let dummySuccessResponse = HTTPURLResponse(
-            url: URL(fileURLWithPath: "https://dummyImageUrl.com"),
+            url: URL(fileURLWithPath: mockUrlString),
             statusCode: 200,
             httpVersion: nil,
             headerFields: nil
         )
         mockSession.nextResponse = dummySuccessResponse
-        uiImageView.loadImage(with: "https://dummyImageUrl.com", and: mockSession)
-        XCTAssertTrue(mockSession.nextDataTask.resumeWasCalled)
+        
+        var actualImage: UIImage?
+        let expectation = self.expectation(description: "Loading image")
+        uiImageView.loadImage(with: mockUrlString, and: mockSession) { result in
+            do {
+                let loadedImage = try result.get()
+                actualImage = loadedImage
+                expectation.fulfill()
+            } catch {
+                print(error)
+            }
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(expectedImage?.pngData(), actualImage?.pngData())
+    }
+    
+    func testThatUiImageViewCanReturnCorrectErrorGivenABadNetworkResponse() throws {
+        let mockUrlString = "https://dummyImageUrl.com"
+        let expectation = self.expectation(description: "Pretending to load image")
+        let dummyBadServerResponse = HTTPURLResponse(
+            url: URL(fileURLWithPath: "https://dummyImageUrl.com"),
+            statusCode: 500,
+            httpVersion: nil,
+            headerFields: nil
+        )
+        let expectedError = UIImageView.NetworkError.badServerResponse(dummyBadServerResponse)
+        var actualError: Error?
+        uiImageView.loadImage(with: mockUrlString, and: mockSession) { result in
+            do {
+                try result.get()
+            } catch {
+                expectation.fulfill()
+                actualError = error
+            }
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(expectedError.localizedDescription, actualError?.localizedDescription)
     }
 }

@@ -14,38 +14,45 @@ import UIKit
 let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
-    func loadImage(with imageURLString: String, and session: URLSessionProtocol) {
+    func loadImage(with imageURLString: String, and session: URLSessionProtocol, _ completion: @escaping (Result<UIImage, Error>) -> Void) -> Void {
         image = nil
         if let imageFromCache = imageCache.object(forKey: imageURLString as NSString) {
-            self.image = imageFromCache.getRoundedImage(with: Constants.eventImageCornerRadius)
+            completion(.success(imageFromCache))
             return
         }
         guard let imageURL = URL(string: imageURLString) else {
-            print("Invalid URL Image was passed!")
+            let urlError = URLError.invalidInput(imageURLString)
+            completion(.failure(urlError))
             return
         }
-        let task = session.dataTask(with: imageURL, completion: {(data, response, error) in
-            if error != nil {
-                print(error!)
+        let task = session.dataTask(with: imageURL) { data, response, error in
+            if let safeData = data, let imageToCache = UIImage(data: safeData) {
+                imageCache.setObject(
+                    imageToCache,
+                    forKey: imageURLString as NSString
+                )
+                completion(.success(imageToCache))
                 return
             }
-            if let safeData = data {
-                DispatchQueue.main.async {
-                    if let imageToCache = UIImage(data: safeData) {
-                        imageCache.setObject(
-                            imageToCache,
-                            forKey: imageURLString as NSString
-                        )
-                        self.image = imageToCache.getRoundedImage(with: Constants.eventImageCornerRadius)
-                    }
-                }
-            }
-            else {
-                print("Data from Image URL Retrieval Failed!")
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                let badNetworkResponseError = NetworkError.badServerResponse(response)
+                completion(.failure(badNetworkResponseError))
                 return
             }
-        })
+        }
         task.resume()
+    }
+}
+
+//MARK: - Cache Optimization Error Enums
+
+extension UIImageView {
+    public enum URLError: Error {
+        case invalidInput(_ urlString: String)
+    }
+
+    public enum NetworkError: Error {
+        case badServerResponse(_ response: URLResponse?)
     }
 }
 
@@ -63,15 +70,3 @@ extension UIImage {
         return UIGraphicsGetImageFromCurrentImageContext()!
     }
 }
-
-//MARK: - Cache Optimization Error Enums
-
-//extension UIImageView {
-//    public enum URLError: Error {
-//        case invalidInput(_ urlString: String)
-//    }
-//
-//    public enum NetworkError: Error {
-//        case badServerResponse(_ response: URLResponse?)
-//    }
-//}
