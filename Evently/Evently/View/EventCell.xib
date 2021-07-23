@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se0-FA-KdI" userLabel="Event Details">
                         <rect key="frame" x="200" y="0.0" width="287" height="279"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Los Angeles Rams at Tampa Bay Buccaneers" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weU-48-cbz" userLabel="Event Title">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Los Angeles Rams at Tampa Bay Buccaneers" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="weU-48-cbz" userLabel="Event Title">
                                 <rect key="frame" x="30" y="15" width="227" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="rQg-Li-Lv4"/>

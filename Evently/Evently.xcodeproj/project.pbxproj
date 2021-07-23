@@ -11,7 +11,7 @@
 		8C017E9126A610C5007FCAE6 /* UIImageViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C017E9026A610C5007FCAE6 /* UIImageViewExtensionTests.swift */; };
 		8C12223C2581DD6B00ABF35F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12223B2581DD6B00ABF35F /* AppDelegate.swift */; };
 		8C12223E2581DD6B00ABF35F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12223D2581DD6B00ABF35F /* SceneDelegate.swift */; };
-		8C1222402581DD6B00ABF35F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12223F2581DD6B00ABF35F /* EventViewController.swift */; };
+		8C1222402581DD6B00ABF35F /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12223F2581DD6B00ABF35F /* EventsTableViewController.swift */; };
 		8C1222432581DD6B00ABF35F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222412581DD6B00ABF35F /* Main.storyboard */; };
 		8C1222452581DD7000ABF35F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222442581DD7000ABF35F /* Assets.xcassets */; };
 		8C1222482581DD7000ABF35F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */; };
@@ -34,6 +34,8 @@
 		8C92A11E25B4FA23007B1B42 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A11C25B4FA23007B1B42 /* EventCell.swift */; };
 		8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8C92A12125B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
+		8CAA1D8926AB47150020097D /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */; };
+		8CAA1D8A26AB47150020097D /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */; };
 		B261C3BA92B95C905777A8F8 /* Pods_Evently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E6ACE853B53624F3727D7E /* Pods_Evently.framework */; };
 		CC27BE2F3A0B41FF7FCDAF94 /* Pods_Evently_EventlyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A30D91229DB27004D06E6E2 /* Pods_Evently_EventlyUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,7 +68,7 @@
 		8C1222382581DD6B00ABF35F /* Evently.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evently.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C12223B2581DD6B00ABF35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C12223D2581DD6B00ABF35F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C12223F2581DD6B00ABF35F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		8C12223F2581DD6B00ABF35F /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		8C1222422581DD6B00ABF35F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C1222442581DD7000ABF35F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C1222472581DD7000ABF35F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		8C8904CF269B4F2C00518088 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		8C92A11C25B4FA23007B1B42 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		8C92A11D25B4FA23007B1B42 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.release.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDAB4CFE2FFFC5AB90DF147D /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,7 +224,8 @@
 		8C18483F25867EC500F925B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8C12223F2581DD6B00ABF35F /* EventViewController.swift */,
+				8C12223F2581DD6B00ABF35F /* EventsTableViewController.swift */,
+				8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -506,8 +510,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAA1D8926AB47150020097D /* EventDetailsViewController.swift in Sources */,
 				8C50799A264C1897001E5600 /* DateTimeFormatter.swift in Sources */,
-				8C1222402581DD6B00ABF35F /* EventViewController.swift in Sources */,
+				8C1222402581DD6B00ABF35F /* EventsTableViewController.swift in Sources */,
 				8C92A11E25B4FA23007B1B42 /* EventCell.swift in Sources */,
 				8C138873269B4A7900FE1C3D /* NetworkingProtocols.swift in Sources */,
 				8C8904D0269B4F2C00518088 /* HelperExtensions.swift in Sources */,
@@ -525,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C72F0E425B23795007E3220 /* MockURLSessionDataTask.swift in Sources */,
+				8CAA1D8A26AB47150020097D /* EventDetailsViewController.swift in Sources */,
 				8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */,
 				8C3D3A4B264C5602002ECC13 /* DateTimeFormatterTests.swift in Sources */,
 				8C3D3A4F264C5A15002ECC13 /* MockDateFormatter.swift in Sources */,

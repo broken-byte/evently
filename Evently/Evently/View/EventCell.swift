@@ -23,5 +23,6 @@ class EventCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        #warning("I need to set up a property injection strategy here")
     }
 }

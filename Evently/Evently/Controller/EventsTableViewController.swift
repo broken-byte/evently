@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventsTableViewController: UIViewController {
     
     @IBOutlet weak var eventSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -35,7 +35,7 @@ class EventViewController: UIViewController {
 
 //MARK: - EventManagerDelegate
 
-extension EventViewController: EventManagerDelegate {
+extension EventsTableViewController: EventManagerDelegate {
     
     func didFetchEvents(_ eventManager: EventAPIManager, fetchedEvents: [EventModel]) {
         events = fetchedEvents
@@ -51,7 +51,7 @@ extension EventViewController: EventManagerDelegate {
 
 //MARK: - UITableViewDataSource
 
-extension EventViewController: UITableViewDataSource {
+extension EventsTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
@@ -80,9 +80,21 @@ extension EventViewController: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 
-extension EventViewController: UITableViewDelegate {
+extension EventsTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let eventAtIndex = events[indexPath.row]
+        #warning("Haven't figured out how to get this to work yet lol")
+        //showEventDetails(given: eventAtIndex)
+    }
+    
+    private func showEventDetails(given event: EventModel) {
+//        guard let eventDetailsViewController = UIStoryboard(name: "Main", bundle: .main)
+//                .instantiateViewController(withIdentifier: "EventDetailsViewController")
+//                as? EventDetailsViewController else {
+//            fatalError("Unable to Instantiate Event Details View Controller")
+//        }
+        let eventDetailsViewController = EventDetailsViewController()
+        present(eventDetailsViewController, animated: true, completion: nil)
     }
 }
 

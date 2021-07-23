@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Event View Controller-->
+        <!--Events Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EventViewController" customModule="Evently" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EventsTableViewController" customModule="Evently" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-v8-hgI">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-v8-hgI">
                                         <rect key="frame" x="0.0" y="58" width="414" height="794"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
@@ -59,8 +59,102 @@
             </objects>
             <point key="canvasLocation" x="-165.21739130434784" y="93.75"/>
         </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="W61-nK-jc2">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sWG-Vh-Mip" customClass="EventDetailsViewController" customModule="Evently" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yko-1q-25a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Angeles Rams at Tampa Bay Buccaneers" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R46-HE-wne" userLabel="Event Title">
+                                <rect key="frame" x="72" y="44" width="270" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="1I6-Px-nla"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdN-9w-qDQ" userLabel="Horizontal Division">
+                                <rect key="frame" x="30" y="204" width="354" height="3"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="Pzv-nq-dHS"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultEventImage" translatesAutoresizingMaskIntoConstraints="NO" id="xWv-qr-LXi" userLabel="Event Image">
+                                <rect key="frame" x="30" y="232" width="354" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="rJc-Y8-ir5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Tuesday, 24 Nov 2020" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgh-UX-Yvx" userLabel="Event Date">
+                                <rect key="frame" x="30" y="542" width="219.5" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="lSR-2U-gO2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01:15AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBm-T7-bZ6" userLabel="Event Time">
+                                <rect key="frame" x="261" y="542" width="123" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="ZDp-Np-r21"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tampa, FL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjp-gf-CCm" userLabel="Event Location">
+                                <rect key="frame" x="30" y="594" width="220" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gyy-S9-1yc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E5O-XV-cPK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xWv-qr-LXi" firstAttribute="top" secondItem="qdN-9w-qDQ" secondAttribute="bottom" constant="25" id="ALR-XF-fGM"/>
+                            <constraint firstItem="R46-HE-wne" firstAttribute="leading" secondItem="E5O-XV-cPK" secondAttribute="leading" constant="72" id="Cd9-MJ-6ZQ"/>
+                            <constraint firstItem="xWv-qr-LXi" firstAttribute="leading" secondItem="E5O-XV-cPK" secondAttribute="leading" constant="30" id="DQp-Ik-amg"/>
+                            <constraint firstItem="qdN-9w-qDQ" firstAttribute="top" secondItem="R46-HE-wne" secondAttribute="bottom" constant="30" id="N2t-1h-S7f"/>
+                            <constraint firstItem="qdN-9w-qDQ" firstAttribute="leading" secondItem="E5O-XV-cPK" secondAttribute="leading" constant="30" id="V8l-vJ-b7O"/>
+                            <constraint firstAttribute="trailing" secondItem="R46-HE-wne" secondAttribute="trailing" constant="72" id="Vga-v0-dne"/>
+                            <constraint firstItem="R46-HE-wne" firstAttribute="top" secondItem="E5O-XV-cPK" secondAttribute="top" id="Z4R-Nk-ek3"/>
+                            <constraint firstItem="rjp-gf-CCm" firstAttribute="leading" secondItem="E5O-XV-cPK" secondAttribute="leading" constant="30" id="ZLD-cq-64G"/>
+                            <constraint firstItem="rjp-gf-CCm" firstAttribute="top" secondItem="xgh-UX-Yvx" secondAttribute="bottom" constant="10" id="bs6-Iv-e0l"/>
+                            <constraint firstItem="E5O-XV-cPK" firstAttribute="trailing" secondItem="qdN-9w-qDQ" secondAttribute="trailing" constant="30" id="c1p-gg-klR"/>
+                            <constraint firstItem="E5O-XV-cPK" firstAttribute="trailing" secondItem="oBm-T7-bZ6" secondAttribute="trailing" constant="30" id="el6-FL-gid"/>
+                            <constraint firstItem="E5O-XV-cPK" firstAttribute="trailing" secondItem="rjp-gf-CCm" secondAttribute="trailing" constant="164" id="flc-Io-pzb"/>
+                            <constraint firstItem="xgh-UX-Yvx" firstAttribute="top" secondItem="xWv-qr-LXi" secondAttribute="bottom" constant="30" id="frG-cc-xtf"/>
+                            <constraint firstItem="oBm-T7-bZ6" firstAttribute="leading" secondItem="xgh-UX-Yvx" secondAttribute="trailing" constant="11.5" id="iyz-gw-d7h"/>
+                            <constraint firstItem="xgh-UX-Yvx" firstAttribute="leading" secondItem="E5O-XV-cPK" secondAttribute="leading" constant="30" id="jae-nw-mFV"/>
+                            <constraint firstItem="oBm-T7-bZ6" firstAttribute="top" secondItem="xWv-qr-LXi" secondAttribute="bottom" constant="30" id="who-UA-J25"/>
+                            <constraint firstItem="E5O-XV-cPK" firstAttribute="trailing" secondItem="xWv-qr-LXi" secondAttribute="trailing" constant="30" id="zrs-AH-mdu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="eventDateLabel" destination="xgh-UX-Yvx" id="G0G-Jk-wqc"/>
+                        <outlet property="eventImageView" destination="xWv-qr-LXi" id="i7D-kh-G6j"/>
+                        <outlet property="eventLocationLabel" destination="rjp-gf-CCm" id="atr-gS-2Cm"/>
+                        <outlet property="eventTimeLabel" destination="oBm-T7-bZ6" id="RGK-bV-bjh"/>
+                        <outlet property="eventTitleLabel" destination="R46-HE-wne" id="JKh-3W-oi1"/>
+                        <outlet property="title" destination="R46-HE-wne" id="BVi-71-g0D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0L-MI-SlA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620.28985507246387" y="93.75"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="DefaultEventImage" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
