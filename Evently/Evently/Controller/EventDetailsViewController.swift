@@ -23,12 +23,18 @@ class EventDetailsViewController: UIViewController {
         super.viewDidLoad()
         urlSession = URLSession(configuration: .default)
         if let safeEvent = event {
-            setEventUI(with: safeEvent)
+            self.setEventUI(with: safeEvent)
         }
         #warning("I need to use a property injection strategy here")
+        /*
+         TODO: I need to fix the title to expand to fit the title text
+         TODO: I need to implement the init(coder:) method since I think
+               that's why my view controller's view heirarchy
+               isnt loading automatically.
+         */
     }
     
-    private func setEventUI(with event: EventModel) {
+    public func setEventUI(with event: EventModel) {
         eventTitleLabel.text = event.title
         eventImageView.loadImage(with: event.imageURL, and: urlSession) { result in
             do {

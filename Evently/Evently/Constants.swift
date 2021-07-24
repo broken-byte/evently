@@ -7,6 +7,7 @@
 
 struct Constants {
     static let eventCellIdentifier = "EventCell"
+    static let eventDetailsViewControllerIdentifier = "EventDetailsViewController"
     static let eventCellNibName = "EventCell"
     static let seatGeekURL = "https://api.seatgeek.com/2"
     static let apiUTCDateTimeFormat = "yyyy-MM-dd'T'HH:mm:ss"

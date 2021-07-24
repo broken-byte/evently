@@ -33,6 +33,26 @@ class EventsTableViewController: UIViewController {
     }
 }
 
+class EventCell: UITableViewCell {
+
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventLocation: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventTime: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+        #warning("I need to set up a property injection strategy here")
+    }
+}
+
 //MARK: - EventManagerDelegate
 
 extension EventsTableViewController: EventManagerDelegate {
@@ -82,19 +102,19 @@ extension EventsTableViewController: UITableViewDataSource {
 
 extension EventsTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let eventAtIndex = events[indexPath.row]
-        #warning("Haven't figured out how to get this to work yet lol")
-        //showEventDetails(given: eventAtIndex)
+        showEventDetails(given: eventAtIndex)
     }
     
     private func showEventDetails(given event: EventModel) {
-//        guard let eventDetailsViewController = UIStoryboard(name: "Main", bundle: .main)
-//                .instantiateViewController(withIdentifier: "EventDetailsViewController")
-//                as? EventDetailsViewController else {
-//            fatalError("Unable to Instantiate Event Details View Controller")
-//        }
-        let eventDetailsViewController = EventDetailsViewController()
-        present(eventDetailsViewController, animated: true, completion: nil)
+        guard let eventDetailsViewController = storyboard?.instantiateViewController(withIdentifier: Constants.eventDetailsViewControllerIdentifier) as? EventDetailsViewController else {
+            fatalError("Unable to Instantiate Event Details View Controller")
+        }
+        eventDetailsViewController.event = event
+        var _ = eventDetailsViewController.view
+        self.present(eventDetailsViewController as EventDetailsViewController, animated: true, completion: nil)
+        
     }
 }
 
