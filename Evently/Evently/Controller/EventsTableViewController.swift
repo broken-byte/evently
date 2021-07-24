@@ -108,11 +108,13 @@ extension EventsTableViewController: UITableViewDelegate {
     }
     
     private func showEventDetails(given event: EventModel) {
-        guard let eventDetailsViewController = storyboard?.instantiateViewController(withIdentifier: Constants.eventDetailsViewControllerIdentifier) as? EventDetailsViewController else {
+        guard let eventDetailsViewController = storyboard?.instantiateViewController(
+                withIdentifier: Constants.eventDetailsViewControllerIdentifier) as? EventDetailsViewController
+        else {
             fatalError("Unable to Instantiate Event Details View Controller")
         }
         eventDetailsViewController.event = event
-        var _ = eventDetailsViewController.view
+        eventDetailsViewController.loadViewIfNeeded()
         self.present(eventDetailsViewController as EventDetailsViewController, animated: true, completion: nil)
         
     }

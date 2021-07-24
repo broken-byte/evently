@@ -27,13 +27,13 @@ class EventDetailsViewController: UIViewController {
         }
         #warning("I need to use a property injection strategy here")
         /*
-         TODO: I need to fix the title to expand to fit the title text
          TODO: I need to implement the init(coder:) method since I think
                that's why my view controller's view heirarchy
                isnt loading automatically.
          TODO: I need to move the loading and caching to it's own
                component, since the memory keeps growing which is
                not ok lol
+         TODO: I need to find a way to handle my keyboard!
          */
     }
     
