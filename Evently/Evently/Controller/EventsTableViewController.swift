@@ -13,20 +13,22 @@ class EventsTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var events: [EventModel] = []
-    var eventManager: EventAPIManager!
+    var dateTimeFormatter: DateTimeFormatter!
     var urlSession: URLSessionProtocol!
+    var eventManager: EventAPIManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(
             UINib(nibName: Constants.eventCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.eventCellIdentifier
         )
-
+        
+        dateTimeFormatter = DateTimeFormatter()
         urlSession = URLSession(configuration: .default)
-        let dateTimeFormatter = DateTimeFormatter()
         eventManager = EventAPIManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
         eventManager.delegate = self
         eventManager.fetchEvents()
@@ -41,6 +43,8 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
     
+    var onReuse: () -> Void = {}
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -50,6 +54,11 @@ class EventCell: UITableViewCell {
 
         // Configure the view for the selected state
         #warning("I need to set up a property injection strategy here")
+    }
+    
+    override func prepareForReuse() {
+        eventImage.image = nil
+        eventImage.cancelImageLoad()
     }
 }
 
@@ -80,16 +89,7 @@ extension EventsTableViewController: UITableViewDataSource {
         let event = events[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventCellIdentifier, for: indexPath)
             as! EventCell
-        cell.eventImage?.loadImage(with: event.imageURL, and: urlSession) { result in
-            do {
-                let loadedImage = try result.get()
-                DispatchQueue.main.async {
-                    cell.eventImage.image = loadedImage.getRoundedImage(with: Constants.eventImageCornerRadius)
-                }
-            } catch {
-                print(error)
-            }
-        }
+        cell.eventImage.loadImage(with: event.imageURL)
         cell.eventTitle?.text = event.title
         cell.eventLocation?.text = event.location
         cell.eventDate?.text = event.date

@@ -39,16 +39,7 @@ class EventDetailsViewController: UIViewController {
     
     public func setEventUI(with event: EventModel) {
         eventTitleLabel.text = event.title
-        eventImageView.loadImage(with: event.imageURL, and: urlSession) { result in
-            do {
-                let loadedImage = try result.get()
-                DispatchQueue.main.async {
-                    self.eventImageView.image = loadedImage.getRoundedImage(with: Constants.eventImageCornerRadius)
-                }
-            } catch {
-                print(error)
-            }
-        }
+        eventImageView.loadImage(with: event.imageURL)
         eventDateLabel.text = event.date
         eventTimeLabel.text = event.time
         eventLocationLabel.text = event.location
