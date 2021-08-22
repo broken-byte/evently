@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 class UIImageLoadingHandler {
-    // Singleton
-    static let loader = UIImageLoadingHandler()
-    static let urlSession: URLSessionProtocol = URLSession(configuration: .default)
+    static let loader = UIImageLoadingHandler() // Singleton
+    static var urlSession: URLSessionProtocol = URLSession(configuration: .default)
     private let imageLoadingManager = ImageLoadingManager(urlSession: urlSession)
     private var uuidMap = [UIImageView: UUID]()
     

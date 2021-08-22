@@ -39,19 +39,12 @@ class UIImageViewExtensionTests: XCTestCase {
 //
 //        var actualImage: UIImage?
 //        let expectation = self.expectation(description: "Loading image")
-//        uiImageView.loadImage(with: mockUrlString, and: mockSession) { result in
-//            do {
-//                let loadedImage = try result.get()
-//                actualImage = loadedImage
-//                expectation.fulfill()
-//            } catch {
-//                print(error)
-//            }
-//        }
+//        UIImageLoadingHandler.urlSession = mockSession
+//        uiImageView.loadImage(with: mockUrlString)
 //        waitForExpectations(timeout: 5, handler: nil)
 //        XCTAssertEqual(expectedImage?.pngData(), actualImage?.pngData())
 //    }
-//
+
 //    func testThatUiImageViewCanReturnCorrectErrorGivenABadNetworkResponse() throws {
 //        let mockUrlString = "https://dummyImageUrl.com"
 //        let expectation = self.expectation(description: "Pretending to load image")
