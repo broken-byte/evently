@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ImageLoadingManager {
+class ImageLoader {
     private var loadedImagesCache = [URL: UIImage]()
     private var runningRequests = [UUID: URLSessionDataTaskProtocol]()
     private var session: URLSessionProtocol!
@@ -64,7 +64,7 @@ class ImageLoadingManager {
 
 //MARK: - Error Enumerations
 
-extension ImageLoadingManager {
+extension ImageLoader {
     public enum URLError: Error {
         case invalidInput(_ urlString: String)
     }

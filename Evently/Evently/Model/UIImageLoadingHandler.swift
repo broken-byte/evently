@@ -9,15 +9,17 @@ import Foundation
 import UIKit
 
 class UIImageLoadingHandler {
-    static let loader = UIImageLoadingHandler() // Singleton
-    static var urlSession: URLSessionProtocol = URLSession(configuration: .default)
-    private let imageLoadingManager = ImageLoadingManager(urlSession: urlSession)
+//    static let loader = UIImageLoadingHandler() // Singleton
+//    private var urlSession: URLSessionProtocol = URLSession(configuration: .default)
+    private let loader: ImageLoader!
     private var uuidMap = [UIImageView: UUID]()
     
-    private init() {}
+    init(imageLoadingManager: ImageLoader) {
+        self.loader = imageLoadingManager
+    }
     
     func load(with imageUrlString: String, for imageView: UIImageView) {
-        let token = imageLoadingManager.loadImage(with: imageUrlString) { result in
+        let token = loader.loadImage(with: imageUrlString) { result in
             defer {
                 self.uuidMap.removeValue(forKey: imageView)
             }
@@ -39,7 +41,7 @@ class UIImageLoadingHandler {
     
     func cancel(for imageView: UIImageView) {
         if let uuid = uuidMap[imageView] {
-            imageLoadingManager.cancelLoad(uuid)
+            loader.cancelLoad(uuid)
             uuidMap.removeValue(forKey: imageView)
         }
     }

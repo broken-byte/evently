@@ -25,10 +25,8 @@
 		8C3D3A4B264C5602002ECC13 /* DateTimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D3A4A264C5602002ECC13 /* DateTimeFormatterTests.swift */; };
 		8C3D3A4F264C5A15002ECC13 /* MockDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D3A4E264C5A15002ECC13 /* MockDateFormatter.swift */; };
 		8C50799A264C1897001E5600 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C507999264C1897001E5600 /* DateTimeFormatter.swift */; };
-		8C5CAB0826B36A050028CD80 /* ImageLoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0726B36A050028CD80 /* ImageLoadingManager.swift */; };
+		8C5CAB0826B36A050028CD80 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0726B36A050028CD80 /* ImageLoader.swift */; };
 		8C5CAB0A26B445A40028CD80 /* UIImageLoadingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0926B445A40028CD80 /* UIImageLoadingHandler.swift */; };
-		8C5CAB0F26B44E000028CD80 /* ImageLoadingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0E26B44E000028CD80 /* ImageLoadingManagerTests.swift */; };
-		8C5CAB1026B44E000028CD80 /* ImageLoadingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0E26B44E000028CD80 /* ImageLoadingManagerTests.swift */; };
 		8C5CAB1226B44E190028CD80 /* UIImageLoadingHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB1126B44E190028CD80 /* UIImageLoadingHandlerTests.swift */; };
 		8C5CAB1326B44E190028CD80 /* UIImageLoadingHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB1126B44E190028CD80 /* UIImageLoadingHandlerTests.swift */; };
 		8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C720AAA25A0E7A7008717EE /* MockURLSession.swift */; };
@@ -91,9 +89,8 @@
 		8C3D3A4A264C5602002ECC13 /* DateTimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatterTests.swift; sourceTree = "<group>"; };
 		8C3D3A4E264C5A15002ECC13 /* MockDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDateFormatter.swift; sourceTree = "<group>"; };
 		8C507999264C1897001E5600 /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
-		8C5CAB0726B36A050028CD80 /* ImageLoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingManager.swift; sourceTree = "<group>"; };
+		8C5CAB0726B36A050028CD80 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		8C5CAB0926B445A40028CD80 /* UIImageLoadingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoadingHandler.swift; sourceTree = "<group>"; };
-		8C5CAB0E26B44E000028CD80 /* ImageLoadingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingManagerTests.swift; sourceTree = "<group>"; };
 		8C5CAB1126B44E190028CD80 /* UIImageLoadingHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoadingHandlerTests.swift; sourceTree = "<group>"; };
 		8C720AAA25A0E7A7008717EE /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "successful-seat-geek-api-data.json"; sourceTree = "<group>"; };
@@ -194,7 +191,6 @@
 				8C1222542581DD7000ABF35F /* Info.plist */,
 				8C3D3A4A264C5602002ECC13 /* DateTimeFormatterTests.swift */,
 				8C017E9026A610C5007FCAE6 /* UIImageViewExtensionTests.swift */,
-				8C5CAB0E26B44E000028CD80 /* ImageLoadingManagerTests.swift */,
 				8C5CAB1126B44E190028CD80 /* UIImageLoadingHandlerTests.swift */,
 			);
 			path = EventlyTests;
@@ -225,7 +221,7 @@
 				8C138874269B4A8A00FE1C3D /* EventAPIManager.swift */,
 				8C18484025867F9E00F925B6 /* EventData.swift */,
 				8C1848752586EAEE00F925B6 /* EventModel.swift */,
-				8C5CAB0726B36A050028CD80 /* ImageLoadingManager.swift */,
+				8C5CAB0726B36A050028CD80 /* ImageLoader.swift */,
 				8C5CAB0926B445A40028CD80 /* UIImageLoadingHandler.swift */,
 			);
 			path = Model;
@@ -526,12 +522,11 @@
 				8C138873269B4A7900FE1C3D /* NetworkingProtocols.swift in Sources */,
 				8C8904D0269B4F2C00518088 /* HelperExtensions.swift in Sources */,
 				8C12223C2581DD6B00ABF35F /* AppDelegate.swift in Sources */,
-				8C5CAB0826B36A050028CD80 /* ImageLoadingManager.swift in Sources */,
+				8C5CAB0826B36A050028CD80 /* ImageLoader.swift in Sources */,
 				8C5CAB0A26B445A40028CD80 /* UIImageLoadingHandler.swift in Sources */,
 				8C12223E2581DD6B00ABF35F /* SceneDelegate.swift in Sources */,
 				8C1848762586EAEE00F925B6 /* EventModel.swift in Sources */,
 				8C5CAB1226B44E190028CD80 /* UIImageLoadingHandlerTests.swift in Sources */,
-				8C5CAB0F26B44E000028CD80 /* ImageLoadingManagerTests.swift in Sources */,
 				8C1848392583341700F925B6 /* Constants.swift in Sources */,
 				8C18484125867F9E00F925B6 /* EventData.swift in Sources */,
 				8C138875269B4A8A00FE1C3D /* EventAPIManager.swift in Sources */,
@@ -542,7 +537,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C5CAB1026B44E000028CD80 /* ImageLoadingManagerTests.swift in Sources */,
 				8C72F0E425B23795007E3220 /* MockURLSessionDataTask.swift in Sources */,
 				8CAA1D8A26AB47150020097D /* EventDetailsViewController.swift in Sources */,
 				8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */,
