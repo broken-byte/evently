@@ -11,7 +11,7 @@ import UIKit
 class EventDetailsViewController: UIViewController {
     
     var event: EventModel?
-    var uiImageLoadingHandler: UIImageLoadingHandler?
+    var uiImageLoadingOrchestrator: UIImageViewLoadingOrchestrator?
     var urlSession: URLSessionProtocol!
     
     @IBOutlet weak var eventTitleLabel: UILabel!
@@ -23,7 +23,7 @@ class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         urlSession = URLSession(configuration: .default)
-        if let safeEvent = event, let safeHandler = uiImageLoadingHandler {
+        if let safeEvent = event, let safeHandler = uiImageLoadingOrchestrator {
             self.setEventUI(with: safeEvent, and: safeHandler)
         }
         #warning("I need to use a property injection strategy here")
@@ -38,7 +38,7 @@ class EventDetailsViewController: UIViewController {
          */
     }
     
-    public func setEventUI(with event: EventModel, and uiImageLoadingHandler: UIImageLoadingHandler) {
+    public func setEventUI(with event: EventModel, and uiImageLoadingHandler: UIImageViewLoadingOrchestrator) {
         eventTitleLabel.text = event.title
         eventImageView.loadImage(with: event.imageURL, and: uiImageLoadingHandler)
         eventDateLabel.text = event.date

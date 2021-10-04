@@ -8,7 +8,15 @@
 import Foundation
 import UIKit
 
-class ImageLoader {
+protocol ImageLoaderProtocol {
+    
+    func loadImage(with imageUrlString: String, _ completion: @escaping (Result<UIImage, Error>) -> Void) -> UUID?
+    
+    func cancelLoad(_ uuid: UUID)
+}
+
+class ImageLoader: ImageLoaderProtocol {
+    
     private var loadedImagesCache = [URL: UIImage]()
     private var runningRequests = [UUID: URLSessionDataTaskProtocol]()
     private var session: URLSessionProtocol!
@@ -17,7 +25,7 @@ class ImageLoader {
         session = urlSession
     }
     
-    func loadImage(with imageUrlString: String, _ completion: @escaping (Result<UIImage, Error>) -> Void) -> UUID? {
+    public func loadImage(with imageUrlString: String, _ completion: @escaping (Result<UIImage, Error>) -> Void) -> UUID? {
         guard let imageURL = URL(string: imageUrlString) else {
             let urlError = URLError.invalidInput(imageUrlString)
             completion(.failure(urlError))
@@ -56,7 +64,7 @@ class ImageLoader {
         return uuid
     }
     
-    func cancelLoad(_ uuid: UUID) {
+    public func cancelLoad(_ uuid: UUID) {
         runningRequests[uuid]?.cancel()
         runningRequests.removeValue(forKey: uuid)
     }

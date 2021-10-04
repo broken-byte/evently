@@ -10,6 +10,7 @@ import Foundation
 
 class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     
+    // Allows checking wether task was resumed or canceled outside module
     private (set) var resumeWasCalled = false
     private (set) var cancelWasCalled = false
 

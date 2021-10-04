@@ -17,7 +17,7 @@ class EventsTableViewController: UIViewController {
     var urlSession: URLSessionProtocol!
     var eventManager: EventAPIManager!
     var imageLoader: ImageLoader!
-    var uiImageLoadingHandler: UIImageLoadingHandler!
+    var uiImageLoadingHandler: UIImageViewLoadingOrchestrator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class EventsTableViewController: UIViewController {
         eventManager = EventAPIManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
         eventManager.delegate = self
         imageLoader = ImageLoader(urlSession: urlSession)
-        uiImageLoadingHandler = UIImageLoadingHandler(imageLoadingManager: imageLoader)
+        uiImageLoadingHandler = UIImageViewLoadingOrchestrator(imageLoadingManager: imageLoader)
         eventManager.fetchEvents()
     }
 }
@@ -46,7 +46,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
-    var uiImageLoadingHandler: UIImageLoadingHandler!
+    var uiImageLoadingHandler: UIImageViewLoadingOrchestrator!
     
     var onReuse: () -> Void = {}
     
@@ -120,7 +120,7 @@ extension EventsTableViewController: UITableViewDelegate {
             fatalError("Unable to Instantiate Event Details View Controller")
         }
         eventDetailsViewController.event = event
-        eventDetailsViewController.uiImageLoadingHandler = uiImageLoadingHandler
+        eventDetailsViewController.uiImageLoadingOrchestrator = uiImageLoadingHandler
         eventDetailsViewController.loadViewIfNeeded()
         self.present(eventDetailsViewController as EventDetailsViewController, animated: true, completion: nil)
     }

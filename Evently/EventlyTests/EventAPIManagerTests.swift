@@ -18,16 +18,23 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     }
 
     override func setUpWithError() throws {
+        try super.setUpWithError()
         mockSession = MockURLSession()
         mockDateTimeFormatter = MockDateFormatter()
-        eventAPIManager = EventAPIManager(urlSession: mockSession, dateTimeFormatter: mockDateTimeFormatter)
+        eventAPIManager = EventAPIManager(
+            urlSession: mockSession,
+            dateTimeFormatter: mockDateTimeFormatter
+        )
         eventAPIManager.delegate = self
     }
 
     override func tearDownWithError() throws {
         eventAPIManager = nil
+        mockSession = nil
+        mockDateTimeFormatter = nil
         actualEvents = nil
         actualError = nil
+        try super.tearDownWithError()
     }
     
     func didFetchEvents(_ eventManager: EventAPIManager, fetchedEvents: [EventModel]) {
@@ -40,7 +47,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
 
     func testThatEventAPIManagerSuccessfullyFetchesEventsFromAPI() throws {
         if let expectedMockData = readLocalFile(forName: "successful-seat-geek-api-data") {
-            mockSession.nextData = expectedMockData
+            mockSession.mockData = expectedMockData
         }
         let dummySuccessResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: "https://seatgeek.com"),
@@ -48,7 +55,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
             httpVersion: nil,
             headerFields: nil
         )
-        mockSession.nextResponse = dummySuccessResponse
+        mockSession.mockResponse = dummySuccessResponse
         let expectedEvents: [EventModel] = [
             EventModel(
                 title: "Folds of Honor QuikTrip 500",
@@ -69,7 +76,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
             httpVersion: nil,
             headerFields: nil
         )
-        mockSession.nextResponse = dummyBadServerResponse
+        mockSession.mockResponse = dummyBadServerResponse
         let expectedError = EventAPIManager.HTTPResponseError.badServerResponse(dummyBadServerResponse)
         eventAPIManager.fetchEvents()
         XCTAssertEqual(expectedError.localizedDescription, actualError.localizedDescription)

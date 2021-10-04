@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-class UIImageLoadingHandler {
+class UIImageViewLoadingOrchestrator {
 //    static let loader = UIImageLoadingHandler() // Singleton
 //    private var urlSession: URLSessionProtocol = URLSession(configuration: .default)
-    private let loader: ImageLoader!
+    private let loader: ImageLoaderProtocol
     private var uuidMap = [UIImageView: UUID]()
     
-    init(imageLoadingManager: ImageLoader) {
+    init(imageLoadingManager: ImageLoaderProtocol) {
         self.loader = imageLoadingManager
     }
     

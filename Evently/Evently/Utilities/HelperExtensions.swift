@@ -11,11 +11,11 @@ import UIKit
 //MARK: - Image Loading Extensions
 
 extension UIImageView {
-    func loadImage(with imageUrlString: String, and imageLoadingHandler: UIImageLoadingHandler) {
+    func loadImage(with imageUrlString: String, and imageLoadingHandler: UIImageViewLoadingOrchestrator) {
         imageLoadingHandler.load(with: imageUrlString, for: self)
     }
 
-    func cancelImageLoad(with imageLoadingHandler: UIImageLoadingHandler) {
+    func cancelImageLoad(with imageLoadingHandler: UIImageViewLoadingOrchestrator) {
         imageLoadingHandler.cancel(for: self)
     }
 }

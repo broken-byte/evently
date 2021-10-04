@@ -13,11 +13,13 @@ class DateTimeFormatterTests: XCTestCase {
     private var dateTimeFormatter: DateTimeFormatter!
 
     override func setUpWithError() throws {
+        try super.setUpWithError()
         dateTimeFormatter = DateTimeFormatter()
     }
 
     override func tearDownWithError() throws {
         dateTimeFormatter = nil
+        try super.tearDownWithError()
     }
 
     func testThatDateTimeFormatterCanGetFormattedDateTimeGivenUTCDateTime0() throws {

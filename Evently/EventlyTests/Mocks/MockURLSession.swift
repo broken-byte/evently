@@ -10,13 +10,14 @@ import Foundation
 
 class MockURLSession: URLSessionProtocol {
     
-    var nextData: Data?
-    var nextResponse: HTTPURLResponse?
-    var nextError: Error?
-    var nextDataTask = MockURLSessionDataTask()
+    var mockData: Data?
+    var mockResponse: HTTPURLResponse?
+    var mockError: Error?
+    var mockDataTask = MockURLSessionDataTask()
     
     func dataTask(with url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
-        completion(nextData, nextResponse, nextError)
-        return nextDataTask
+        // flattens asynchronous call
+        completion(mockData, mockResponse, mockError)
+        return mockDataTask
     }
 }
