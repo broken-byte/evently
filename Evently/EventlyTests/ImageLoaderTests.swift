@@ -27,7 +27,27 @@ class ImageLoaderTests: XCTestCase {
     }
     
     func testThatImageLoaderCanLoadAnImageGivenAnImageURL() throws {
+        if let expectedImageData = Utilities.readDataFromLocalFile(withFileName: "test_image", ofType: "jpeg") {
+            mockSession.mockData = expectedImageData
+        }
+        let mockImageUrlString = "https://dummyImageUrl.com"
+        mockSession.mockResponse = HTTPURLResponse(
+            url: URL(fileURLWithPath: "https://dummyImageUrl.com"),
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil
+        )
+        mockSession.mockError = nil
         
+        var actualImage: UIImage?
+        _ = imageLoader.loadImage(with: mockImageUrlString) { result in
+            do {
+                actualImage = try result.get()
+            }
+            catch {
+                print(error)
+            }
+        }
+        XCTAssertNotNil(actualImage!)
     }
 }
-

@@ -34,9 +34,12 @@
 		8C5CAB0826B36A050028CD80 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0726B36A050028CD80 /* ImageLoader.swift */; };
 		8C5CAB0A26B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0926B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift */; };
 		8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C720AAA25A0E7A7008717EE /* MockURLSession.swift */; };
-		8C72F0CD25A13BA4007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
-		8C72F0D425A14090007E3220 /* successful-seat-geek-api-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */; };
+		8C72F0CD25A13BA4007E3220 /* successful_seat_geek_api_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful_seat_geek_api_data.json */; };
+		8C72F0D425A14090007E3220 /* successful_seat_geek_api_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful_seat_geek_api_data.json */; };
 		8C72F0E425B23795007E3220 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */; };
+		8C87A5D42715E04600FC27E7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87A5D32715E04600FC27E7 /* Utilities.swift */; };
+		8C87A5D82715E33500FC27E7 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8C87A5D72715E33500FC27E7 /* test_image.jpeg */; };
+		8C87A5D92715EA8900FC27E7 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8C87A5D72715E33500FC27E7 /* test_image.jpeg */; };
 		8C8904D0269B4F2C00518088 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8904CF269B4F2C00518088 /* HelperExtensions.swift */; };
 		8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8C92A12125B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
@@ -102,8 +105,10 @@
 		8C5CAB0726B36A050028CD80 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		8C5CAB0926B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewLoadingOrchestrator.swift; sourceTree = "<group>"; };
 		8C720AAA25A0E7A7008717EE /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
-		8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "successful-seat-geek-api-data.json"; sourceTree = "<group>"; };
+		8C72F0CC25A13BA4007E3220 /* successful_seat_geek_api_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = successful_seat_geek_api_data.json; sourceTree = "<group>"; };
 		8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
+		8C87A5D32715E04600FC27E7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8C87A5D72715E33500FC27E7 /* test_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpeg; sourceTree = "<group>"; };
 		8C8904CF269B4F2C00518088 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		8C92A11D25B4FA23007B1B42 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +205,7 @@
 				8C1222542581DD7000ABF35F /* Info.plist */,
 				8C3D3A4A264C5602002ECC13 /* DateTimeFormatterTests.swift */,
 				8C13F78C270B5F6300F8CBA4 /* ImageLoaderTests.swift */,
+				8C87A5D32715E04600FC27E7 /* Utilities.swift */,
 			);
 			path = EventlyTests;
 			sourceTree = "<group>";
@@ -267,7 +273,8 @@
 		8C72F0CB25A13B67007E3220 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8C72F0CC25A13BA4007E3220 /* successful-seat-geek-api-data.json */,
+				8C87A5D72715E33500FC27E7 /* test_image.jpeg */,
+				8C72F0CC25A13BA4007E3220 /* successful_seat_geek_api_data.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -390,11 +397,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C72F0D425A14090007E3220 /* successful-seat-geek-api-data.json in Resources */,
+				8C72F0D425A14090007E3220 /* successful_seat_geek_api_data.json in Resources */,
 				8C1222482581DD7000ABF35F /* LaunchScreen.storyboard in Resources */,
 				8C1222452581DD7000ABF35F /* Assets.xcassets in Resources */,
 				8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */,
 				8C1222432581DD6B00ABF35F /* Main.storyboard in Resources */,
+				8C87A5D92715EA8900FC27E7 /* test_image.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +410,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C72F0CD25A13BA4007E3220 /* successful-seat-geek-api-data.json in Resources */,
+				8C72F0CD25A13BA4007E3220 /* successful_seat_geek_api_data.json in Resources */,
+				8C87A5D82715E33500FC27E7 /* test_image.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +571,7 @@
 				8C3D3A4F264C5A15002ECC13 /* MockDateFormatter.swift in Sources */,
 				8CE7081E26E8311A00B7A1A4 /* NetworkingProtocols.swift in Sources */,
 				8C13F78D270B5F6400F8CBA4 /* ImageLoaderTests.swift in Sources */,
+				8C87A5D42715E04600FC27E7 /* Utilities.swift in Sources */,
 				8C138879269B4B2D00FE1C3D /* EventAPIManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

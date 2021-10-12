@@ -46,7 +46,7 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
     }
 
     func testThatEventAPIManagerSuccessfullyFetchesEventsFromAPI() throws {
-        if let expectedMockData = readLocalFile(forName: "successful-seat-geek-api-data") {
+        if let expectedMockData = Utilities.readDataFromLocalFile(withFileName: "successful_seat_geek_api_data", ofType: "json") {
             mockSession.mockData = expectedMockData
         }
         let dummySuccessResponse = HTTPURLResponse(
@@ -80,19 +80,5 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
         let expectedError = EventAPIManager.HTTPResponseError.badServerResponse(dummyBadServerResponse)
         eventAPIManager.fetchEvents()
         XCTAssertEqual(expectedError.localizedDescription, actualError.localizedDescription)
-    }
-    
-    private func readLocalFile(forName name: String) -> Data? {
-        do {
-            if let bundlePath = Bundle.main.path(forResource: name,
-                                                 ofType: "json"),
-                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-                return jsonData
-            }
-        } catch {
-            print(error)
-        }
-        
-        return nil
     }
 }
