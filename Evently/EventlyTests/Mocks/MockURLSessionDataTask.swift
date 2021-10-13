@@ -11,14 +11,14 @@ import Foundation
 class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     
     // Allows checking wether task was resumed or canceled outside module
-    private (set) var resumeWasCalled = false
-    private (set) var cancelWasCalled = false
+    private (set) var resumeCallCount = 0
+    private (set) var cancelCallCount = 0
 
     func resume() {
-        resumeWasCalled = true
+        resumeCallCount += 1
     }
     
     func cancel() {
-        cancelWasCalled = true
+        cancelCallCount += 1
     }
 }

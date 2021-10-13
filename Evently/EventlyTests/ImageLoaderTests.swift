@@ -32,7 +32,7 @@ class ImageLoaderTests: XCTestCase {
         }
         let mockImageUrlString = "https://dummyImageUrl.com"
         mockSession.mockResponse = HTTPURLResponse(
-            url: URL(fileURLWithPath: "https://dummyImageUrl.com"),
+            url: URL(fileURLWithPath: mockImageUrlString),
             statusCode: 200,
             httpVersion: nil,
             headerFields: nil
@@ -49,5 +49,33 @@ class ImageLoaderTests: XCTestCase {
             }
         }
         XCTAssertNotNil(actualImage!)
+    }
+    
+    func testThatImageLoaderCanLoadAnImageFromCacheAfterInitialDownload() throws {
+        if let expectedImageData = Utilities.readDataFromLocalFile(withFileName: "test_image", ofType: "jpeg") {
+            mockSession.mockData = expectedImageData
+        }
+        let mockUrlString = "https://dummyImageUrl.com"
+        mockSession.mockResponse = HTTPURLResponse(
+            url: URL(fileURLWithPath: mockUrlString),
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil
+        )
+        mockSession.mockError = nil
+        
+        var actualImage:UIImage?
+        for _ in 0...1 { // Initial download, then cache hit
+            _ = imageLoader.loadImage(with: mockUrlString) { result in
+                do {
+                    actualImage = try result.get()
+                }
+                catch {
+                    print(error)
+                }
+            }
+            XCTAssertNotNil(actualImage!)
+            XCTAssertTrue(mockSession.mockDataTask.resumeCallCount == 1)
+        }
     }
 }
