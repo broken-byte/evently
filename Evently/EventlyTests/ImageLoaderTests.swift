@@ -78,4 +78,31 @@ class ImageLoaderTests: XCTestCase {
             XCTAssertTrue(mockSession.mockDataTask.resumeCallCount == 1)
         }
     }
+    
+    func testThatImageLoaderCanCancelAnImageLoad() throws {
+        if let expectedImageData = Utilities.readDataFromLocalFile(withFileName: "test_image", ofType: "jpeg") {
+            mockSession.mockData = expectedImageData
+        }
+        let mockUrlString = "https://dummyImageUrl.com"
+        mockSession.mockResponse = HTTPURLResponse(
+            url: URL(fileURLWithPath: mockUrlString),
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil
+        )
+        mockSession.mockError = nil
+        
+        let task: UUID? = imageLoader.loadImage(with: mockUrlString) { result in
+            do {
+                _ = try result.get()
+            }
+            catch {
+                print(error)
+            }
+        }
+        if let safeTask = task {
+            imageLoader.cancelLoad(safeTask)
+        }
+        XCTAssertTrue(mockSession.mockDataTask.cancelCallCount == 1)
+    }
 }

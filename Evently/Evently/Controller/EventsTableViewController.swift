@@ -17,7 +17,7 @@ class EventsTableViewController: UIViewController {
     var urlSession: URLSessionProtocol!
     var eventManager: EventAPIManager!
     var imageLoader: ImageLoader!
-    var uiImageLoadingHandler: UIImageViewLoadingOrchestrator!
+    var uiImageLoadingHandler: UIImageViewLoadingOrchestratorProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
-    var uiImageLoadingHandler: UIImageViewLoadingOrchestrator!
+    var uiImageLoadingHandler: UIImageViewLoadingOrchestratorProtocol!
     
     var onReuse: () -> Void = {}
     

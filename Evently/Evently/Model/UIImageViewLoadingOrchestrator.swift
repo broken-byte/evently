@@ -8,9 +8,15 @@
 import Foundation
 import UIKit
 
-class UIImageViewLoadingOrchestrator {
-//    static let loader = UIImageLoadingHandler() // Singleton
-//    private var urlSession: URLSessionProtocol = URLSession(configuration: .default)
+protocol UIImageViewLoadingOrchestratorProtocol {
+    
+    func load(with imageUrlString: String, for imageView: UIImageView)
+    
+    func cancel(for imageView: UIImageView)
+}
+
+class UIImageViewLoadingOrchestrator: UIImageViewLoadingOrchestratorProtocol {
+    
     private let loader: ImageLoaderProtocol
     private var uuidMap = [UIImageView: UUID]()
     

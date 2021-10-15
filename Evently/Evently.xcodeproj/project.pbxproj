@@ -44,6 +44,7 @@
 		8C92A12025B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8C92A12125B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8CAA1D8926AB47150020097D /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */; };
+		8CC1D1CC2719B894000EBA46 /* MockImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1D1CB2719B894000EBA46 /* MockImageLoader.swift */; };
 		8CE7081E26E8311A00B7A1A4 /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C138872269B4A7900FE1C3D /* NetworkingProtocols.swift */; };
 		8CE7081F26E8311D00B7A1A4 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8904CF269B4F2C00518088 /* HelperExtensions.swift */; };
 		8CE7082026E8312000B7A1A4 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C507999264C1897001E5600 /* DateTimeFormatter.swift */; };
@@ -112,6 +113,7 @@
 		8C8904CF269B4F2C00518088 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		8C92A11D25B4FA23007B1B42 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		8CC1D1CB2719B894000EBA46 /* MockImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageLoader.swift; sourceTree = "<group>"; };
 		AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.release.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDAB4CFE2FFFC5AB90DF147D /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +268,7 @@
 				8C720AAA25A0E7A7008717EE /* MockURLSession.swift */,
 				8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */,
 				8C3D3A4E264C5A15002ECC13 /* MockDateFormatter.swift */,
+				8CC1D1CB2719B894000EBA46 /* MockImageLoader.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				8C3D3A4F264C5A15002ECC13 /* MockDateFormatter.swift in Sources */,
 				8CE7081E26E8311A00B7A1A4 /* NetworkingProtocols.swift in Sources */,
 				8C13F78D270B5F6400F8CBA4 /* ImageLoaderTests.swift in Sources */,
+				8CC1D1CC2719B894000EBA46 /* MockImageLoader.swift in Sources */,
 				8C87A5D42715E04600FC27E7 /* Utilities.swift in Sources */,
 				8C138879269B4B2D00FE1C3D /* EventAPIManagerTests.swift in Sources */,
 			);
