@@ -6,8 +6,8 @@
 //
 
 import Foundation
-@testable import Evently
 import XCTest
+@testable import Evently
 
 class ImageLoaderTests: XCTestCase {
     

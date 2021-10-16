@@ -22,7 +22,7 @@
 		8C13F75E270A01EE00F8CBA4 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C18484025867F9E00F925B6 /* EventData.swift */; };
 		8C13F760270A020E00F8CBA4 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1848752586EAEE00F925B6 /* EventModel.swift */; };
 		8C13F761270A021100F8CBA4 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0726B36A050028CD80 /* ImageLoader.swift */; };
-		8C13F762270A021400F8CBA4 /* UIImageViewLoadingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0926B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift */; };
+		8C13F762270A021400F8CBA4 /* UiImageViewLoadingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0926B445A40028CD80 /* UiImageViewLoadingOrchestrator.swift */; };
 		8C13F763270A022800F8CBA4 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */; };
 		8C13F78D270B5F6400F8CBA4 /* ImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13F78C270B5F6300F8CBA4 /* ImageLoaderTests.swift */; };
 		8C1848392583341700F925B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1848382583341700F925B6 /* Constants.swift */; };
@@ -32,7 +32,7 @@
 		8C3D3A4F264C5A15002ECC13 /* MockDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D3A4E264C5A15002ECC13 /* MockDateFormatter.swift */; };
 		8C50799A264C1897001E5600 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C507999264C1897001E5600 /* DateTimeFormatter.swift */; };
 		8C5CAB0826B36A050028CD80 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0726B36A050028CD80 /* ImageLoader.swift */; };
-		8C5CAB0A26B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0926B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift */; };
+		8C5CAB0A26B445A40028CD80 /* UiImageViewLoadingOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAB0926B445A40028CD80 /* UiImageViewLoadingOrchestrator.swift */; };
 		8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C720AAA25A0E7A7008717EE /* MockURLSession.swift */; };
 		8C72F0CD25A13BA4007E3220 /* successful_seat_geek_api_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful_seat_geek_api_data.json */; };
 		8C72F0D425A14090007E3220 /* successful_seat_geek_api_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C72F0CC25A13BA4007E3220 /* successful_seat_geek_api_data.json */; };
@@ -45,6 +45,7 @@
 		8C92A12125B4FA23007B1B42 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C92A11D25B4FA23007B1B42 /* EventCell.xib */; };
 		8CAA1D8926AB47150020097D /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */; };
 		8CC1D1CC2719B894000EBA46 /* MockImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1D1CB2719B894000EBA46 /* MockImageLoader.swift */; };
+		8CC1D1CE271B3AD5000EBA46 /* UiImageViewLoadingOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1D1CD271B3AD5000EBA46 /* UiImageViewLoadingOrchestratorTests.swift */; };
 		8CE7081E26E8311A00B7A1A4 /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C138872269B4A7900FE1C3D /* NetworkingProtocols.swift */; };
 		8CE7081F26E8311D00B7A1A4 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8904CF269B4F2C00518088 /* HelperExtensions.swift */; };
 		8CE7082026E8312000B7A1A4 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C507999264C1897001E5600 /* DateTimeFormatter.swift */; };
@@ -104,7 +105,7 @@
 		8C3D3A4E264C5A15002ECC13 /* MockDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDateFormatter.swift; sourceTree = "<group>"; };
 		8C507999264C1897001E5600 /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
 		8C5CAB0726B36A050028CD80 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		8C5CAB0926B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewLoadingOrchestrator.swift; sourceTree = "<group>"; };
+		8C5CAB0926B445A40028CD80 /* UiImageViewLoadingOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageViewLoadingOrchestrator.swift; sourceTree = "<group>"; };
 		8C720AAA25A0E7A7008717EE /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		8C72F0CC25A13BA4007E3220 /* successful_seat_geek_api_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = successful_seat_geek_api_data.json; sourceTree = "<group>"; };
 		8C72F0E325B23795007E3220 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		8C92A11D25B4FA23007B1B42 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		8CAA1D8826AB47150020097D /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		8CC1D1CB2719B894000EBA46 /* MockImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageLoader.swift; sourceTree = "<group>"; };
+		8CC1D1CD271B3AD5000EBA46 /* UiImageViewLoadingOrchestratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageViewLoadingOrchestratorTests.swift; sourceTree = "<group>"; };
 		AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.release.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDAB4CFE2FFFC5AB90DF147D /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 				8C3D3A4A264C5602002ECC13 /* DateTimeFormatterTests.swift */,
 				8C13F78C270B5F6300F8CBA4 /* ImageLoaderTests.swift */,
 				8C87A5D32715E04600FC27E7 /* Utilities.swift */,
+				8CC1D1CD271B3AD5000EBA46 /* UiImageViewLoadingOrchestratorTests.swift */,
 			);
 			path = EventlyTests;
 			sourceTree = "<group>";
@@ -238,7 +241,7 @@
 				8C18484025867F9E00F925B6 /* EventData.swift */,
 				8C1848752586EAEE00F925B6 /* EventModel.swift */,
 				8C5CAB0726B36A050028CD80 /* ImageLoader.swift */,
-				8C5CAB0926B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift */,
+				8C5CAB0926B445A40028CD80 /* UiImageViewLoadingOrchestrator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,7 +546,7 @@
 				8C8904D0269B4F2C00518088 /* HelperExtensions.swift in Sources */,
 				8C12223C2581DD6B00ABF35F /* AppDelegate.swift in Sources */,
 				8C5CAB0826B36A050028CD80 /* ImageLoader.swift in Sources */,
-				8C5CAB0A26B445A40028CD80 /* UIImageViewLoadingOrchestrator.swift in Sources */,
+				8C5CAB0A26B445A40028CD80 /* UiImageViewLoadingOrchestrator.swift in Sources */,
 				8C12223E2581DD6B00ABF35F /* SceneDelegate.swift in Sources */,
 				8C1848762586EAEE00F925B6 /* EventModel.swift in Sources */,
 				8C1848392583341700F925B6 /* Constants.swift in Sources */,
@@ -565,7 +568,8 @@
 				8C13F763270A022800F8CBA4 /* EventDetailsViewController.swift in Sources */,
 				8CE7082426E8313200B7A1A4 /* EventsTableViewController.swift in Sources */,
 				8C720AAB25A0E7A7008717EE /* MockURLSession.swift in Sources */,
-				8C13F762270A021400F8CBA4 /* UIImageViewLoadingOrchestrator.swift in Sources */,
+				8CC1D1CE271B3AD5000EBA46 /* UiImageViewLoadingOrchestratorTests.swift in Sources */,
+				8C13F762270A021400F8CBA4 /* UiImageViewLoadingOrchestrator.swift in Sources */,
 				8C13F760270A020E00F8CBA4 /* EventModel.swift in Sources */,
 				8CE7082626E8315900B7A1A4 /* SceneDelegate.swift in Sources */,
 				8C3D3A4B264C5602002ECC13 /* DateTimeFormatterTests.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class EventDetailsViewController: UIViewController {
     
     var event: EventModel?
-    var uiImageLoadingOrchestrator: UIImageViewLoadingOrchestratorProtocol?
+    var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol?
     var urlSession: URLSessionProtocol!
     
     @IBOutlet weak var eventTitleLabel: UILabel!
@@ -38,7 +38,7 @@ class EventDetailsViewController: UIViewController {
          */
     }
     
-    public func setEventUI(with event: EventModel, and uiImageLoadingHandler: UIImageViewLoadingOrchestratorProtocol) {
+    public func setEventUI(with event: EventModel, and uiImageLoadingHandler: UiImageViewLoadingOrchestratorProtocol) {
         eventTitleLabel.text = event.title
         eventImageView.loadImage(with: event.imageURL, and: uiImageLoadingHandler)
         eventDateLabel.text = event.date

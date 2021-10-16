@@ -8,24 +8,24 @@
 import Foundation
 import UIKit
 
-protocol UIImageViewLoadingOrchestratorProtocol {
+protocol UiImageViewLoadingOrchestratorProtocol {
     
     func load(with imageUrlString: String, for imageView: UIImageView)
     
     func cancel(for imageView: UIImageView)
 }
 
-class UIImageViewLoadingOrchestrator: UIImageViewLoadingOrchestratorProtocol {
+class UiImageViewLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol {
     
     private let loader: ImageLoaderProtocol
     private var uuidMap = [UIImageView: UUID]()
     
-    init(imageLoadingManager: ImageLoaderProtocol) {
-        self.loader = imageLoadingManager
+    init(imageLoader: ImageLoaderProtocol) {
+        self.loader = imageLoader
     }
     
     func load(with imageUrlString: String, for imageView: UIImageView) {
-        let token = loader.loadImage(with: imageUrlString) { result in
+        let token: UUID? = loader.loadImage(with: imageUrlString) { result in
             defer {
                 self.uuidMap.removeValue(forKey: imageView)
             }
