@@ -12,12 +12,9 @@ class EventsTableViewController: UIViewController {
     @IBOutlet weak var eventSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var events: [EventModel] = []
-    var dateTimeFormatter: DateTimeFormatterProtocol!
-    var urlSession: URLSessionProtocol!
-    var eventManager: EventAPIManager!
-    var imageLoader: ImageLoaderProtocol!
-    var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol!
+    private var eventApiManager: EventApiManagerProtocol!
+    private var events: [EventModel] = []
+    private var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +26,14 @@ class EventsTableViewController: UIViewController {
             forCellReuseIdentifier: Constants.eventCellIdentifier
         )
         
-        dateTimeFormatter = DateTimeFormatter()
-        urlSession = URLSession(configuration: .default)
-        eventManager = EventAPIManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
-        eventManager.delegate = self
-        imageLoader = ImageLoader(urlSession: urlSession)
-        uiImageLoadingOrchestrator = UiImageViewLoadingOrchestrator(imageLoader: imageLoader)
-        eventManager.fetchEvents()
+        let dateTimeFormatter = DateTimeFormatter()
+        let urlSession = URLSession(configuration: .default)
+        let imageLoader = ImageLoader(urlSession: urlSession)
+        
+        eventApiManager = EventAPIManager(urlSession: urlSession, dateTimeFormatter: dateTimeFormatter)
+        eventApiManager.delegate = self
+        uiImageLoadingOrchestrator = UiImageViewLoadingOrchestrator(imageLoader: imageLoader, dispatchQueue: DispatchQueue.main)
+        eventApiManager.fetchEvents()
     }
 }
 
@@ -86,6 +84,7 @@ extension EventsTableViewController: EventManagerDelegate {
 //MARK: - UITableViewDataSource
 
 extension EventsTableViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
@@ -107,6 +106,7 @@ extension EventsTableViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 
 extension EventsTableViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let eventAtIndex = events[indexPath.row]

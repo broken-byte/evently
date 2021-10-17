@@ -18,7 +18,8 @@ class UiImageViewLoadingOrchestratorTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         mockImageLoader = MockImageLoader()
-        orchestrator = UiImageViewLoadingOrchestrator(imageLoader: mockImageLoader)
+        let mockDispatchQueue = MockMainDispatchQueue()
+        orchestrator = UiImageViewLoadingOrchestrator(imageLoader: mockImageLoader, dispatchQueue: mockDispatchQueue)
     }
     
     override func tearDownWithError() throws {

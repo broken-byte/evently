@@ -13,7 +13,14 @@ protocol EventManagerDelegate {
     func didFailWithError(_ error: Error)
 }
 
-struct EventAPIManager {
+protocol EventApiManagerProtocol {
+    
+    var delegate: EventManagerDelegate? { get set }
+    
+    func fetchEvents()
+}
+
+struct EventAPIManager: EventApiManagerProtocol {
     
     public var delegate: EventManagerDelegate?
     private let session: URLSessionProtocol

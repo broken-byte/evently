@@ -18,10 +18,12 @@ protocol UiImageViewLoadingOrchestratorProtocol {
 class UiImageViewLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol {
     
     private let loader: ImageLoaderProtocol
+    private let mainDispatchQueue: DispatchQueueProtocol
     private var uuidMap = [UIImageView: UUID]()
     
-    init(imageLoader: ImageLoaderProtocol) {
+    init(imageLoader: ImageLoaderProtocol, dispatchQueue: DispatchQueueProtocol) {
         self.loader = imageLoader
+        self.mainDispatchQueue = dispatchQueue
     }
     
     func load(with imageUrlString: String, for imageView: UIImageView) {
@@ -31,7 +33,7 @@ class UiImageViewLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol {
             }
             do {
                 let loadedImage = try result.get()
-                DispatchQueue.main.async {
+                self.mainDispatchQueue.async {
                     imageView.image = loadedImage.getRoundedImage(with: Constants.eventImageCornerRadius)
                 }
             }
@@ -53,3 +55,16 @@ class UiImageViewLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol {
     }
     
 }
+
+//MARK: - DispatchQueue Dependency Injection BoilerPlate
+
+protocol DispatchQueueProtocol {
+    func async(execute work: @escaping @convention(block) () -> Void)
+}
+
+extension DispatchQueue: DispatchQueueProtocol {
+    func async(execute work: @escaping @convention(block) () -> Void) {
+        async(group: nil, qos: .unspecified, flags: [], execute: work)
+    }
+}
+
