@@ -40,4 +40,17 @@ class UiImageViewLoadingOrchestratorTests: XCTestCase {
         
         XCTAssertNotNil(uiImageView.image)
     }
+    
+    func testThatOrchestratorCanCancelAnImageLoad() throws {
+        let uiImageView = UIImageView()
+        if let testImageData: Data = Utilities.readDataFromLocalFile(withFileName: "test_image", ofType: "jpeg") {
+            mockImageLoader.mockImageData = testImageData
+        }
+        mockImageLoader.shouldLoadSuccessfully = true
+        let mockUrlString = "https://dummyImageUrl.com"
+        
+        uiImageView.loadImage(with: mockUrlString, and: orchestrator)
+        uiImageView.cancelImageLoad(with: orchestrator)
+        XCTAssertTrue(mockImageLoader.cancelCallCount == 1)
+    }
 }
