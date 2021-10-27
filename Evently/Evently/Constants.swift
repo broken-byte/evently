@@ -7,6 +7,8 @@
 
 struct Constants {
     
+    static let mainStoryBoardIdentifier = "Main"
+    
     static let eventDetailsViewControllerIdentifier = "EventDetailsViewController"
     
     static let eventCellIdentifier = "EventCell"

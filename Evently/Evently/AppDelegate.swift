@@ -13,7 +13,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        guard let eventsTableVC = UIStoryboard(
+//            name: Constants.mainStoryBoardIdentifier,
+//            bundle: Bundle.main
+//        ).instantiateInitialViewController() as? EventsTableViewController
+//        else {
+//            fatalError("Unable to Instantiate Root View Controller")
+//        }
+//
+//        let dateTimeFormatter = DateTimeFormatter()
+//        let urlSession = URLSession(configuration: .default)
+//        let eventApiManager = EventAPIManager(
+//            urlSession: urlSession,
+//            dateTimeFormatter: dateTimeFormatter
+//        )
+//
+//        let imageLoader = ImageLoader(urlSession: urlSession)
+//        let uiImageLoadingOrchestrator = UiImageViewLoadingOrchestrator(
+//            imageLoader: imageLoader,
+//            dispatchQueue: DispatchQueue.main
+//        )
+//
+//        eventsTableVC.eventApiManager = eventApiManager
+//        eventsTableVC.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
+//
+//        window?.rootViewController = eventsTableVC
+//
+//        // Make Key and Visible
+//        window?.makeKeyAndVisible()
         return true
     }
 
