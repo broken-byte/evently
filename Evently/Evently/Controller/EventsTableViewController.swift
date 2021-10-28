@@ -14,8 +14,8 @@ class EventsTableViewController: UIViewController {
     
     private var events: [EventModel] = []
     
-    public var eventApiManager: EventApiManagerProtocol?
-    public var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol?
+    public var eventApiManager: EventApiManagerProtocol!
+    public var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +44,8 @@ class EventsTableViewController: UIViewController {
         self.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
 
         
-        self.eventApiManager?.delegate = self
-        self.eventApiManager?.fetchEvents()
+        self.eventApiManager.delegate = self
+        self.eventApiManager.fetchEvents()
     }
 }
 
@@ -62,7 +62,11 @@ class EventCell: UITableViewCell {
     
     public func inject(event: EventModel, and uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol) {
         self.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
-        eventImage.loadImage(with: event.imageURL, and: uiImageLoadingOrchestrator)
+        setEventUI(with: event)
+    }
+    
+    private func setEventUI(with event: EventModel) {
+        eventImage.loadImage(with: event.imageURL, and: uiImageLoadingOrchestrator!)
         eventTitle?.text = event.title
         eventLocation?.text = event.location
         eventDate?.text = event.date
@@ -110,11 +114,14 @@ extension EventsTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let event = events[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: Constants.eventCellIdentifier,
+            for: indexPath
+        )
             as! EventCell
         cell.inject(
             event: event,
-            and: uiImageLoadingOrchestrator!
+            and: uiImageLoadingOrchestrator
         )
         return cell
     }
@@ -131,16 +138,36 @@ extension EventsTableViewController: UITableViewDelegate {
     }
     
     private func showEventDetails(given event: EventModel) {
-        guard let eventDetailsViewController = storyboard?.instantiateViewController(
-            withIdentifier: Constants.eventDetailsViewControllerIdentifier
-        ) as? EventDetailsViewController
+        let eventDetailsVC: EventDetailsViewController?
+        if #available(iOS 13.0, *) {
+            eventDetailsVC = storyboard?.instantiateViewController(
+                identifier: Constants.eventDetailsViewControllerIdentifier
+            ) { (coder) -> EventDetailsViewController? in
+                return EventDetailsViewController(
+                    coder: coder,
+                    event: event,
+                    uiImageLoadingOrchestrator: self.uiImageLoadingOrchestrator
+                )
+            }
+        }
         else {
+            eventDetailsVC = storyboard?.instantiateViewController(
+                withIdentifier: Constants.eventDetailsViewControllerIdentifier
+            ) as? EventDetailsViewController
+            eventDetailsVC?.inject(
+                event: event,
+                uiImageLoadingOrchestrator: self.uiImageLoadingOrchestrator
+            )
+        }
+        guard let eventDetailsVC = eventDetailsVC else {
             fatalError("Unable to Instantiate Event Details View Controller")
         }
-        eventDetailsViewController.event = event
-        eventDetailsViewController.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
-        eventDetailsViewController.loadViewIfNeeded()
-        self.present(eventDetailsViewController as EventDetailsViewController, animated: true, completion: nil)
+        eventDetailsVC.loadViewIfNeeded()
+        self.present(
+            eventDetailsVC as EventDetailsViewController,
+            animated: true,
+            completion: nil
+        )
     }
 }
 
