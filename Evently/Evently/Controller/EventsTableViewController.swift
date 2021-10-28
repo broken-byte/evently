@@ -156,7 +156,7 @@ extension EventsTableViewController: UITableViewDelegate {
             ) as? EventDetailsViewController
             eventDetailsVC?.inject(
                 event: event,
-                uiImageLoadingOrchestrator: self.uiImageLoadingOrchestrator
+                and: self.uiImageLoadingOrchestrator
             )
         }
         guard let eventDetailsVC = eventDetailsVC else {

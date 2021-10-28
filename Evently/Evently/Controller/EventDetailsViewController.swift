@@ -38,7 +38,7 @@ class EventDetailsViewController: UIViewController {
     }
     
     // Compatibility iOS 12 and lower
-    public func inject(event: EventModel, uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol) {
+    public func inject(event: EventModel, and uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol) {
         self.event = event
         self.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
     }
