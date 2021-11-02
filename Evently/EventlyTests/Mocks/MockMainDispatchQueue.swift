@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import Evently
 
 final class MockMainDispatchQueue: DispatchQueueProtocol {
     func async(execute work: @escaping @convention(block) () -> Void) {

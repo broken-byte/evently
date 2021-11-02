@@ -10,8 +10,8 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
     
-    private var event: EventModel
-    private var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol
+    private var event: EventModel?
+    private var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol?
     
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var eventImageView: UIImageView!
@@ -27,27 +27,19 @@ class EventDetailsViewController: UIViewController {
          */
     }
     
-    init?(coder: NSCoder, event: EventModel, uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol) {
-        self.event = event
-        self.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
-            super.init(coder: coder)
-    }
-        
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // Compatibility iOS 12 and lower
-    public func inject(event: EventModel, and uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol) {
+    public func injectDependencies(event: EventModel, uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol) {
         self.event = event
         self.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
     }
     
-    public func setEventUI() {
-        eventTitleLabel.text = event.title
-        eventImageView.loadImage(with: event.imageURL, and: uiImageLoadingOrchestrator)
-        eventDateLabel.text = event.date
-        eventTimeLabel.text = event.time
-        eventLocationLabel.text = event.location
+    private func setEventUI() {
+        guard let safeOrchestrator = uiImageLoadingOrchestrator, let safeEvent = event else {
+            fatalError("Dependencies were not injected into View Controller prior to loading")
+        }
+        eventTitleLabel.text = safeEvent.title
+        eventImageView.loadImage(with: safeEvent.imageURL, and: safeOrchestrator)
+        eventDateLabel.text = safeEvent.date
+        eventTimeLabel.text = safeEvent.time
+        eventLocationLabel.text = safeEvent.location
     }
 }

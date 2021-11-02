@@ -138,33 +138,18 @@ extension EventsTableViewController: UITableViewDelegate {
     }
     
     private func showEventDetails(given event: EventModel) {
-        let eventDetailsVC: EventDetailsViewController?
-        if #available(iOS 13.0, *) {
-            eventDetailsVC = storyboard?.instantiateViewController(
-                identifier: Constants.eventDetailsViewControllerIdentifier
-            ) { (coder) -> EventDetailsViewController? in
-                return EventDetailsViewController(
-                    coder: coder,
-                    event: event,
-                    uiImageLoadingOrchestrator: self.uiImageLoadingOrchestrator
-                )
-            }
-        }
-        else {
-            eventDetailsVC = storyboard?.instantiateViewController(
-                withIdentifier: Constants.eventDetailsViewControllerIdentifier
-            ) as? EventDetailsViewController
-            eventDetailsVC?.inject(
-                event: event,
-                and: self.uiImageLoadingOrchestrator
-            )
-        }
-        guard let eventDetailsVC = eventDetailsVC else {
+        guard let safeEventDetailsVC = storyboard?.instantiateViewController(
+            withIdentifier: Constants.eventDetailsViewControllerIdentifier
+        ) as? EventDetailsViewController else {
             fatalError("Unable to Instantiate Event Details View Controller")
         }
-        eventDetailsVC.loadViewIfNeeded()
+        safeEventDetailsVC.injectDependencies(
+            event: event,
+            uiImageLoadingOrchestrator: self.uiImageLoadingOrchestrator
+        )
+        safeEventDetailsVC.loadViewIfNeeded()
         self.present(
-            eventDetailsVC as EventDetailsViewController,
+            safeEventDetailsVC as EventDetailsViewController,
             animated: true,
             completion: nil
         )
