@@ -27,9 +27,13 @@ class ImageLoaderTests: XCTestCase {
     }
     
     func testThatImageLoaderCanLoadAnImageGivenAnImageURL() throws {
-        if let expectedImageData = Utilities.readDataFromLocalFile(withFileName: "test_image", ofType: "jpeg") {
-            mockSession.mockData = expectedImageData
+        guard let imageData = Utilities.readDataFromLocalFile(
+            withFileName: "test_image",
+            ofType: "jpeg"
+        ) else {
+            fatalError("failed to fetch image data from local")
         }
+        mockSession.mockData = imageData
         let mockImageUrlString = "https://dummyImageUrl.com"
         mockSession.mockResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: mockImageUrlString),

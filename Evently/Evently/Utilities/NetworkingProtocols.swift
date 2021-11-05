@@ -22,4 +22,4 @@ protocol URLSessionDataTaskProtocol {
     func cancel()
 }
 
-extension URLSessionDataTask: URLSessionDataTaskProtocol { }
+extension URLSessionDataTask: URLSessionDataTaskProtocol { } // Avoids typing errors

@@ -30,22 +30,30 @@ class UiImageViewLoadingOrchestratorTests: XCTestCase {
     
     func testThatOrchestratorCanLoadAnImageIntoAnImageView() throws {
         let uiImageView = UIImageView()
-        if let testImageData: Data = Utilities.readDataFromLocalFile(withFileName: "test_image", ofType: "jpeg") {
-            mockImageLoader.mockImageData = testImageData
+        guard let testImageData: Data = Utilities.readDataFromLocalFile(
+            withFileName: "test_image",
+            ofType: "jpeg"
+        ) else {
+            fatalError("Failed to load test image data from local")
         }
+        mockImageLoader.mockImageData = testImageData
         mockImageLoader.shouldLoadSuccessfully = true
         let mockUrlString = "https://dummyImageUrl.com"
         
         uiImageView.loadImage(with: mockUrlString, and: orchestrator)
         
-        XCTAssertNotNil(uiImageView.image)
+        XCTAssertNotNil(uiImageView.image!)
     }
     
     func testThatOrchestratorCanCancelAnImageLoad() throws {
         let uiImageView = UIImageView()
-        if let testImageData: Data = Utilities.readDataFromLocalFile(withFileName: "test_image", ofType: "jpeg") {
-            mockImageLoader.mockImageData = testImageData
+        guard let testImageData: Data = Utilities.readDataFromLocalFile(
+            withFileName: "test_image",
+            ofType: "jpeg"
+        ) else {
+            fatalError("Failed to load test image data from local")
         }
+        mockImageLoader.mockImageData = testImageData
         mockImageLoader.shouldLoadSuccessfully = true
         let mockUrlString = "https://dummyImageUrl.com"
         

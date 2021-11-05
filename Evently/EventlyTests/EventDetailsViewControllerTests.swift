@@ -12,8 +12,6 @@ import XCTest
 
 class EventDetailsViewControllerTests: XCTestCase {
     
-    // TODO - Change EventsDetailsViewController to use injection methods instead of new API, currently can't test it with that
-    
     private var mockOrchestrator: MockOrchestrator!
     private var mockEvent: EventModel!
     private var eventDetailsVC: EventDetailsViewController!
@@ -63,7 +61,7 @@ class EventDetailsViewControllerTests: XCTestCase {
         eventDetailsVC.injectDependencies(event: mockEvent, uiImageLoadingOrchestrator: mockOrchestrator)
         eventDetailsVC.loadViewIfNeeded()
         XCTAssertEqual(eventDetailsVC.eventTitleLabel.text, mockEvent.title)
-        XCTAssertNotNil(eventDetailsVC.eventImageView.image)
+        XCTAssertNotNil(eventDetailsVC.eventImageView.image!)
         XCTAssertEqual(eventDetailsVC.eventLocationLabel.text, mockEvent.location)
         XCTAssertEqual(eventDetailsVC.eventDateLabel.text, mockEvent.date)
         XCTAssertEqual(eventDetailsVC.eventTimeLabel.text, mockEvent.time)
