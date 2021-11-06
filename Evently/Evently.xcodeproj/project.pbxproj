@@ -55,11 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A30D91229DB27004D06E6E2 /* Pods_Evently_EventlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evently_EventlyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD30B08A9A778B6C9E07BF9 /* Pods-EventlyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.debug.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		43E6ACE853B53624F3727D7E /* Pods_Evently.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evently.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490916D6A713E238B2C16317 /* Pods-Evently.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently.release.xcconfig"; path = "Target Support Files/Pods-Evently/Pods-Evently.release.xcconfig"; sourceTree = "<group>"; };
-		874ED60902F67502CAABD823 /* Pods-Evently-EventlyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8AE9671C4D6B7CEDD9617D30 /* Pods-Evently.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently.debug.xcconfig"; path = "Target Support Files/Pods-Evently/Pods-Evently.debug.xcconfig"; sourceTree = "<group>"; };
 		8C1222382581DD6B00ABF35F /* Evently.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evently.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C12223B2581DD6B00ABF35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		8CC1D1CF271CAE9A000EBA46 /* MockMainDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMainDispatchQueue.swift; sourceTree = "<group>"; };
 		8CF57C4B272DEF7700FC8314 /* EventDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 		8CF57C4D2730638000FC8314 /* MockOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOrchestrator.swift; sourceTree = "<group>"; };
-		AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Evently-EventlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventlyTests.release.xcconfig"; path = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDAB4CFE2FFFC5AB90DF147D /* Pods_EventlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,8 +123,6 @@
 			children = (
 				8AE9671C4D6B7CEDD9617D30 /* Pods-Evently.debug.xcconfig */,
 				490916D6A713E238B2C16317 /* Pods-Evently.release.xcconfig */,
-				874ED60902F67502CAABD823 /* Pods-Evently-EventlyUITests.debug.xcconfig */,
-				AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */,
 				2BD30B08A9A778B6C9E07BF9 /* Pods-EventlyTests.debug.xcconfig */,
 				DD97871629BCFC3F628C5141 /* Pods-EventlyTests.release.xcconfig */,
 			);
@@ -253,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				43E6ACE853B53624F3727D7E /* Pods_Evently.framework */,
-				2A30D91229DB27004D06E6E2 /* Pods_Evently_EventlyUITests.framework */,
 				FDAB4CFE2FFFC5AB90DF147D /* Pods_EventlyTests.framework */,
 			);
 			name = Frameworks;

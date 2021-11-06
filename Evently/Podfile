@@ -6,9 +6,6 @@ target 'Evently' do
   target 'EventlyTests' do
     inherit! :search_paths
   end
-  target 'EventlyUITests' do
-    # Pods for testing
-  end
 end
 
 plugin 'cocoapods-keys', {
