@@ -12,24 +12,28 @@ class EventsTableViewController: UIViewController {
     @IBOutlet weak var eventSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    private var events: [EventModel] = []
+    private var events = [EventModel]()
     
     public var eventApiManager: EventApiManagerProtocol!
     public var uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let urlSession = URLSession(configuration: .default)
+        eventApiManager = createEventApiManager(with: urlSession)
+        uiImageLoadingOrchestrator = createOrchestrator(with: urlSession)
+        
+        eventSearchBar.delegate = self
         tableView.delegate = self
+        eventApiManager.delegate = self
         tableView.dataSource = self
+        
         tableView.register(
             UINib(nibName: Constants.eventCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.eventCellIdentifier
         )
-        let urlSession = URLSession(configuration: .default)
-        self.eventApiManager = createEventApiManager(with: urlSession)
-        self.uiImageLoadingOrchestrator = createOrchestrator(with: urlSession)
-        self.eventApiManager.delegate = self
-        self.eventApiManager.fetchEvents()
+        eventApiManager.fetchEvents()
     }
     
     private func createEventApiManager(with urlSession: URLSessionProtocol) -> EventApiManagerProtocol {
@@ -48,6 +52,21 @@ class EventsTableViewController: UIViewController {
         )
     }
 }
+
+//MARK: - Search
+
+extension EventsTableViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        eventApiManager.fetchEvents(searchQuery: searchText)
+    }
+         
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        self.view.endEditing(false)
+    }
+}
+
 
 //MARK: - EventCell
 
@@ -118,11 +137,11 @@ extension EventsTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let event = events[indexPath.row]
         let cell = tableView.dequeueReusableCell(
             withIdentifier: Constants.eventCellIdentifier,
             for: indexPath
         ) as! EventCell
+        let event: EventModel = events[indexPath.row]
         cell.inject(event: event, and: uiImageLoadingOrchestrator)
         return cell
     }

@@ -45,10 +45,14 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
         actualError = error
     }
 
-    func testThatEventAPIManagerSuccessfullyFetchesEventsFromAPI() throws {
-        if let expectedMockData = Utilities.readDataFromLocalFile(withFileName: "successful_seat_geek_api_data", ofType: "json") {
-            mockSession.mockData = expectedMockData
+    func testThatManagerSuccessfullyFetchesEventsFromAPI() throws {
+        guard let expectedMockData = Utilities.readDataFromLocalFile(
+            withFileName: "successful_seat_geek_api_data",
+            ofType: "json"
+        ) else {
+            fatalError("Failed to load data from local")
         }
+        mockSession.mockData = expectedMockData
         let dummySuccessResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: "https://seatgeek.com"),
             statusCode: 200,
@@ -69,7 +73,35 @@ class EventManagerTests: XCTestCase, EventManagerDelegate {
         XCTAssertEqual(expectedEvents, actualEvents)
     }
     
-    func testThatEventAPIManagerReturnsTheCorrectErrorOnBadNetworkResponse() throws {
+    func testThatManagerSuccessfullyFetchesEventsGivenSearchQuery() {
+        guard let expectedMockData = Utilities.readDataFromLocalFile(
+            withFileName: "successful_seat_geek_api_data",
+            ofType: "json"
+        ) else {
+            fatalError("Failed to load data from local")
+        }
+        mockSession.mockData = expectedMockData
+        let dummySuccessResponse = HTTPURLResponse(
+            url: URL(fileURLWithPath: "https://seatgeek.com"),
+            statusCode: 200,
+            httpVersion: nil,
+            headerFields: nil
+        )
+        mockSession.mockResponse = dummySuccessResponse
+        let expectedEvents: [EventModel] = [
+            EventModel(
+                title: "Folds of Honor QuikTrip 500",
+                imageURL: "https://seatgeek.com/images/performers-landscape/folds-of-honor-quiktrip-500-1-4c93a3/622294/huge.jpg",
+                location: "Hampton, GA",
+                date: "Wed 12 May 2021",
+                time: "03:30 AM"
+            )
+        ]
+        eventAPIManager.fetchEvents(searchQuery: "Folds")
+        XCTAssertEqual(expectedEvents, actualEvents)
+    }
+    
+    func testThatManagerReturnsTheCorrectErrorOnBadNetworkResponse() throws {
         let dummyBadServerResponse = HTTPURLResponse(
             url: URL(fileURLWithPath: "https://seatgeek.com"),
             statusCode: 500,

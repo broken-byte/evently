@@ -19,4 +19,6 @@ struct Constants {
     static let dateFormatterLocaleID = "your_loc_id"
     static let eventDateTimeFormat = "HH:mm a, E d MMM y"
     static let eventImageCornerRadius = 25.0
+    
+    static let searchBarPlaceholder = "search for events"
 }

@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aRE-hE-P8a">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" text="" placeholder="This is a search bar!" translatesAutoresizingMaskIntoConstraints="NO" id="j6E-jj-S1j">
+                                    <searchBar contentMode="redraw" text="" placeholder="search for events" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6E-jj-S1j">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>

@@ -17,7 +17,14 @@ protocol EventApiManagerProtocol {
     
     var delegate: EventManagerDelegate? { get set }
     
-    func fetchEvents()
+    func fetchEvents(searchQuery: String?)
+}
+
+extension EventApiManagerProtocol {  // allows default parameter
+    
+    func fetchEvents(searchQuery: String? = nil) {
+        fetchEvents(searchQuery: searchQuery)
+    }
 }
 
 struct EventAPIManager: EventApiManagerProtocol {
@@ -25,18 +32,25 @@ struct EventAPIManager: EventApiManagerProtocol {
     public var delegate: EventManagerDelegate?
     private let session: URLSessionProtocol
     private let dateTimeFormatter: DateTimeFormatterProtocol
+    private let clientID: String
+    private let clientSecret: String
+    private let eventApiUrlString: String
     
     init(urlSession: URLSessionProtocol = URLSession.shared, dateTimeFormatter: DateTimeFormatterProtocol) {
         self.session = urlSession
         self.dateTimeFormatter = dateTimeFormatter
+        let keys = EventlyKeys()
+        clientID = keys.seatGeekClientID
+        clientSecret = keys.seatGeekClientSecret
+        eventApiUrlString = "\(Constants.seatGeekURL)/events/?client_id=\(clientID)&client_secret=\(clientSecret)"
     }
     
-    public func fetchEvents() {
-        let keys = EventlyKeys()
-        let clientID = keys.seatGeekClientID
-        let clientSecret = keys.seatGeekClientSecret
-        let eventsAPIUrlString = "\(Constants.seatGeekURL)/events/?client_id=\(clientID)&client_secret=\(clientSecret)"
-        performRequest(with: eventsAPIUrlString)
+    public func fetchEvents(searchQuery: String? = nil) {
+        var requestString: String = eventApiUrlString
+        if let providedQuery = searchQuery {
+            requestString += "&q=\(providedQuery)"
+        }
+        performRequest(with: requestString)
     }
     
     private func performRequest(with urlString: String) {
