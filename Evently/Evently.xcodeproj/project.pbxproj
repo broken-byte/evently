@@ -14,7 +14,6 @@
 		8C1222432581DD6B00ABF35F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222412581DD6B00ABF35F /* Main.storyboard */; };
 		8C1222452581DD7000ABF35F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222442581DD7000ABF35F /* Assets.xcassets */; };
 		8C1222482581DD7000ABF35F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1222462581DD7000ABF35F /* LaunchScreen.storyboard */; };
-		8C12225E2581DD7000ABF35F /* EventlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12225D2581DD7000ABF35F /* EventlyUITests.swift */; };
 		8C138873269B4A7900FE1C3D /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C138872269B4A7900FE1C3D /* NetworkingProtocols.swift */; };
 		8C138875269B4A8A00FE1C3D /* EventAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C138874269B4A8A00FE1C3D /* EventAPIManager.swift */; };
 		8C138879269B4B2D00FE1C3D /* EventAPIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C138878269B4B2D00FE1C3D /* EventAPIManagerTests.swift */; };
@@ -43,18 +42,10 @@
 		8CF57C4C272DEF7700FC8314 /* EventDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF57C4B272DEF7700FC8314 /* EventDetailsViewControllerTests.swift */; };
 		8CF57C4E2730638100FC8314 /* MockOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF57C4D2730638000FC8314 /* MockOrchestrator.swift */; };
 		B261C3BA92B95C905777A8F8 /* Pods_Evently.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E6ACE853B53624F3727D7E /* Pods_Evently.framework */; };
-		CC27BE2F3A0B41FF7FCDAF94 /* Pods_Evently_EventlyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A30D91229DB27004D06E6E2 /* Pods_Evently_EventlyUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		8C12224F2581DD7000ABF35F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C1222302581DD6B00ABF35F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C1222372581DD6B00ABF35F;
-			remoteInfo = Evently;
-		};
-		8C12225A2581DD7000ABF35F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8C1222302581DD6B00ABF35F /* Project object */;
 			proxyType = 1;
@@ -80,9 +71,6 @@
 		8C1222492581DD7000ABF35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C12224E2581DD7000ABF35F /* EventlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1222542581DD7000ABF35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C1222592581DD7000ABF35F /* EventlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C12225D2581DD7000ABF35F /* EventlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventlyUITests.swift; sourceTree = "<group>"; };
-		8C12225F2581DD7000ABF35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C138872269B4A7900FE1C3D /* NetworkingProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
 		8C138874269B4A8A00FE1C3D /* EventAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAPIManager.swift; sourceTree = "<group>"; };
 		8C138878269B4B2D00FE1C3D /* EventAPIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAPIManagerTests.swift; sourceTree = "<group>"; };
@@ -130,14 +118,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C1222562581DD7000ABF35F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC27BE2F3A0B41FF7FCDAF94 /* Pods_Evently_EventlyUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,7 +139,6 @@
 			children = (
 				8C12223A2581DD6B00ABF35F /* Evently */,
 				8C1222512581DD7000ABF35F /* EventlyTests */,
-				8C12225C2581DD7000ABF35F /* EventlyUITests */,
 				8C1222392581DD6B00ABF35F /* Products */,
 				59F9531DF501A42B29357AC9 /* Pods */,
 				FEA50353606451F86C1184D8 /* Frameworks */,
@@ -171,7 +150,6 @@
 			children = (
 				8C1222382581DD6B00ABF35F /* Evently.app */,
 				8C12224E2581DD7000ABF35F /* EventlyTests.xctest */,
-				8C1222592581DD7000ABF35F /* EventlyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,15 +184,6 @@
 				8CF57C4B272DEF7700FC8314 /* EventDetailsViewControllerTests.swift */,
 			);
 			path = EventlyTests;
-			sourceTree = "<group>";
-		};
-		8C12225C2581DD7000ABF35F /* EventlyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8C12225D2581DD7000ABF35F /* EventlyUITests.swift */,
-				8C12225F2581DD7000ABF35F /* Info.plist */,
-			);
-			path = EventlyUITests;
 			sourceTree = "<group>";
 		};
 		8C18483D25867E8D00F925B6 /* View */ = {
@@ -331,26 +300,6 @@
 			productReference = 8C12224E2581DD7000ABF35F /* EventlyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8C1222582581DD7000ABF35F /* EventlyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8C1222682581DD7000ABF35F /* Build configuration list for PBXNativeTarget "EventlyUITests" */;
-			buildPhases = (
-				78644F16756A2236605E1487 /* [CP] Check Pods Manifest.lock */,
-				8C1222552581DD7000ABF35F /* Sources */,
-				8C1222562581DD7000ABF35F /* Frameworks */,
-				8C1222572581DD7000ABF35F /* Resources */,
-				80EF2E133DA44D2040698C3A /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8C12225B2581DD7000ABF35F /* PBXTargetDependency */,
-			);
-			name = EventlyUITests;
-			productName = EventlyUITests;
-			productReference = 8C1222592581DD7000ABF35F /* EventlyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -364,10 +313,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					8C12224D2581DD7000ABF35F = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 8C1222372581DD6B00ABF35F;
-					};
-					8C1222582581DD7000ABF35F = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 8C1222372581DD6B00ABF35F;
 					};
@@ -388,7 +333,6 @@
 			targets = (
 				8C1222372581DD6B00ABF35F /* Evently */,
 				8C12224D2581DD7000ABF35F /* EventlyTests */,
-				8C1222582581DD7000ABF35F /* EventlyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -416,13 +360,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C1222572581DD7000ABF35F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -446,45 +383,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		78644F16756A2236605E1487 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Evently-EventlyUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80EF2E133DA44D2040698C3A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8D6280D5C198530FB003D93 /* [CP] Embed Pods Frameworks */ = {
@@ -568,14 +466,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C1222552581DD7000ABF35F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C12225E2581DD7000ABF35F /* EventlyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -583,11 +473,6 @@
 			isa = PBXTargetDependency;
 			target = 8C1222372581DD6B00ABF35F /* Evently */;
 			targetProxy = 8C12224F2581DD7000ABF35F /* PBXContainerItemProxy */;
-		};
-		8C12225B2581DD7000ABF35F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C1222372581DD6B00ABF35F /* Evently */;
-			targetProxy = 8C12225A2581DD7000ABF35F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -815,48 +700,6 @@
 			};
 			name = Release;
 		};
-		8C1222692581DD7000ABF35F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 874ED60902F67502CAABD823 /* Pods-Evently-EventlyUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7HPJCDQKBD;
-				INFOPLIST_FILE = EventlyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.riccardt.EventlyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Evently;
-			};
-			name = Debug;
-		};
-		8C12226A2581DD7000ABF35F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF8FFD1EC5792A5425CC868C /* Pods-Evently-EventlyUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7HPJCDQKBD;
-				INFOPLIST_FILE = EventlyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.riccardt.EventlyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Evently;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -883,15 +726,6 @@
 			buildConfigurations = (
 				8C1222662581DD7000ABF35F /* Debug */,
 				8C1222672581DD7000ABF35F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8C1222682581DD7000ABF35F /* Build configuration list for PBXNativeTarget "EventlyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8C1222692581DD7000ABF35F /* Debug */,
-				8C12226A2581DD7000ABF35F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

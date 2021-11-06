@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1240"
+   LastUpgradeVersion = "1310"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -85,16 +85,6 @@
                BlueprintIdentifier = "8C12224D2581DD7000ABF35F"
                BuildableName = "EventlyTests.xctest"
                BlueprintName = "EventlyTests"
-               ReferencedContainer = "container:Evently.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C1222582581DD7000ABF35F"
-               BuildableName = "EventlyUITests.xctest"
-               BlueprintName = "EventlyUITests"
                ReferencedContainer = "container:Evently.xcodeproj">
             </BuildableReference>
          </TestableReference>

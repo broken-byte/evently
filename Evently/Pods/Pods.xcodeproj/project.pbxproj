@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		130963050D89B762071968134DE1D37B /* Pods-Evently-EventlyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDE5E44068662C7AD728704218A19C4 /* Pods-Evently-EventlyUITests-dummy.m */; };
 		2C67D965BAB1C5229F938BEE66CFCD75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		38D36BC15BAD5EE33557ED6BB8AEDE79 /* Pods-Evently-EventlyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DC2A12504CE5411A126DA74DC48EB5 /* Pods-Evently-EventlyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52D1E5C1B5A4904AFE310FA13AA89892 /* Pods-Evently-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 58EA50F6F8C8E019A959ACDB88D92055 /* Pods-Evently-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6A81465AC6AE013A791BEE560909D8 /* Pods-EventlyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D723DB00FBA204FE005981E50B835E /* Pods-EventlyTests-dummy.m */; };
 		600EDDF53D3B60070F68276C570DE4B7 /* Pods-Evently-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C40A63FC88C3ADD062366AC96F36F1DB /* Pods-Evently-dummy.m */; };
@@ -17,7 +15,6 @@
 		AAA34ADC48F89F00F1DB3A85E4B2EAF0 /* EventlyKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ADB85CEB9884E271352711EA8992D0 /* EventlyKeys.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		D6058270F323D958F8932E9F5378CCD4 /* EventlyKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B78C5C23633F11B221748905B3E999 /* EventlyKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D865826AAE22727BD6A29D52B8EBA00D /* Keys-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA0859E08EE95F38C09ADB14931BD51 /* Keys-dummy.m */; };
-		DEEBDCB0F09452D11B1646CAB24967C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		E32F390397C2E18A548BCDA628B89B3F /* Keys-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 269B14F54F34209941C386C692F07947 /* Keys-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA6CFDCE08CBB0278BEF3F83007C4A2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		ECFE078FBFEF053BD6F5C9892E1E9E71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -37,13 +34,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9002561C732D25B78B1616532ADC80B9;
 			remoteInfo = "Pods-Evently";
-		};
-		D085B8B08E048F13CD23AA09D82BBBDD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CE75F0DCD94A1A113665B974F74795F;
-			remoteInfo = Keys;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -67,7 +57,6 @@
 		58EA50F6F8C8E019A959ACDB88D92055 /* Pods-Evently-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Evently-umbrella.h"; sourceTree = "<group>"; };
 		5B8CDBB2D5303221338A6A4CC8BE28D7 /* Keys-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Keys-Info.plist"; sourceTree = "<group>"; };
 		5CABF89B350D6A9CD66B6F0ADFF72EC4 /* Pods-EventlyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EventlyTests-Info.plist"; sourceTree = "<group>"; };
-		65F152CF750FD986D32AEE13C067FB10 /* Pods_Evently_EventlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Evently_EventlyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA0859E08EE95F38C09ADB14931BD51 /* Keys-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Keys-dummy.m"; sourceTree = "<group>"; };
 		6EB193D2BDCA442E8F10F15B208A6845 /* Pods-Evently-EventlyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Evently-EventlyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -106,14 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C67D965BAB1C5229F938BEE66CFCD75 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9BB537A230874159D0E8D27D65AAB1C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DEEBDCB0F09452D11B1646CAB24967C1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +158,6 @@
 			children = (
 				E8CACB8744373C1818777FFB8F84C67E /* Keys.framework */,
 				77CFF8297EB5C4584BBF61B2021D0866 /* Pods_Evently.framework */,
-				65F152CF750FD986D32AEE13C067FB10 /* Pods_Evently_EventlyUITests.framework */,
 				43EEE29FDCE0910057A3518EE5660390 /* Pods_EventlyTests.framework */,
 			);
 			name = Products;
@@ -194,7 +174,6 @@
 		5E2C0347F7849CE3CA00FC3265DDE174 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8CA4620A2659E86C009FC514 /* Keys */,
 				221FDDD5E99DDCF4BB98DC5565AE0575 /* Pods-Evently */,
 				5FA9F50CB943C27B2358D207D7E3F936 /* Pods-Evently-EventlyUITests */,
 				A52A787AD910EB664889511DE4127690 /* Pods-EventlyTests */,
@@ -217,13 +196,6 @@
 			);
 			name = "Pods-Evently-EventlyUITests";
 			path = "Target Support Files/Pods-Evently-EventlyUITests";
-			sourceTree = "<group>";
-		};
-		8CA4620A2659E86C009FC514 /* Keys */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Keys;
 			sourceTree = "<group>";
 		};
 		918C67CEDF38AB6FC9603B3803A92E0F /* Development Pods */ = {
@@ -280,14 +252,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0628D1E6E81E7876E14A7D5E2D3750D2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38D36BC15BAD5EE33557ED6BB8AEDE79 /* Pods-Evently-EventlyUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		55C7AAC01A0477D3E281FF8E280B6688 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,25 +317,6 @@
 			productReference = E8CACB8744373C1818777FFB8F84C67E /* Keys.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6ADF33C4D6773E761F46303C9D2CF7F2 /* Pods-Evently-EventlyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 848FCF12828CD25BEE80FB5E5025ED3E /* Build configuration list for PBXNativeTarget "Pods-Evently-EventlyUITests" */;
-			buildPhases = (
-				0628D1E6E81E7876E14A7D5E2D3750D2 /* Headers */,
-				68B34B6F14A2A14015B5FD0E1FFC1CCC /* Sources */,
-				B9BB537A230874159D0E8D27D65AAB1C /* Frameworks */,
-				EF6BEBDAF818BEBF9782414200A73A3B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7AE065050925E4F7855D099167A4C191 /* PBXTargetDependency */,
-			);
-			name = "Pods-Evently-EventlyUITests";
-			productName = "Pods-Evently-EventlyUITests";
-			productReference = 65F152CF750FD986D32AEE13C067FB10 /* Pods_Evently_EventlyUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		9002561C732D25B78B1616532ADC80B9 /* Pods-Evently */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24FF1C309463A9411A07B3B3FD54D2B3 /* Build configuration list for PBXNativeTarget "Pods-Evently" */;
@@ -398,7 +343,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1310;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -415,7 +360,6 @@
 			targets = (
 				5CE75F0DCD94A1A113665B974F74795F /* Keys */,
 				9002561C732D25B78B1616532ADC80B9 /* Pods-Evently */,
-				6ADF33C4D6773E761F46303C9D2CF7F2 /* Pods-Evently-EventlyUITests */,
 				593C16287E1DF6870A4B82EB24C492C8 /* Pods-EventlyTests */,
 			);
 		};
@@ -436,13 +380,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF6BEBDAF818BEBF9782414200A73A3B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FEDE4EBF6751FE542DF7B79A6A253D0E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,14 +390,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		68B34B6F14A2A14015B5FD0E1FFC1CCC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				130963050D89B762071968134DE1D37B /* Pods-Evently-EventlyUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8210AFB6C3D442BF6E29493DDF05BE6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,12 +418,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7AE065050925E4F7855D099167A4C191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Keys;
-			target = 5CE75F0DCD94A1A113665B974F74795F /* Keys */;
-			targetProxy = D085B8B08E048F13CD23AA09D82BBBDD /* PBXContainerItemProxy */;
-		};
 		D7078DAB993C266D2D16AA3FE68E82F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Keys;
@@ -510,7 +433,192 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2CAD32AF16B28445E66726CEB89D32AD /* Release */ = {
+		2312D1916C555D635CE8D3CC5B406C24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30CA2B0791AEC11BB1DE7FA2B986967D /* Pods-EventlyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		23AB8D1AF99411947D6FFC536F824B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA51F54ABE70A95F5B064C05998F3170 /* Pods-Evently.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Evently/Pods-Evently-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Evently/Pods-Evently.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		380D4D9CEA9B3BB0F126B934D72C0CD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB9C4126FA27470EAC4E6097E241709 /* Pods-Evently.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Evently/Pods-Evently-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Evently/Pods-Evently.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7A89508ABC55DE3D2362D22137E08CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 985EADF008F73F5D67070FACCD909243 /* Pods-EventlyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9EB5A9716EE87C904BA58D1497C351AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C3CE28EF35DDA5F1E9B05FBCA4D55AE /* Keys.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Keys/Keys-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Keys/Keys.modulemap";
+				PRODUCT_MODULE_NAME = Keys;
+				PRODUCT_NAME = Keys;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A80F31491C9DADB0F8B6DB7459BE9496 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -571,83 +679,7 @@
 			};
 			name = Release;
 		};
-		308DF4976E516D77222D1A6F872E7467 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CE5A63005E8D55DDBC847B10CADCABA /* Pods-Evently-EventlyUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		317278D1F54496E0C6CB3235B8764A68 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA51F54ABE70A95F5B064C05998F3170 /* Pods-Evently.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Evently/Pods-Evently-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Evently/Pods-Evently.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		477B0298221A7FA44C610192EC957EBE /* Debug */ = {
+		B9C7698B38D09B8EB380EE205AF889B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -712,190 +744,6 @@
 			};
 			name = Debug;
 		};
-		50985F1FFD34F5F288889AA34C7A2954 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 985EADF008F73F5D67070FACCD909243 /* Pods-EventlyTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5D13D432BFB0D5CBE687B161D4E92D34 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEB9C4126FA27470EAC4E6097E241709 /* Pods-Evently.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Evently/Pods-Evently-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Evently/Pods-Evently.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		60A83C8C2AA81835D35D788E957AB119 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EB193D2BDCA442E8F10F15B208A6845 /* Pods-Evently-EventlyUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Evently-EventlyUITests/Pods-Evently-EventlyUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9C5D951B1DCC3B3485C9A722905BF71D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30CA2B0791AEC11BB1DE7FA2B986967D /* Pods-EventlyTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EventlyTests/Pods-EventlyTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9EB5A9716EE87C904BA58D1497C351AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C3CE28EF35DDA5F1E9B05FBCA4D55AE /* Keys.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Keys/Keys-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Keys/Keys.modulemap";
-				PRODUCT_MODULE_NAME = Keys;
-				PRODUCT_NAME = Keys;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		CAEA1FAF4D2383DEA4B68839BEBB0FED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0890C89924535A54EDFB2E2E1B039340 /* Keys.debug.xcconfig */;
@@ -911,7 +759,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Keys/Keys-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Keys/Keys-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -936,8 +784,8 @@
 		24FF1C309463A9411A07B3B3FD54D2B3 /* Build configuration list for PBXNativeTarget "Pods-Evently" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5D13D432BFB0D5CBE687B161D4E92D34 /* Debug */,
-				317278D1F54496E0C6CB3235B8764A68 /* Release */,
+				380D4D9CEA9B3BB0F126B934D72C0CD5 /* Debug */,
+				23AB8D1AF99411947D6FFC536F824B06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -945,8 +793,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				477B0298221A7FA44C610192EC957EBE /* Debug */,
-				2CAD32AF16B28445E66726CEB89D32AD /* Release */,
+				B9C7698B38D09B8EB380EE205AF889B0 /* Debug */,
+				A80F31491C9DADB0F8B6DB7459BE9496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -960,20 +808,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		848FCF12828CD25BEE80FB5E5025ED3E /* Build configuration list for PBXNativeTarget "Pods-Evently-EventlyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				60A83C8C2AA81835D35D788E957AB119 /* Debug */,
-				308DF4976E516D77222D1A6F872E7467 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DD9C6B5A3E04E20D42D96D00D8F1FC56 /* Build configuration list for PBXNativeTarget "Pods-EventlyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C5D951B1DCC3B3485C9A722905BF71D /* Debug */,
-				50985F1FFD34F5F288889AA34C7A2954 /* Release */,
+				2312D1916C555D635CE8D3CC5B406C24 /* Debug */,
+				7A89508ABC55DE3D2362D22137E08CDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
