@@ -19,35 +19,37 @@ class EventsTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(
             UINib(nibName: Constants.eventCellNibName, bundle: nil),
             forCellReuseIdentifier: Constants.eventCellIdentifier
         )
-
-        let dateTimeFormatter = DateTimeFormatter()
         let urlSession = URLSession(configuration: .default)
-        let eventApiManager = EventAPIManager(
-            urlSession: urlSession,
-            dateTimeFormatter: dateTimeFormatter
-        )
-
-        let imageLoader = ImageLoader(urlSession: urlSession)
-        let uiImageLoadingOrchestrator = UiImageViewLoadingOrchestrator(
-            imageLoader: imageLoader,
-            dispatchQueue: DispatchQueue.main
-        )
-        
-        self.eventApiManager = eventApiManager
-        self.uiImageLoadingOrchestrator = uiImageLoadingOrchestrator
-
-        
+        self.eventApiManager = createEventApiManager(with: urlSession)
+        self.uiImageLoadingOrchestrator = createOrchestrator(with: urlSession)
         self.eventApiManager.delegate = self
         self.eventApiManager.fetchEvents()
     }
+    
+    private func createEventApiManager(with urlSession: URLSessionProtocol) -> EventApiManagerProtocol {
+        let dateTimeFormatter = DateTimeFormatter()
+        return EventAPIManager(
+            urlSession: urlSession,
+            dateTimeFormatter: dateTimeFormatter
+        )
+    }
+    
+    private func createOrchestrator(with urlSession: URLSessionProtocol) -> UiImageViewLoadingOrchestratorProtocol {
+        let imageLoader = ImageLoader(urlSession: urlSession)
+        return UiImageViewLoadingOrchestrator(
+            imageLoader: imageLoader,
+            dispatchQueue: DispatchQueue.main
+        )
+    }
 }
+
+//MARK: - EventCell
 
 class EventCell: UITableViewCell {
 
@@ -65,12 +67,15 @@ class EventCell: UITableViewCell {
         setEventUI(with: event)
     }
     
-    private func setEventUI(with event: EventModel) {
-        eventImage.loadImage(with: event.imageURL, and: uiImageLoadingOrchestrator!)
-        eventTitle?.text = event.title
-        eventLocation?.text = event.location
-        eventDate?.text = event.date
-        eventTime?.text = event.time
+    private func setEventUI(with event: EventModel?) {
+        guard let safeEvent = event, let safeOrchestrator = uiImageLoadingOrchestrator else {
+           fatalError("EventCell dependencies were not injected")
+        }
+        eventImage.loadImage(with: safeEvent.imageURL, and: safeOrchestrator)
+        eventTitle?.text = safeEvent.title
+        eventLocation?.text = safeEvent.location
+        eventDate?.text = safeEvent.date
+        eventTime?.text = safeEvent.time
     }
     
     override func awakeFromNib() {
@@ -117,12 +122,8 @@ extension EventsTableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: Constants.eventCellIdentifier,
             for: indexPath
-        )
-            as! EventCell
-        cell.inject(
-            event: event,
-            and: uiImageLoadingOrchestrator
-        )
+        ) as! EventCell
+        cell.inject(event: event, and: uiImageLoadingOrchestrator)
         return cell
     }
 }
