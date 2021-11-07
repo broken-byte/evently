@@ -39,8 +39,7 @@ class ImageLoader: ImageLoaderProtocol {
 
         let task = session.dataTask(with: imageURL) { data, response, error in
             defer {
-                self.runningRequests.removeValue(forKey: uuid)
-                
+                self.runningRequests.removeValue(forKey: uuid) 
             }
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 let badNetworkResponseError = NetworkError.badServerResponse(response)
