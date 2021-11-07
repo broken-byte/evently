@@ -22,9 +22,6 @@ class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setEventUI()
-        /*
-         TODO: I need to find a way to handle my keyboard!
-         */
     }
     
     public func injectDependencies(event: EventModel, uiImageLoadingOrchestrator: UiImageViewLoadingOrchestratorProtocol) {
